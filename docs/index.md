@@ -1,40 +1,40 @@
-# Schemas documentation
+# Trust Infrastructure Schemas documentation
 
-This documentation set is the **canonical reference** for the `schemas` repository.
+This documentation set is the canonical reference for the repository as an **Open Trust Artifact Model**.
 
 ## Start here
 
 - **Repository README:** `../README.md`
-- **Schema families:**
-  - Agent: `../credentials/agent/v1/README.md`
-  - DTG: `../credentials/dtg/v1/README.md`
-  - Reputation: `../credentials/reputation/v1/README.md`
+- **Open Trust Artifact Model:** `open-trust-artifact-model.md`
+- **Artifact taxonomy:** `artifact-taxonomy.md`
 
-## Governance and trust framing (non-normative)
+## Schema families
+
+- Agent: `../credentials/agent/v1/README.md`
+- DTG: `../credentials/dtg/v1/README.md`
+- Reputation: `../credentials/reputation/v1/README.md`
+- Assurance: `../assurance/assurance-levels.md`
+- Conformance: `../conformance/IMPLEMENTER-DECLARATION.md`
+- Controls: `../controls/controls.md`
+- Registry: `../registry/README.md`
+
+## Governance and trust framing
 
 - Trust model: `TRUST-MODEL.md`
-- Trust assumptions & threat model: `TRUST-ASSUMPTIONS.md`
+- Trust assumptions and threat model: `TRUST-ASSUMPTIONS.md`
 - Cross-repo drift prevention: `cross-repo-governance.md`
+
+## Architecture and interoperability
+
+- Architecture snapshot: `architecture.md`
+- Ecosystem interoperability: `ecosystem-interoperability.md`
+- Transport alignment (TSP): `tsp-alignment.md`
+
+## Machine-readable model metadata
+
+- Taxonomy JSON: `../model/trust-artifact-taxonomy.json`
+- Taxonomy schema: `../model/trust-artifact-taxonomy.schema.json`
 
 ## GitHub Pages
 
-This repository can be published via **GitHub Pages** from the `/docs` folder.
-
-- Pages entry point: this file (`docs/index.md`)
-- Recommended source: **Deploy from a branch → `/docs` folder**
-
-## Ecosystem interoperability
-
-- Ecosystem interoperability: `ecosystem-interoperability.md`
-- Architecture snapshot: `architecture.md`
-- Upstream references:
-  - `../upstream/dtg-credentials.md`
-  - `../upstream/verifiable-trust-infrastructure.md`
-  - `../upstream/openvtc.md`
-
-## Interoperability
-
-- [Ecosystem interoperability](ecosystem-interoperability.md)
-- [Architecture snapshot](architecture.md)
-- [Transport alignment (TSP)](tsp-alignment.md)
-
+This repository can be published via GitHub Pages from the `/docs` folder.

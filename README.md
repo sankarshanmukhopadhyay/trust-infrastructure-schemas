@@ -1,101 +1,124 @@
-## Schemas (Release v0.4.0)
+## Trust Infrastructure Schemas (Release v0.5.0)
 
-This repository publishes the canonical **data contracts** for the DTG assurance ecosystem.
+This repository publishes the canonical **machine-readable artifacts** for operational digital trust infrastructure.
 
-**Last reviewed:** 2026-03-05
+**Last reviewed:** 2026-03-14
 
-## Upstream Origin
+## Positioning
+
+Most trust ecosystems stop at narrative governance. This repository focuses on the harder layer: the structured artifacts needed to express, exchange, validate, and automate trust decisions.
+
+In practice, this repository now positions itself as an **Open Trust Artifact Model** implemented through schemas.
+
+That means the primary product is not a loose collection of JSON schemas. The primary product is a model of the artifacts required to operate trust systems, including:
+
+- identity and authority artifacts
+- governance and policy artifacts
+- assurance and conformance artifacts
+- ecosystem state and registry artifacts
+
+## Upstream origin
 
 This repository is forked from https://github.com/archetech/schemas.
-The project builds upon the original structure while evolving schema governance and validation practices to support Archon use cases.
+The project builds upon the original structure while evolving schema governance and validation practices to support Archon and broader trust-infrastructure use cases.
 
-# schemas
-Standard Archon schemas
+## Artifact families
 
-- Agent credential [schemas](credentials/agent/v1/README.md)
-- Decentralized Trust Graph (DTG) credential [schemas](credentials/dtg/v1/README.md)
-- Reputation credential [schemas](credentials/reputation/v1/README.md)
-## Ecosystem & related repositories
+The repository is organized around the artifact types that appear in real trust ecosystems.
 
-This repository is part of a small assurance ecosystem:
+### 1. Identity and authority artifacts
 
-- **`schemas` (this repo):** canonical data contracts for credentials, controls, and machine-checkable declarations.
+- Agent credential schemas: `credentials/agent/v1/README.md`
+- DTG credential schemas: `credentials/dtg/v1/README.md`
+- Reputation credential schemas: `credentials/reputation/v1/README.md`
+
+### 2. Assurance and conformance artifacts
+
+- Assurance levels: `assurance/assurance-levels.md`
+- Assurance schema: `assurance/assurance.schema.json`
+- Implementer declaration template: `conformance/IMPLEMENTER-DECLARATION.md`
+- Conformance declaration schema: `conformance/conformance-declaration.schema.json`
+
+### 3. Control framework artifacts
+
+- Controls registry: `controls/controls.md`
+- Controls data: `controls/controls.json`
+- Controls schema: `controls/controls.schema.json`
+- Control-to-assurance mapping: `controls/mappings/control-assurance-matrix.json`
+
+### 4. Ecosystem state artifacts
+
+- Registry schema: `registry/registry.schema.json`
+- Sample registry: `registry/sample-registry.json`
+
+### 5. Artifact model metadata
+
+- Trust artifact taxonomy: `model/trust-artifact-taxonomy.json`
+- Taxonomy schema: `model/trust-artifact-taxonomy.schema.json`
+- Model overview: `docs/open-trust-artifact-model.md`
+
+## Ecosystem and related repositories
+
+This repository is part of a broader assurance and governance stack:
+
+- **`schemas` (this repo):** the schema registry and artifact model for operational trust systems.
 - **DCAS (`dtg-conformance-assurance`):** the assurance method and verifier workflow that evaluates conformance claims built on these contracts.
 - **Domain baselines (example: `agent-name-assurance-baseline`):** normative requirements for specific domains that produce declarations and evidence bundles evaluable via DCAS.
+- **TSMM-aligned work:** conceptual models that define entities, relationships, and governance semantics across the trust stack.
 
 **Canonical ownership:** Assurance Levels (AL1–AL4) are defined *normatively* in `assurance/assurance-levels.md`. Downstream repos MUST reference this document instead of copying AL semantics.
 
 See also: `docs/cross-repo-governance.md`.
 
+## Why this shift matters
 
-## Conformance
+Identity ecosystems standardized credentials. Trust ecosystems also need standardized **assurance artifacts**, **conformance artifacts**, **control artifacts**, and **registry artifacts**.
 
-This repository supports implementer-facing conformance artifacts to enable ecosystem alignment and auditable interoperability claims.
+This repository exists to provide those machine-readable primitives so that trust frameworks can move from narrative governance to **verifiable and automatable trust infrastructure**.
 
-- Human-readable template: `conformance/IMPLEMENTER-DECLARATION.md`
-- Machine-readable declaration schema: `conformance/conformance-declaration.schema.json`
-- Example declaration: `conformance/examples/example-declaration.json`
-
-Implementers SHOULD pin to a tagged release and reference schemas by `$id` where possible.
-
-
-## Controls
-
-This repository maintains a lightweight Controls Registry to support ecosystem conformance and assurance claims.
-
-- Human-readable registry: `controls/controls.md`
-- Machine-readable registry: `controls/controls.json`
-- Registry schema: `controls/controls.schema.json`
-
-## Schema Versioning Policy
+## Schema versioning policy
 
 This repository follows semantic governance for schema evolution.
 
-### Major Versions (`vN/`)
+### Major versions (`vN/`)
+
 - Represent semantic compatibility boundaries.
 - Breaking structural or validation changes require a new `v(N+1)/` directory.
 
-### Minor / Patch Releases
-Within a major version directory, the following changes are generally allowed:
-- Clarify descriptions and documentation
-- Add optional properties
-- Add new schemas (with examples)
+### Minor / patch releases
 
-Changes that MAY be breaking (treat with caution):
-- Tightening validation constraints
-- Changing required properties
-- Altering semantic interpretation of existing fields
+Within a major version directory, the following changes are generally allowed:
+
+- clarify descriptions and documentation
+- add optional properties
+- add new schemas and examples
+- extend the artifact taxonomy without invalidating existing payloads
+
+Changes that MAY be breaking and SHOULD be treated cautiously:
+
+- tightening validation constraints
+- changing required properties
+- altering semantic interpretation of existing fields
 
 When in doubt, changes that invalidate previously valid payloads MUST be treated as breaking.
 
-### Consumer Guidance
+### Consumer guidance
+
 Implementers SHOULD:
-- Pin to tagged releases for production use.
-- Avoid referencing `main` for production validation.
-- Use `$id` as the canonical identifier for schema references once published via a stable hosting endpoint (e.g., GitHub Pages).
 
-
-## Assurance
-
-This repository defines **assurance levels** (AL1–AL4) to distinguish schema-validity from trust posture.
-
-- Human-readable: `assurance/assurance-levels.md`
-- Machine-readable: `assurance/assurance-levels.json` (validated by `assurance/assurance.schema.json`)
-
-## Control ↔ Assurance Mapping
-
-A control-to-assurance matrix defines required/recommended controls per level:
-
-- `controls/mappings/control-assurance-matrix.json`
+- pin to tagged releases for production use
+- avoid referencing `main` for production validation
+- use `$id` as the canonical identifier for published schema references
+- treat the artifact taxonomy as the navigation layer for implementation and governance alignment
 
 ## Tools
 
 Reference scripts for implementers and CI parity:
 
 - `tools/validate-conformance.js` — validate conformance, controls, assurance, and registry simulation artifacts via AJV CLI
-- `tools/lint-schemas.js` — lightweight schema linting (identity + documentation hygiene)
+- `tools/lint-schemas.js` — lightweight schema linting for identity and documentation hygiene
 
-## Registry Simulation (Non-normative)
+## Registry simulation (non-normative)
 
 Example artifacts showing how an ecosystem might index implementers and their declarations:
 
@@ -104,4 +127,4 @@ Example artifacts showing how an ecosystem might index implementers and their de
 
 ## Ecosystem interoperability
 
-See `docs/ecosystem-interoperability.md` and `docs/architecture.md` for how this repo composes with DTG Labs upstream work (`dtg-credentials`, `verifiable-trust-infrastructure`, `openVTC`).
+See `docs/ecosystem-interoperability.md`, `docs/architecture.md`, and `docs/open-trust-artifact-model.md` for how this repository composes with DTG Labs upstream work and adjacent trust-stack efforts.

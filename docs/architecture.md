@@ -1,47 +1,52 @@
 # Architecture snapshot
 
-This diagram is a **non-normative** view of how this repository composes with DTG Labs upstream work and the ToIP Trust Spanning Protocol (TSP).
+This diagram is a non-normative view of where this repository sits in a broader trust stack.
 
 ```mermaid
 flowchart TB
-  subgraph A[Assurance and Conformance Layer]
-    S[Schemas]
-    D[DCAS]
-    N[ANAB]
-    S --> D --> N
+  subgraph I[Identity Layer]
+    DID[DIDs and identifiers]
+    VC[Verifiable credentials]
   end
 
-  subgraph T[Transport]
-    TSP[ToIP Trust Spanning Protocol]
+  subgraph A[Trust Artifact Layer]
+    OTAM[Open Trust Artifact Model]
+    AS[Assurance artifacts]
+    CF[Conformance artifacts]
+    CT[Control artifacts]
+    RG[Registry artifacts]
+    OTAM --> AS
+    OTAM --> CF
+    OTAM --> CT
+    OTAM --> RG
   end
 
-  subgraph C[Credential Semantics]
-    DC[dtg-credentials]
+  subgraph G[Governance Layer]
+    TF[Trust frameworks]
+    PL[Policies and rules]
+    MM[TSMM-style meta-models]
   end
 
-  subgraph I[Ecosystem Architecture]
-    VTI[verifiable-trust-infrastructure]
+  subgraph O[Operational Systems]
+    DCAS[DCAS and assurance workflows]
+    BAS[Domain baselines]
+    REG[Trust registries]
+    AG[Agent ecosystems]
   end
 
-  subgraph R[Reference Implementations]
-    O[openVTC]
-  end
-
-  %% Typical dependency direction
-  DC --> VTI --> O
-
-  %% Transport adjacency (non-normative)
-  N -. "trust tasks over transport" .- TSP
-  DC -. "artifact exchange over transport" .- TSP
-
-  %% Interop touchpoints (non-normative)
-  S -. "schemas for claims" .- DC
-  D -. "assurance profiles" .- VTI
-  N -. "identifier trust tasks" .- O
+  DID --> VC --> OTAM
+  TF --> OTAM
+  PL --> OTAM
+  MM -. semantic alignment .- OTAM
+  AS --> DCAS
+  CF --> DCAS
+  CT --> BAS
+  RG --> REG
+  OTAM --> AG
 ```
 
 ## Notes
 
-- Solid arrows represent a typical dependency direction.
-- Dotted edges represent interoperability touchpoints (mapping, evaluation, integration), not hard dependencies.
-- The transport layer is shown as an adjacency to highlight where secure message exchange is expected to occur.
+- The repository is positioned as the machine-readable artifact layer between identity primitives and governance systems.
+- Schemas in this repository are implementations of a broader artifact model.
+- Downstream assurance, registry, and agent systems can reuse the same artifact classes without copying semantics into each repository.
