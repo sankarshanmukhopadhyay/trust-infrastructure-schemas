@@ -1,5 +1,14 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+- Added `docs/a2a-bound-trust-artifacts.md` to record how the canonical schema layer should treat reusable patterns exposed by ANAB-over-A2A.
+
+### Changed
+- Refreshed README, cross-repo composition, roadmap, taxonomy, and registry sample artifacts to account for A2A-bound trust descriptions.
+
+
 ## v0.5.1 - 2026-03-24
 
 ### Added

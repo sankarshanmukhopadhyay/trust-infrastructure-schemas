@@ -46,3 +46,12 @@ The repository should do three things well:
 ## Tracking philosophy
 
 This roadmap is a living artifact. Items may move as downstream repos harden. The governing principle is simple: this repository should stay boring, dependable, and composable.
+
+
+### 4. A2A-bound trust artifact patterns
+
+- document how A2A Agent Card extensions can carry trust-artifact references without forcing domain baselines into a shared local vocabulary
+- identify which fields are generic reusable patterns, such as declaration references, evidence references, trust anchors, freshness, and authority boundaries
+- wait to promote those patterns into normative schemas until reuse pressure is visible across more than one downstream baseline
+
+**Outcome:** the canonical layer stays stable while remaining ready to generalize the right parts of A2A-bound trust descriptions.

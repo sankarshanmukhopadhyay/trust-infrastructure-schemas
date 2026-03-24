@@ -70,7 +70,15 @@ This repository is part of a broader assurance and governance stack:
 
 See also: `docs/cross-repo-governance.md`.
 - Cross-repo example pack: `docs/cross-repo-example.md`
+- A2A-bound trust artifact note: `docs/a2a-bound-trust-artifacts.md`
 - Roadmap: `docs/roadmap.md`
+
+
+## ANAB-over-A2A impact
+
+ANAB now publishes a detailed A2A description extension for Agent Cards. That does not create an immediate schema migration requirement here, but it does create a structural question for the canonical artifact layer: which parts of that binding are domain-specific, and which parts are reusable trust-artifact patterns that should eventually be standardized across ecosystems?
+
+This repo now records that position in `docs/a2a-bound-trust-artifacts.md`.
 
 ## Why this shift matters
 

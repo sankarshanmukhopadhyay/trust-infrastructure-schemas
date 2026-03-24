@@ -22,3 +22,8 @@ See `registry/sample-registry.json` for an illustrative entry showing how a regi
 ## Practical takeaway
 
 The canonical layer should standardize **how trust artifacts travel**, not force every downstream baseline to collapse into one local control namespace.
+
+
+## ANAB-over-A2A follow-on
+
+With the new ANAB-over-A2A binding, the composition chain can now include an Agent Card that carries references to a declaration, evidence bundle, card-binding material, and trust-anchor metadata. The canonical repo does not need to own the ANAB schema to make this legible. It needs to make clear that these are recognizable trust-artifact patterns traveling through the stack.

@@ -8,9 +8,21 @@
       "name": "Identity and authority",
       "description": "Artifacts that identify actors, issuers, delegated roles, and related trust-bearing entities.",
       "artifacts": [
-        {"name": "Agent credential schemas", "path": "credentials/agent/v1/", "status": "implemented"},
-        {"name": "DTG credential schemas", "path": "credentials/dtg/v1/", "status": "implemented"},
-        {"name": "Reputation credential schemas", "path": "credentials/reputation/v1/", "status": "implemented"}
+        {
+          "name": "Agent credential schemas",
+          "path": "credentials/agent/v1/",
+          "status": "implemented"
+        },
+        {
+          "name": "DTG credential schemas",
+          "path": "credentials/dtg/v1/",
+          "status": "implemented"
+        },
+        {
+          "name": "Reputation credential schemas",
+          "path": "credentials/reputation/v1/",
+          "status": "implemented"
+        }
       ]
     },
     {
@@ -18,8 +30,17 @@
       "name": "Governance and policy",
       "description": "Artifacts that express ecosystem rules, policy references, and framework semantics.",
       "artifacts": [
-        {"name": "Assurance level definitions", "path": "assurance/assurance-levels.md", "status": "implemented", "notes": "Normative prose source for AL semantics."},
-        {"name": "Trust and architecture documentation", "path": "docs/", "status": "implemented"}
+        {
+          "name": "Assurance level definitions",
+          "path": "assurance/assurance-levels.md",
+          "status": "implemented",
+          "notes": "Normative prose source for AL semantics."
+        },
+        {
+          "name": "Trust and architecture documentation",
+          "path": "docs/",
+          "status": "implemented"
+        }
       ]
     },
     {
@@ -27,9 +48,27 @@
       "name": "Assurance and conformance",
       "description": "Artifacts that express trust posture, implementation claims, and evaluable declarations.",
       "artifacts": [
-        {"name": "Assurance schema", "path": "assurance/assurance.schema.json", "status": "implemented"},
-        {"name": "Conformance declaration schema", "path": "conformance/conformance-declaration.schema.json", "status": "implemented"},
-        {"name": "Implementer declaration template", "path": "conformance/IMPLEMENTER-DECLARATION.md", "status": "implemented"}
+        {
+          "name": "Assurance schema",
+          "path": "assurance/assurance.schema.json",
+          "status": "implemented"
+        },
+        {
+          "name": "Conformance declaration schema",
+          "path": "conformance/conformance-declaration.schema.json",
+          "status": "implemented"
+        },
+        {
+          "name": "Implementer declaration template",
+          "path": "conformance/IMPLEMENTER-DECLARATION.md",
+          "status": "implemented"
+        },
+        {
+          "name": "A2A-bound trust artifact notes",
+          "path": "docs/a2a-bound-trust-artifacts.md",
+          "status": "implemented",
+          "notes": "Documents reusable trust-artifact patterns exposed by domain-specific A2A bindings such as ANAB-over-A2A."
+        }
       ]
     },
     {
@@ -37,9 +76,21 @@
       "name": "Controls and mappings",
       "description": "Artifacts that define controls, obligations, and assurance mappings.",
       "artifacts": [
-        {"name": "Controls schema", "path": "controls/controls.schema.json", "status": "implemented"},
-        {"name": "Controls registry", "path": "controls/controls.json", "status": "implemented"},
-        {"name": "Control-assurance matrix", "path": "controls/mappings/control-assurance-matrix.json", "status": "implemented"}
+        {
+          "name": "Controls schema",
+          "path": "controls/controls.schema.json",
+          "status": "implemented"
+        },
+        {
+          "name": "Controls registry",
+          "path": "controls/controls.json",
+          "status": "implemented"
+        },
+        {
+          "name": "Control-assurance matrix",
+          "path": "controls/mappings/control-assurance-matrix.json",
+          "status": "implemented"
+        }
       ]
     },
     {
@@ -47,8 +98,16 @@
       "name": "Registry and ecosystem state",
       "description": "Artifacts that express current ecosystem state, membership, and indexable trust facts.",
       "artifacts": [
-        {"name": "Registry schema", "path": "registry/registry.schema.json", "status": "implemented"},
-        {"name": "Sample registry", "path": "registry/sample-registry.json", "status": "implemented"}
+        {
+          "name": "Registry schema",
+          "path": "registry/registry.schema.json",
+          "status": "implemented"
+        },
+        {
+          "name": "Sample registry",
+          "path": "registry/sample-registry.json",
+          "status": "implemented"
+        }
       ]
     }
   ]

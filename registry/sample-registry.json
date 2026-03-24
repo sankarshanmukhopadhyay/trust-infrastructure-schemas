@@ -38,12 +38,21 @@
       "controls": [
         "ANAGB-RES-01",
         "ANAGB-AUTH-01",
-        "ANAGB-A2A-03"
+        "ANAGB-A2A-03",
+        "ANAGB-A2A-07",
+        "ANAGB-A2A-09"
       ],
       "scope": {
         "baseline": "agent-name-assurance-baseline",
         "verification_tier": "AN-3",
-        "conformance_profile": "Enterprise"
+        "conformance_profile": "Enterprise",
+        "a2a_extension_uri": "https://trustoverip.github.io/dtgwg-agent-names-tf/extensions/anab-description/v1",
+        "trust_artifacts": [
+          "declaration-reference",
+          "evidence-bundle-reference",
+          "trust-anchor-reference",
+          "authority-boundary"
+        ]
       }
     }
   ]

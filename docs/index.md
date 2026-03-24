@@ -38,3 +38,5 @@ This documentation set is the canonical reference for the repository as an **Ope
 ## GitHub Pages
 
 This repository can be published via GitHub Pages from the `/docs` folder.
+
+- [A2A-bound trust artifacts](a2a-bound-trust-artifacts.md)
