@@ -38,6 +38,16 @@ try {
   console.log("== Validating registry simulation ==");
   run('ajv validate -s registry/registry.schema.json -d registry/sample-registry.json --strict=false');
 
+  console.log("== Validating OASF publication profile example ==");
+  run('ajv validate -s oasf/oasf-publication-profile.schema.json -d oasf/examples/oasf-publication-profile.example.json --strict=false');
+
+  console.log("== Validating OASF evaluation envelope example ==");
+  run('ajv validate -s oasf/oasf-evaluation-envelope.schema.json -d oasf/examples/oasf-evaluation-envelope.example.json --strict=false');
+
+  console.log("== Validating OASF control crosswalk ==");
+  run('ajv validate -s oasf/mappings/oasf-control-crosswalk.schema.json -d oasf/mappings/oasf-control-crosswalk.json --strict=false');
+
+
   console.log("OK");
 } catch (e) {
   process.exit(2);

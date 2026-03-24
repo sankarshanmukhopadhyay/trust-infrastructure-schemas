@@ -72,6 +72,63 @@
           "scope": {
             "type": "object",
             "additionalProperties": true
+          },
+          "oasf": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "publication_profile": {
+                "type": "string",
+                "format": "uri"
+              },
+              "evaluation_envelopes": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "uniqueItems": true
+              },
+              "evidence_references": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "uniqueItems": true
+              },
+              "semantic_bindings": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "model",
+                    "entity_id"
+                  ],
+                  "properties": {
+                    "model": {
+                      "type": "string",
+                      "enum": [
+                        "TSMM",
+                        "ANAB",
+                        "DCAS",
+                        "OASF",
+                        "other"
+                      ]
+                    },
+                    "entity_id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "binding_uri": {
+                      "type": "string",
+                      "format": "uri"
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }

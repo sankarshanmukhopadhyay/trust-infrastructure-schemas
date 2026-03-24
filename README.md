@@ -1,4 +1,4 @@
-## Trust Infrastructure Schemas (Release v0.5.0)
+## Trust Infrastructure Schemas
 
 This repository publishes the canonical **machine-readable artifacts** for operational digital trust infrastructure.
 
@@ -38,6 +38,8 @@ The repository is organized around the artifact types that appear in real trust 
 - Assurance schema: `assurance/assurance.schema.json`
 - Implementer declaration template: `conformance/IMPLEMENTER-DECLARATION.md`
 - Conformance declaration schema: `conformance/conformance-declaration.schema.json`
+- OASF publication profile schema: `oasf/oasf-publication-profile.schema.json`
+- OASF evaluation envelope schema: `oasf/oasf-evaluation-envelope.schema.json`
 
 ### 3. Control framework artifacts
 
@@ -45,11 +47,13 @@ The repository is organized around the artifact types that appear in real trust 
 - Controls data: `controls/controls.json`
 - Controls schema: `controls/controls.schema.json`
 - Control-to-assurance mapping: `controls/mappings/control-assurance-matrix.json`
+- OASF control crosswalk: `oasf/mappings/oasf-control-crosswalk.json`
 
 ### 4. Ecosystem state artifacts
 
 - Registry schema: `registry/registry.schema.json`
 - Sample registry: `registry/sample-registry.json`
+- OASF-aware registry references: `registry/sample-registry.json`
 
 ### 5. Artifact model metadata
 
@@ -61,7 +65,7 @@ The repository is organized around the artifact types that appear in real trust 
 
 This repository is part of a broader assurance and governance stack:
 
-- **`schemas` (this repo):** the schema registry and artifact model for operational trust systems.
+- **`schemas` (this repo):** the schema registry and artifact model for operational trust systems, including canonical OASF-shaped publication and evaluation artifacts.
 - **DCAS (`dtg-conformance-assurance`):** the assurance method and verifier workflow that evaluates conformance claims built on these contracts.
 - **Domain baselines (example: `agent-name-assurance-baseline`):** normative requirements for specific domains that produce declarations and evidence bundles evaluable via DCAS.
 - **TSMM-aligned work:** conceptual models that define entities, relationships, and governance semantics across the trust stack.
@@ -138,3 +142,14 @@ Example artifacts showing how an ecosystem might index implementers and their de
 ## Ecosystem interoperability
 
 See `docs/ecosystem-interoperability.md`, `docs/architecture.md`, and `docs/open-trust-artifact-model.md` for how this repository composes with DTG Labs upstream work and adjacent trust-stack efforts.
+
+
+## OASF artifact family
+
+This repository now carries a first-class OASF artifact family so downstream repos do not need to invent local carrier formats for publication profiles, evaluation envelopes, control crosswalks, and registry references.
+
+See:
+- `docs/oasf-artifact-family.md`
+- `oasf/oasf-publication-profile.schema.json`
+- `oasf/oasf-evaluation-envelope.schema.json`
+- `oasf/mappings/oasf-control-crosswalk.json`

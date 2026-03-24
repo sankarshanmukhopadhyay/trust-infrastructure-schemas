@@ -17,6 +17,7 @@ The repository should do three things well:
 - Conformance declaration schema (`conformance/`)
 - Registry simulation artifacts (`registry/`)
 - Open Trust Artifact Model framing (`docs/open-trust-artifact-model.md`)
+- OASF artifact family for publication profiles, evaluation envelopes, and crosswalks (`oasf/`)
 
 ## Next increments
 
@@ -55,3 +56,12 @@ This roadmap is a living artifact. Items may move as downstream repos harden. Th
 - wait to promote those patterns into normative schemas until reuse pressure is visible across more than one downstream baseline
 
 **Outcome:** the canonical layer stays stable while remaining ready to generalize the right parts of A2A-bound trust descriptions.
+
+
+### 5. OASF profile hardening
+
+- observe reuse pressure across more downstream baselines before expanding OASF profile semantics
+- keep optional fields optional unless at least two independent downstream repos need the same stronger contract
+- publish cross-repo examples that show how OASF publication and evaluation artifacts flow through registry entries and declarations
+
+**Outcome:** OASF support grows as shared infrastructure, not as a dumping ground for downstream local fields.

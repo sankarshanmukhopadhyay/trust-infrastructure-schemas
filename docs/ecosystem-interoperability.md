@@ -29,3 +29,17 @@ This repository provides the **assurance and conformance layer**. The upstream r
 Interoperability depends on a transport substrate for secure, privacy-preserving exchange of messages and artifacts between endpoints. This repo aligns with the **Trust Spanning Protocol (TSP)** from ToIP as a candidate transport layer for these exchanges.
 
 See: https://trustoverip.github.io/tswg-tsp-specification/
+
+
+## OASF integration impact
+
+The OASF integration work across TSMM, ANAB, and DCAS creates a clear normalization responsibility for this repository. The purpose is not to absorb those repositories. The purpose is to publish the shared artifact contracts they should all be able to reuse.
+
+### Canonical role of this repository
+
+- TSMM remains the semantic spine
+- ANAB remains the domain baseline
+- DCAS remains the evaluator
+- this repository carries the canonical OASF-shaped publication, evaluation, mapping, and registry artifact contracts
+
+That split keeps semantics, requirements, execution, and carrier formats from collapsing into one repository.

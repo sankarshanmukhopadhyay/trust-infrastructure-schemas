@@ -13,10 +13,12 @@ flowchart TB
     OTAM[Open Trust Artifact Model]
     AS[Assurance artifacts]
     CF[Conformance artifacts]
+    OASF[OASF publication and evaluation artifacts]
     CT[Control artifacts]
     RG[Registry artifacts]
     OTAM --> AS
     OTAM --> CF
+    OTAM --> OASF
     OTAM --> CT
     OTAM --> RG
   end
@@ -40,6 +42,8 @@ flowchart TB
   MM -. semantic alignment .- OTAM
   AS --> DCAS
   CF --> DCAS
+  OASF --> DCAS
+  OASF --> AG
   CT --> BAS
   RG --> REG
   OTAM --> AG
@@ -50,3 +54,5 @@ flowchart TB
 - The repository is positioned as the machine-readable artifact layer between identity primitives and governance systems.
 - Schemas in this repository are implementations of a broader artifact model.
 - Downstream assurance, registry, and agent systems can reuse the same artifact classes without copying semantics into each repository.
+
+- OASF publication profiles and evaluation envelopes now sit inside the trust artifact layer as shared carrier contracts between semantic models, domain baselines, evaluators, and registry surfaces.

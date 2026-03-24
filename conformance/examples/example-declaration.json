@@ -54,5 +54,27 @@
       "SC-CONF-01"
     ],
     "control_matrix_ref": "controls/mappings/control-assurance-matrix.json"
+  },
+  "oasf": {
+    "publication_profiles": [
+      "https://example.invalid/oasf/profile/example-agent-beta.json"
+    ],
+    "evaluation_envelopes": [
+      "https://example.invalid/oasf/evaluations/example-agent-beta.json"
+    ],
+    "evidence_references": [
+      "https://example.invalid/anab/example.agent.beta/evidence.json"
+    ],
+    "semantic_bindings": [
+      {
+        "model": "TSMM",
+        "entity_id": "TSMM-ENT-AGENT",
+        "binding_uri": "https://example.invalid/tsmm/bindings/agent-beta.json"
+      }
+    ],
+    "control_namespaces": [
+      "SC",
+      "ANAGB"
+    ]
   }
 }

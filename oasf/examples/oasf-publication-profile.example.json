@@ -1,0 +1,56 @@
+{
+  "profile_id": "oasf-profile-example-agent-beta",
+  "profile_version": "2026-03",
+  "subject": {
+    "subject_id": "did:web:example.invalid:agents:beta",
+    "subject_type": "agent",
+    "display_name": "Example Agent Beta",
+    "resolver": "https://example.invalid/agents/beta"
+  },
+  "declarations": [
+    {
+      "type": "baseline",
+      "uri": "https://example.invalid/anab/example.agent.beta/conformance.json",
+      "media_type": "application/json",
+      "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+      "issued_at": "2026-03-25T00:00:00Z"
+    }
+  ],
+  "evidence_references": [
+    {
+      "kind": "bundle",
+      "uri": "https://example.invalid/anab/example.agent.beta/evidence.json",
+      "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+      "fresh_until": "2026-06-25T00:00:00Z"
+    }
+  ],
+  "semantic_bindings": [
+    {
+      "model": "TSMM",
+      "entity_id": "TSMM-ENT-AGENT",
+      "binding_uri": "https://example.invalid/tsmm/bindings/agent-beta.json"
+    },
+    {
+      "model": "ANAB",
+      "entity_id": "ANAB-ENTITY-AGENT-NAME",
+      "binding_uri": "https://example.invalid/anab/oasf-profile.json"
+    }
+  ],
+  "control_namespaces": [
+    {
+      "namespace": "ANAGB",
+      "controls": [
+        "ANAGB-RES-01",
+        "ANAGB-AUTH-01",
+        "ANAGB-A2A-07"
+      ],
+      "mapping_ref": "https://example.invalid/oasf/mappings/anab-crosswalk.json"
+    }
+  ],
+  "trust_anchors": [
+    {
+      "anchor_type": "registry",
+      "uri": "https://example.invalid/registry/agents"
+    }
+  ]
+}

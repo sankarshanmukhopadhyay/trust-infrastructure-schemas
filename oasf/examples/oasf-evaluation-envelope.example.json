@@ -1,0 +1,46 @@
+{
+  "evaluation_id": "dcas-eval-example-agent-beta-001",
+  "subject_ref": {
+    "subject_id": "did:web:example.invalid:agents:beta",
+    "publication_profile_uri": "https://example.invalid/oasf/profile/example-agent-beta.json",
+    "declaration_uri": "https://example.invalid/anab/example.agent.beta/conformance.json"
+  },
+  "evaluator": {
+    "name": "Example DCAS Evaluator",
+    "engine": "dcas",
+    "run_uri": "https://example.invalid/evaluations/agent-beta/001",
+    "generated_at": "2026-03-25T00:00:00Z"
+  },
+  "result": {
+    "status": "pass",
+    "summary": "ANAB subject satisfied mapped controls and published an evidence bundle discoverable through OASF."
+  },
+  "assurance": {
+    "assurance_level": "AL3",
+    "controls_checked": [
+      "OASF-PUB-01",
+      "OASF-EVID-01",
+      "ANAGB-AUTH-01"
+    ],
+    "control_mapping_ref": "https://example.invalid/oasf/mappings/oasf-control-crosswalk.json"
+  },
+  "evidence": {
+    "bundle_uri": "https://example.invalid/anab/example.agent.beta/evidence.json",
+    "artifacts": [
+      "https://example.invalid/anab/example.agent.beta/evidence.json"
+    ],
+    "sha256": "3333333333333333333333333333333333333333333333333333333333333333"
+  },
+  "semantic_bindings": [
+    {
+      "model": "TSMM",
+      "entity_id": "TSMM-ENT-AGENT",
+      "binding_uri": "https://example.invalid/tsmm/bindings/agent-beta.json"
+    },
+    {
+      "model": "DCAS",
+      "entity_id": "DCAS-EVAL-AGENT",
+      "binding_uri": "https://example.invalid/dcas/oasf-envelope.json"
+    }
+  ]
+}

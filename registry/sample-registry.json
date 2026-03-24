@@ -53,6 +53,27 @@
           "trust-anchor-reference",
           "authority-boundary"
         ]
+      },
+      "oasf": {
+        "publication_profile": "https://example.invalid/oasf/profile/example-agent-beta.json",
+        "evaluation_envelopes": [
+          "https://example.invalid/oasf/evaluations/example-agent-beta.json"
+        ],
+        "evidence_references": [
+          "https://example.invalid/anab/example.agent.beta/evidence.json"
+        ],
+        "semantic_bindings": [
+          {
+            "model": "TSMM",
+            "entity_id": "TSMM-ENT-AGENT",
+            "binding_uri": "https://example.invalid/tsmm/bindings/agent-beta.json"
+          },
+          {
+            "model": "ANAB",
+            "entity_id": "ANAB-ENTITY-AGENT-NAME",
+            "binding_uri": "https://example.invalid/anab/oasf-profile.json"
+          }
+        ]
       }
     }
   ]

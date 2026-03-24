@@ -26,6 +26,8 @@ Artifacts that express how an entity claims or demonstrates trust posture.
 - assurance levels
 - conformance declarations
 - implementer declarations
+- OASF publication profiles
+- OASF evaluation envelopes
 
 ## 4. Controls and mappings
 
@@ -33,6 +35,7 @@ Artifacts that define obligations, control objectives, and level mappings.
 
 - controls registry
 - control-to-assurance matrix
+- OASF control crosswalks
 
 ## 5. Registry and ecosystem state
 
@@ -41,6 +44,7 @@ Artifacts that express the current indexable state of an ecosystem.
 - registry entries
 - registry snapshots
 - declaration references
+- OASF publication, evidence, evaluation, and semantic-binding references
 
 ## Taxonomy use
 

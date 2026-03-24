@@ -1,0 +1,177 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/main/oasf/oasf-evaluation-envelope.schema.json",
+  "title": "OASF Evaluation Envelope",
+  "description": "Canonical shared artifact shape for publishing evaluator results against an OASF-described subject or declaration set.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "evaluation_id",
+    "subject_ref",
+    "evaluator",
+    "result",
+    "assurance"
+  ],
+  "properties": {
+    "evaluation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "subject_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "subject_id"
+      ],
+      "properties": {
+        "subject_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "publication_profile_uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "declaration_uri": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "evaluator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "engine": {
+          "type": "string"
+        },
+        "run_uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "generated_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "pass",
+            "fail",
+            "partial",
+            "inconclusive"
+          ]
+        },
+        "summary": {
+          "type": "string"
+        },
+        "violations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "assurance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assurance_level",
+        "controls_checked"
+      ],
+      "properties": {
+        "assurance_level": {
+          "type": "string",
+          "pattern": "^AL[1-4]$"
+        },
+        "controls_checked": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "control_mapping_ref": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "bundle_uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "artifacts": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{64}$"
+        }
+      }
+    },
+    "semantic_bindings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "model",
+          "entity_id"
+        ],
+        "properties": {
+          "model": {
+            "type": "string",
+            "enum": [
+              "TSMM",
+              "ANAB",
+              "DCAS",
+              "OASF",
+              "other"
+            ]
+          },
+          "entity_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "binding_uri": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    }
+  }
+}

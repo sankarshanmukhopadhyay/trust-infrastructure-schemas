@@ -1,0 +1,38 @@
+{
+  "crosswalk_id": "oasf-control-crosswalk-2026-03",
+  "source_repositories": [
+    "https://github.com/sankarshanmukhopadhyay/trust-systems-meta-model",
+    "https://github.com/sankarshanmukhopadhyay/agent-name-assurance-baseline",
+    "https://github.com/sankarshanmukhopadhyay/dtg-conformance-assurance"
+  ],
+  "mappings": [
+    {
+      "oasf_control_id": "OASF-PUB-01",
+      "target_namespace": "ANAGB",
+      "target_control_id": "ANAGB-RES-01",
+      "target_repo": "https://github.com/sankarshanmukhopadhyay/agent-name-assurance-baseline",
+      "notes": "Publication record MUST carry a resolvable subject reference."
+    },
+    {
+      "oasf_control_id": "OASF-AUTH-01",
+      "target_namespace": "ANAGB",
+      "target_control_id": "ANAGB-AUTH-01",
+      "target_repo": "https://github.com/sankarshanmukhopadhyay/agent-name-assurance-baseline",
+      "notes": "Published subject MUST carry authority-verifiable references."
+    },
+    {
+      "oasf_control_id": "OASF-EVAL-01",
+      "target_namespace": "DCAS",
+      "target_control_id": "DCAS-OASF-01",
+      "target_repo": "https://github.com/sankarshanmukhopadhyay/dtg-conformance-assurance",
+      "notes": "Evaluation envelope MUST preserve traceability to the published subject and declaration."
+    },
+    {
+      "oasf_control_id": "OASF-SEM-01",
+      "target_namespace": "TSMM",
+      "target_control_id": "TSMM-OASF-01",
+      "target_repo": "https://github.com/sankarshanmukhopadhyay/trust-systems-meta-model",
+      "notes": "Published subject SHOULD declare semantic bindings to model elements where available."
+    }
+  ]
+}

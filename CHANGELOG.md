@@ -4,9 +4,14 @@
 
 ### Added
 - Added `docs/a2a-bound-trust-artifacts.md` to record how the canonical schema layer should treat reusable patterns exposed by ANAB-over-A2A.
+- Added `oasf/oasf-publication-profile.schema.json` and `oasf/oasf-evaluation-envelope.schema.json` as canonical OASF-shaped carrier contracts.
+- Added `oasf/mappings/oasf-control-crosswalk.json` and its schema to normalize cross-repo OASF control mappings.
+- Added `docs/oasf-artifact-family.md` to document the OASF artifact family and its architectural boundary.
 
 ### Changed
 - Refreshed README, cross-repo composition, roadmap, taxonomy, and registry sample artifacts to account for A2A-bound trust descriptions.
+- Extended conformance and registry artifacts so they can carry optional OASF publication, evaluation, evidence, and semantic-binding references.
+- Extended validation tooling to check OASF schemas and example payloads.
 
 
 ## v0.5.1 - 2026-03-24

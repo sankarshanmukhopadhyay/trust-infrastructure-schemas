@@ -17,6 +17,7 @@ This documentation set is the canonical reference for the repository as an **Ope
 - Conformance: `../conformance/IMPLEMENTER-DECLARATION.md`
 - Controls: `../controls/controls.md`
 - Registry: `../registry/README.md`
+- OASF artifact family: `oasf-artifact-family.md`
 
 ## Governance and trust framing
 
