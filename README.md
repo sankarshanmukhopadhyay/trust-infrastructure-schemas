@@ -2,7 +2,7 @@
 
 This repository publishes the canonical **machine-readable artifacts** for operational digital trust infrastructure.
 
-**Last reviewed:** 2026-03-14
+**Last reviewed:** 2026-03-24
 
 ## Positioning
 
@@ -69,6 +69,8 @@ This repository is part of a broader assurance and governance stack:
 **Canonical ownership:** Assurance Levels (AL1–AL4) are defined *normatively* in `assurance/assurance-levels.md`. Downstream repos MUST reference this document instead of copying AL semantics.
 
 See also: `docs/cross-repo-governance.md`.
+- Cross-repo example pack: `docs/cross-repo-example.md`
+- Roadmap: `docs/roadmap.md`
 
 ## Why this shift matters
 

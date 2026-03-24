@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/schemas/v0.4.0/controls/mappings/control-assurance-matrix.schema.json",
+  "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.5.1/controls/mappings/control-assurance-matrix.schema.json",
   "title": "Control to Assurance Level Matrix",
   "description": "Defines which control IDs are required or recommended for each assurance level.",
   "type": "object",
@@ -37,14 +37,14 @@
             "type": "array",
             "items": {
               "type": "string",
-              "pattern": "^SC-[A-Z]+-[0-9]{2}$"
+              "pattern": "^[A-Z][A-Z0-9]*(?:-[A-Z0-9]+)*-[0-9]{2}$"
             }
           },
           "recommended_controls": {
             "type": "array",
             "items": {
               "type": "string",
-              "pattern": "^SC-[A-Z]+-[0-9]{2}$"
+              "pattern": "^[A-Z][A-Z0-9]*(?:-[A-Z0-9]+)*-[0-9]{2}$"
             }
           }
         }

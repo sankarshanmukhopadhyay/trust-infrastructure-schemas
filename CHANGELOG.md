@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.5.1 - 2026-03-24
+
+### Added
+- Added `docs/roadmap.md` to record the next composition-focused increments for the canonical trust artifact layer.
+- Added `docs/cross-repo-example.md` to explain how OTAM, ANAB, and DCAS compose end to end.
+- Expanded `registry/sample-registry.json` with a downstream baseline example carrying `ANAGB-*` control identifiers.
+
+### Changed
+- Generalized generic conformance and registry artifacts to accept namespaced control identifiers beyond the local `SC-*` catalog.
+- Refreshed `$id` references so published schemas point at `trust-infrastructure-schemas` instead of the retired `schemas` path.
+- Refreshed README freshness metadata and removed stray `.DS_Store` artifacts from the archive.
+
 ## v0.5.0 - 2026-03-14
 
 ### Added

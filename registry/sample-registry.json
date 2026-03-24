@@ -1,6 +1,6 @@
 {
-  "registry_version": "0.4.0",
-  "generated_at": "2026-02-21T00:00:00Z",
+  "registry_version": "0.5.1",
+  "generated_at": "2026-03-24T00:00:00Z",
   "entries": [
     {
       "implementer_id": "example.vendor.alpha",
@@ -24,6 +24,26 @@
           "issuer",
           "verifier"
         ]
+      }
+    },
+    {
+      "implementer_id": "example.agent.beta",
+      "display_name": "Example Agent Beta",
+      "declaration": {
+        "url": "https://example.invalid/anab/example.agent.beta/conformance.json",
+        "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+      },
+      "assurance_level": "AL3",
+      "control_namespace": "ANAGB",
+      "controls": [
+        "ANAGB-RES-01",
+        "ANAGB-AUTH-01",
+        "ANAGB-A2A-03"
+      ],
+      "scope": {
+        "baseline": "agent-name-assurance-baseline",
+        "verification_tier": "AN-3",
+        "conformance_profile": "Enterprise"
       }
     }
   ]
