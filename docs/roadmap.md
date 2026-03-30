@@ -65,3 +65,12 @@ This roadmap is a living artifact. Items may move as downstream repos harden. Th
 - publish cross-repo examples that show how OASF publication and evaluation artifacts flow through registry entries and declarations
 
 **Outcome:** OASF support grows as shared infrastructure, not as a dumping ground for downstream local fields.
+
+
+### 6. AIS-1 profile hardening
+
+- observe whether the current bonded-agent profile is reused beyond one downstream baseline before promoting more fields into common contracts
+- add registry examples that show how issuer trust, sponsor authority, and status policies can be distributed without inventing AIS-1-specific registry semantics
+- keep authority-boundary notes explicit so canonical schema consumers do not mistake identity state for delegated authority
+
+**Outcome:** AIS-1 remains reusable infrastructure input rather than repo-local schema folklore.

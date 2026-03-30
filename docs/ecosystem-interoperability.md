@@ -43,3 +43,8 @@ The OASF integration work across TSMM, ANAB, and DCAS creates a clear normalizat
 - this repository carries the canonical OASF-shaped publication, evaluation, mapping, and registry artifact contracts
 
 That split keeps semantics, requirements, execution, and carrier formats from collapsing into one repository.
+
+
+## AIS-1 interoperability note
+
+AIS-1 now has a canonical profile in `profiles/ais1/`. The intent is to let bonded agent identity move through schema, registry, and evaluation surfaces without every downstream repo renaming the same fields differently. The profile should be read as an identity-and-accountability layer, not as a complete delegation or protocol-trust contract.

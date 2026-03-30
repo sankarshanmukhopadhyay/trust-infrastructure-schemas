@@ -1,0 +1,17 @@
+{
+  "registry_entry_type": "ais1-trust-signal",
+  "subject": "did:ais1:agent:research-assistant-01",
+  "accepted_issuers": [
+    "did:web:issuer.example.org"
+  ],
+  "accepted_sponsor_authorities": [
+    "did:web:example.org"
+  ],
+  "required_status": "active",
+  "required_tiers": [
+    "verified",
+    "sovereign"
+  ],
+  "policy_note": "Use AIS-1 as identity and accountability input only. Require separate delegation artifact for high-risk actions.",
+  "last_reviewed": "2026-03-30"
+}

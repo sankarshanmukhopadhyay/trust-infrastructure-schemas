@@ -6,6 +6,7 @@ This documentation set is the canonical reference for the repository as an **Ope
 
 - **Repository README:** `../README.md`
 - **Open Trust Artifact Model:** `open-trust-artifact-model.md`
+- **AIS-1 schema profile:** `ais1-schema-profile.md`
 - **Artifact taxonomy:** `artifact-taxonomy.md`
 
 ## Schema families
@@ -17,6 +18,7 @@ This documentation set is the canonical reference for the repository as an **Ope
 - Conformance: `../conformance/IMPLEMENTER-DECLARATION.md`
 - Controls: `../controls/controls.md`
 - Registry: `../registry/README.md`
+- AIS-1 profile: `ais1-schema-profile.md`
 - OASF artifact family: `oasf-artifact-family.md`
 
 ## Governance and trust framing

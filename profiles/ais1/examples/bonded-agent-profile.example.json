@@ -1,0 +1,45 @@
+{
+  "profile": "ais1-bonded-agent",
+  "agent": {
+    "did": "did:ais1:agent:research-assistant-01",
+    "display_name": "Research Assistant 01",
+    "card_uri": "https://example.org/agents/research-assistant-01/card.json",
+    "metadata_uri": "https://example.org/agents/research-assistant-01"
+  },
+  "sponsor": {
+    "id": "did:web:example.org",
+    "name": "Example Organization",
+    "card_uri": "https://example.org/sponsors/example-org"
+  },
+  "issuer": {
+    "id": "did:web:issuer.example.org",
+    "name": "Example AIS-1 Authority",
+    "trust_anchor_uri": "https://issuer.example.org/registry/example-authority"
+  },
+  "bond": {
+    "bond_id": "bond-7b6c6f07",
+    "verification_method": "on-chain",
+    "verification_uri": "https://ledger.example.org/bonds/bond-7b6c6f07",
+    "issued_at": "2026-03-30T09:00:00Z"
+  },
+  "tier": "verified",
+  "status": "active",
+  "evidence": [
+    {
+      "type": "hcs-log",
+      "uri": "https://logs.example.org/hcs/txn/12345"
+    },
+    {
+      "type": "metadata",
+      "uri": "https://example.org/agents/research-assistant-01/metadata.json"
+    }
+  ],
+  "authority_boundary": {
+    "statement": "Bonded identity verified. No spending or filing authority is implied.",
+    "delegation_required": true
+  },
+  "timestamps": {
+    "verified_at": "2026-03-30T09:05:00Z",
+    "status_updated_at": "2026-03-30T09:05:00Z"
+  }
+}

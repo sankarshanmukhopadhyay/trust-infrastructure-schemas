@@ -1,0 +1,184 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/main/profiles/ais1/schema.json",
+  "title": "AIS-1 Bonded Agent Profile",
+  "description": "Machine-readable profile for expressing AIS-1 bonded agent identity, sponsor accountability, tier status, evidence references, and lifecycle state in the canonical trust artifact layer.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "profile",
+    "agent",
+    "bond",
+    "tier",
+    "status"
+  ],
+  "properties": {
+    "profile": {
+      "type": "string",
+      "const": "ais1-bonded-agent"
+    },
+    "agent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "did",
+        "display_name"
+      ],
+      "properties": {
+        "did": {
+          "type": "string",
+          "pattern": "^did:ais1:.+"
+        },
+        "display_name": {
+          "type": "string"
+        },
+        "card_uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "metadata_uri": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "sponsor": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "card_uri": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "issuer": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "trust_anchor_uri": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "bond": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bond_id",
+        "verification_method"
+      ],
+      "properties": {
+        "bond_id": {
+          "type": "string"
+        },
+        "verification_method": {
+          "type": "string",
+          "enum": [
+            "on-chain",
+            "registry",
+            "api",
+            "other"
+          ]
+        },
+        "verification_uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "issued_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "tier": {
+      "type": "string",
+      "enum": [
+        "basic",
+        "verified",
+        "sovereign"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "suspended",
+        "revoked"
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "uri"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "hcs-log",
+              "vc",
+              "metadata",
+              "assessment",
+              "other"
+            ]
+          },
+          "uri": {
+            "type": "string",
+            "format": "uri"
+          },
+          "digest": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "authority_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "statement": {
+          "type": "string"
+        },
+        "delegation_required": {
+          "type": "boolean"
+        }
+      }
+    },
+    "timestamps": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "verified_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "status_updated_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  }
+}
