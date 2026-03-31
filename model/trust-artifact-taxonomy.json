@@ -1,7 +1,7 @@
 {
   "$schema": "./trust-artifact-taxonomy.schema.json",
   "model": "Open Trust Artifact Model",
-  "version": "v0.5.1+oasf",
+  "version": "v0.6.0+odrl",
   "artifact_classes": [
     {
       "id": "identity-authority",
@@ -40,6 +40,12 @@
           "name": "Trust and architecture documentation",
           "path": "docs/",
           "status": "implemented"
+        },
+        {
+          "name": "ODRL policy reference schema",
+          "path": "odrl/odrl-policy-reference.schema.json",
+          "status": "experimental",
+          "notes": "Canonical carrier contract for an ODRL policy or stable policy reference."
         }
       ]
     },
@@ -131,6 +137,12 @@
           "path": "registry/sample-registry.json",
           "status": "implemented",
           "notes": "Registry entries may now carry OASF publication, evidence, evaluation, and semantic-binding references."
+        },
+        {
+          "name": "ODRL-aware registry references",
+          "path": "registry/sample-registry.json",
+          "status": "experimental",
+          "notes": "Registry entries may now carry optional ODRL policy references."
         }
       ]
     }

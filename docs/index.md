@@ -20,6 +20,7 @@ This documentation set is the canonical reference for the repository as an **Ope
 - Registry: `../registry/README.md`
 - AIS-1 profile *(experimental)*: `ais1-schema-profile.md`
 - OASF artifact family: `oasf-artifact-family.md`
+- ODRL artifact family *(experimental)*: `odrl-artifact-family.md`
 
 ## Governance and trust framing
 

@@ -3,6 +3,23 @@
 ## [Unreleased]
 
 ### Added
+- Added `odrl/odrl-policy-reference.schema.json` and `odrl/samples/odrl-policy-reference.json` as the experimental ODRL artifact family for bounded policy publication.
+- Added `docs/odrl-artifact-family.md` to document the architectural boundary for ODRL in the canonical trust artifact layer.
+
+### Changed
+- Refreshed README, docs index, taxonomy metadata, registry schema, and sample registry to carry optional ODRL policy references.
+
+## v0.6.0 - 2026-03-31
+
+### Added
+- Experimental ODRL policy-reference artifact family.
+- Optional registry support for policy artifacts that point at ODRL-compatible policy objects.
+
+### Changed
+- Clarified that this repository carries ODRL artifacts but does not evaluate ODRL semantics or claim that publication equals enforcement.
+
+
+### Added
 - Added `docs/a2a-bound-trust-artifacts.md` to record how the canonical schema layer should treat reusable patterns exposed by ANAB-over-A2A.
 - Added `oasf/oasf-publication-profile.schema.json` and `oasf/oasf-evaluation-envelope.schema.json` as canonical OASF-shaped carrier contracts.
 - Added `oasf/mappings/oasf-control-crosswalk.json` and its schema to normalize cross-repo OASF control mappings.

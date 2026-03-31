@@ -2,7 +2,7 @@
 
 This repository publishes the canonical **machine-readable artifacts** for operational digital trust infrastructure.
 
-**Last reviewed:** 2026-03-24
+**Last reviewed:** 2026-03-31
 
 ## Positioning
 
@@ -40,6 +40,7 @@ The repository is organized around the artifact types that appear in real trust 
 - Conformance declaration schema: `conformance/conformance-declaration.schema.json`
 - OASF publication profile schema: `oasf/oasf-publication-profile.schema.json`
 - OASF evaluation envelope schema: `oasf/oasf-evaluation-envelope.schema.json`
+- ODRL policy reference schema *(experimental)*: `odrl/odrl-policy-reference.schema.json`
 
 ### 3. Control framework artifacts
 
@@ -76,6 +77,7 @@ See also: `docs/cross-repo-governance.md`.
 - Cross-repo example pack: `docs/cross-repo-example.md`
 - A2A-bound trust artifact note: `docs/a2a-bound-trust-artifacts.md`
 - Roadmap: `docs/roadmap.md`
+- ODRL artifact family: `docs/odrl-artifact-family.md`
 
 
 ## ANAB-over-A2A impact

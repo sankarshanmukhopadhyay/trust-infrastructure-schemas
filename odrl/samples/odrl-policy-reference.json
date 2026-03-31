@@ -1,0 +1,16 @@
+{
+  "policy_id": "policy.example.agent-beta.disclosure.v1",
+  "profile": "https://example.invalid/odrl/profiles/agent-disclosure/v1",
+  "target": "https://example.invalid/agents/example-agent-beta#extended-metadata",
+  "publication_mode": "by_reference",
+  "policy_uri": "https://example.invalid/policies/example-agent-beta-disclosure.jsonld",
+  "policy_hash": "2222222222222222222222222222222222222222222222222222222222222222",
+  "enforcement_note": "Publication of this policy does not by itself prove runtime enforcement.",
+  "issuer": {
+    "id": "example.agent.beta",
+    "name": "Example Agent Beta"
+  },
+  "evaluation_artifacts": [
+    "https://example.invalid/evaluations/example-agent-beta-policy-check.json"
+  ]
+}
