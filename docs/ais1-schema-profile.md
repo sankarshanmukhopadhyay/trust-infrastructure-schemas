@@ -1,4 +1,8 @@
-# AIS-1 Schema Profile
+# AIS-1 Schema Profile (Experimental)
+
+This note records how AIS-1 should be represented in `trust-infrastructure-schemas`.
+
+This profile is **experimental**. It is available for reuse, but it should not yet be treated as a fully settled canonical contract for ecosystem-wide interoperability.
 
 This note records how AIS-1 should be represented in `trust-infrastructure-schemas`.
 

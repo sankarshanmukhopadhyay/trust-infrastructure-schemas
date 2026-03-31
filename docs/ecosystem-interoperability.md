@@ -47,4 +47,4 @@ That split keeps semantics, requirements, execution, and carrier formats from co
 
 ## AIS-1 interoperability note
 
-AIS-1 now has a canonical profile in `profiles/ais1/`. The intent is to let bonded agent identity move through schema, registry, and evaluation surfaces without every downstream repo renaming the same fields differently. The profile should be read as an identity-and-accountability layer, not as a complete delegation or protocol-trust contract.
+AIS-1 now has an **experimental** profile in `profiles/ais1/`. The intent is to let bonded agent identity move through schema, registry, and evaluation surfaces without every downstream repo renaming the same fields differently. The profile should be read as an identity-and-accountability layer, not as a complete delegation or protocol-trust contract, and not yet as a fully settled ecosystem-wide canonical contract.

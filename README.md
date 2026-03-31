@@ -155,6 +155,6 @@ See:
 - `oasf/mappings/oasf-control-crosswalk.json`
 
 
-## AIS-1 profile on main
+## AIS-1 experimental profile on main
 
-This repository now includes a reusable AIS-1 schema profile under `profiles/ais1/`. The profile captures bonded agent identity, sponsor accountability, tier state, evidence references, and authority-boundary notes so downstream repos can reuse the same machine-readable shape instead of inventing local AIS-1 vocabulary.
+This repository now includes an **experimental** AIS-1 schema profile under `profiles/ais1/`. The profile captures bonded agent identity, sponsor accountability, tier state, evidence references, and authority-boundary notes so downstream repos can reuse the same machine-readable shape instead of inventing local AIS-1 vocabulary. Experimental status here means the profile is available for careful reuse and cross-repo normalization, but should not yet be read as a fully settled canonical ecosystem contract.

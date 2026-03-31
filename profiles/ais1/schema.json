@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/main/profiles/ais1/schema.json",
-  "title": "AIS-1 Bonded Agent Profile",
-  "description": "Machine-readable profile for expressing AIS-1 bonded agent identity, sponsor accountability, tier status, evidence references, and lifecycle state in the canonical trust artifact layer.",
+  "title": "AIS-1 Bonded Agent Profile (Experimental)",
+  "description": "Experimental machine-readable profile for expressing AIS-1 bonded agent identity, sponsor accountability, tier status, evidence references, and lifecycle state in the canonical trust artifact layer.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -180,5 +180,7 @@
         }
       }
     }
-  }
+  },
+  "x-profileStatus": "experimental",
+  "x-statusNote": "Included for cross-repo normalization and careful reuse while AIS-1 semantics are still being pressure-tested."
 }

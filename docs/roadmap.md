@@ -73,4 +73,4 @@ This roadmap is a living artifact. Items may move as downstream repos harden. Th
 - add registry examples that show how issuer trust, sponsor authority, and status policies can be distributed without inventing AIS-1-specific registry semantics
 - keep authority-boundary notes explicit so canonical schema consumers do not mistake identity state for delegated authority
 
-**Outcome:** AIS-1 remains reusable infrastructure input rather than repo-local schema folklore.
+**Outcome:** AIS-1 remains reusable infrastructure input rather than repo-local schema folklore, while clearly staying marked experimental until the profile proves durable across more implementations.
