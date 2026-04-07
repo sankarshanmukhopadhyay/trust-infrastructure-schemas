@@ -35,8 +35,15 @@
     }
   ],
   "authority_boundary": {
-    "statement": "Bonded identity verified. No spending or filing authority is implied.",
-    "delegation_required": true
+    "statement": "Bond verification establishes sponsor-backed identity state only. Delegated runtime authority is external to this profile.",
+    "authoritative_party": "Example Sponsor Authority",
+    "delegation_required": true,
+    "revocation_actor": "Example Sponsor Authority",
+    "revocation_uri": "https://example.invalid/agents/beta/revocation",
+    "scope": [
+      "identity-state",
+      "bond-status"
+    ]
   },
   "timestamps": {
     "verified_at": "2026-03-30T09:05:00Z",

@@ -160,6 +160,92 @@
                 }
               }
             }
+          },
+          "artifacts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "uri"
+              ],
+              "properties": {
+                "uri": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "media_type": {
+                  "type": "string"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-fA-F0-9]{64}$"
+                },
+                "issued_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "fresh_until": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "schema_uri": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "role": {
+                  "type": "string",
+                  "enum": [
+                    "declaration",
+                    "evidence",
+                    "evaluation",
+                    "policy",
+                    "binding",
+                    "other"
+                  ]
+                },
+                "notes": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "authority_boundary": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "statement"
+            ],
+            "properties": {
+              "statement": {
+                "type": "string",
+                "minLength": 10
+              },
+              "authoritative_party": {
+                "type": "string"
+              },
+              "delegation_required": {
+                "type": "boolean"
+              },
+              "revocation_actor": {
+                "type": "string"
+              },
+              "revocation_uri": {
+                "type": "string",
+                "format": "uri"
+              },
+              "scope": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "uniqueItems": true
+              },
+              "notes": {
+                "type": "string"
+              }
+            }
           }
         }
       }

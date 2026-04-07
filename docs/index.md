@@ -8,6 +8,7 @@ This documentation set is the canonical reference for the repository as an **Ope
 - **Open Trust Artifact Model:** `open-trust-artifact-model.md`
 - **AIS-1 schema profile (experimental):** `ais1-schema-profile.md`
 - **Artifact taxonomy:** `artifact-taxonomy.md`
+- **Stable identifier governance:** `identifier-governance.md`
 
 ## Schema families
 
@@ -21,6 +22,8 @@ This documentation set is the canonical reference for the repository as an **Ope
 - AIS-1 profile *(experimental)*: `ais1-schema-profile.md`
 - OASF artifact family: `oasf-artifact-family.md`
 - ODRL artifact family *(experimental)*: `odrl-artifact-family.md`
+- Artifact references: `../common/artifact-reference.schema.json`
+- Authority boundaries: `../governance/authority-boundary.schema.json`
 
 ## Governance and trust framing
 

@@ -2,7 +2,7 @@
 
 This repository publishes the canonical **machine-readable artifacts** for operational digital trust infrastructure.
 
-**Last reviewed:** 2026-03-31
+**Last reviewed:** 2026-04-07
 
 ## Positioning
 
@@ -41,6 +41,8 @@ The repository is organized around the artifact types that appear in real trust 
 - OASF publication profile schema: `oasf/oasf-publication-profile.schema.json`
 - OASF evaluation envelope schema: `oasf/oasf-evaluation-envelope.schema.json`
 - ODRL policy reference schema *(experimental)*: `odrl/odrl-policy-reference.schema.json`
+- Artifact reference schema: `common/artifact-reference.schema.json`
+- Authority boundary schema: `governance/authority-boundary.schema.json`
 
 ### 3. Control framework artifacts
 
@@ -74,8 +76,9 @@ This repository is part of a broader assurance and governance stack:
 **Canonical ownership:** Assurance Levels (AL1–AL4) are defined *normatively* in `assurance/assurance-levels.md`. Downstream repos MUST reference this document instead of copying AL semantics.
 
 See also: `docs/cross-repo-governance.md`.
-- Cross-repo example pack: `docs/cross-repo-example.md`
+- Cross-repo example pack: `docs/cross-repo-example.md` and `examples/composition/`
 - A2A-bound trust artifact note: `docs/a2a-bound-trust-artifacts.md`
+- Stable identifier governance: `docs/identifier-governance.md`
 - Roadmap: `docs/roadmap.md`
 - ODRL artifact family: `docs/odrl-artifact-family.md`
 
@@ -159,4 +162,4 @@ See:
 
 ## AIS-1 experimental profile on main
 
-This repository now includes an **experimental** AIS-1 schema profile under `profiles/ais1/`. The profile captures bonded agent identity, sponsor accountability, tier state, evidence references, and authority-boundary notes so downstream repos can reuse the same machine-readable shape instead of inventing local AIS-1 vocabulary. Experimental status here means the profile is available for careful reuse and cross-repo normalization, but should not yet be read as a fully settled canonical ecosystem contract.
+This repository now includes an **experimental** AIS-1 schema profile under `profiles/ais1/` and reusable governance contracts for authority-boundary and artifact-reference handling. The profile captures bonded agent identity, sponsor accountability, tier state, evidence references, and authority-boundary notes so downstream repos can reuse the same machine-readable shape instead of inventing local AIS-1 vocabulary. Experimental status here means the profile is available for careful reuse and cross-repo normalization, but should not yet be read as a fully settled canonical ecosystem contract.

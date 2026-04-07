@@ -1,7 +1,7 @@
 {
   "$schema": "./trust-artifact-taxonomy.schema.json",
   "model": "Open Trust Artifact Model",
-  "version": "v0.6.0+odrl",
+  "version": "v0.6.0+composition-governance",
   "artifact_classes": [
     {
       "id": "identity-authority",
@@ -46,6 +46,12 @@
           "path": "odrl/odrl-policy-reference.schema.json",
           "status": "experimental",
           "notes": "Canonical carrier contract for an ODRL policy or stable policy reference."
+        },
+        {
+          "name": "Authority boundary schema",
+          "path": "governance/authority-boundary.schema.json",
+          "status": "implemented",
+          "notes": "Reusable contract for stating scope, authoritative party, and revocation boundary."
         }
       ]
     },
@@ -86,6 +92,18 @@
           "path": "oasf/oasf-evaluation-envelope.schema.json",
           "status": "implemented",
           "notes": "Canonical shared evaluator result shape for OASF-described subjects."
+        },
+        {
+          "name": "Artifact reference schema",
+          "path": "common/artifact-reference.schema.json",
+          "status": "implemented",
+          "notes": "Reusable reference object for declarations, evidence bundles, evaluations, policies, and bindings."
+        },
+        {
+          "name": "Cross-repo composition examples",
+          "path": "examples/composition/",
+          "status": "implemented",
+          "notes": "End-to-end pack showing declaration, evidence bundle, evaluation output, and registry publication."
         }
       ]
     },

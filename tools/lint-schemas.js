@@ -9,14 +9,14 @@
 const fs = require("fs");
 const path = require("path");
 
-const ROOTS = ["credentials"];
+const ROOTS = ["credentials", "assurance", "conformance", "controls", "model", "oasf", "odrl", "registry", "profiles", "common", "governance"];
 const REQUIRED_TOP_LEVEL = ["$schema", "$id", "title", "description", "type"];
 
 function walk(dir, out=[]) {
   for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
     const p = path.join(dir, ent.name);
     if (ent.isDirectory()) walk(p, out);
-    else if (ent.isFile() && p.endsWith(".json")) out.push(p);
+    else if (ent.isFile() && (p.endsWith(".schema.json") || p.includes("/credentials/"))) out.push(p);
   }
   return out;
 }

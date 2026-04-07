@@ -52,5 +52,15 @@
       "anchor_type": "registry",
       "uri": "https://example.invalid/registry/agents"
     }
-  ]
+  ],
+  "authority_boundary": {
+    "statement": "Publication makes declarations and evidence discoverable but does not by itself authorize delegated action.",
+    "authoritative_party": "Example Registry Operator",
+    "delegation_required": true,
+    "revocation_actor": "Example Sponsor Authority",
+    "scope": [
+      "publication",
+      "discovery"
+    ]
+  }
 }

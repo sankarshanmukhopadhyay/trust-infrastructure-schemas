@@ -1,0 +1,12 @@
+{
+  "statement": "Bonded identity state does not by itself authorize delegated action. Runtime delegation remains a separate control-plane decision.",
+  "authoritative_party": "Example Sponsor Authority",
+  "delegation_required": true,
+  "revocation_actor": "Example Sponsor Authority",
+  "revocation_uri": "https://example.invalid/agents/beta/revocation",
+  "scope": [
+    "identity-state",
+    "registry-discovery"
+  ],
+  "notes": "Reusable authority-boundary contract for AIS-1 and A2A-bound trust artifacts."
+}

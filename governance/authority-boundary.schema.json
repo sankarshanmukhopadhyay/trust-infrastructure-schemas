@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.6.0/governance/authority-boundary.schema.json",
+  "title": "Authority Boundary Statement",
+  "description": "Reusable contract for stating what an artifact does and does not authorize, who stands behind it, and where revocation or override authority lives.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "statement"
+  ],
+  "properties": {
+    "statement": {
+      "type": "string",
+      "minLength": 10
+    },
+    "authoritative_party": {
+      "type": "string"
+    },
+    "delegation_required": {
+      "type": "boolean"
+    },
+    "revocation_actor": {
+      "type": "string"
+    },
+    "revocation_uri": {
+      "type": "string",
+      "format": "uri"
+    },
+    "scope": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

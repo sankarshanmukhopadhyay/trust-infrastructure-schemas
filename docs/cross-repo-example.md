@@ -27,3 +27,15 @@ The canonical layer should standardize **how trust artifacts travel**, not force
 ## ANAB-over-A2A follow-on
 
 With the new ANAB-over-A2A binding, the composition chain can now include an Agent Card that carries references to a declaration, evidence bundle, card-binding material, and trust-anchor metadata. The canonical repo does not need to own the ANAB schema to make this legible. It needs to make clear that these are recognizable trust-artifact patterns traveling through the stack.
+
+
+## Machine-readable composition pack
+
+This repository now also carries a concrete composition pack under `examples/composition/`:
+
+- `domain-baseline-declaration.example.json`
+- `evidence-bundle-manifest.example.json`
+- `verifier-evaluation.example.json`
+- `registry-entry.example.json`
+
+The pack is intentionally boring. It shows how a downstream baseline declaration, an evidence bundle, a verifier result, and a registry entry can travel together through the canonical layer while preserving namespaced controls, artifact references, and explicit authority boundaries.

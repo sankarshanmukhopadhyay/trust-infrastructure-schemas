@@ -47,6 +47,11 @@ try {
   console.log("== Validating OASF control crosswalk ==");
   run('ajv validate -s oasf/mappings/oasf-control-crosswalk.schema.json -d oasf/mappings/oasf-control-crosswalk.json --strict=false');
 
+  console.log("== Validating reusable artifact reference example ==");
+  run('ajv validate -s common/artifact-reference.schema.json -d common/examples/artifact-reference.example.json --strict=false');
+
+  console.log("== Validating authority boundary example ==");
+  run('ajv validate -s governance/authority-boundary.schema.json -d governance/examples/authority-boundary.example.json --strict=false');
 
   console.log("OK");
 } catch (e) {

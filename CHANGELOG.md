@@ -3,6 +3,17 @@
 ## [Unreleased]
 
 ### Added
+- Added `common/artifact-reference.schema.json` and example payloads to normalize reusable references to declarations, evidence bundles, evaluation results, policies, and bindings.
+- Added `governance/authority-boundary.schema.json` and example payloads to carry explicit scope, revocation, and delegation-boundary metadata.
+- Added `examples/composition/` as a machine-readable cross-repo composition pack covering declaration, evidence bundle, evaluator output, and registry publication.
+- Added `docs/identifier-governance.md` to document stable `$id` rules and release-pinning expectations.
+
+### Changed
+- Refreshed stale and placeholder schema `$id` values so canonical identifiers align to `trust-infrastructure-schemas` at `v0.6.0`.
+- Extended conformance, registry, OASF, and AIS-1 artifacts to carry reusable artifact references and explicit authority-boundary metadata.
+- Refreshed README, docs index, taxonomy metadata, roadmap, and sample artifacts to match the completed roadmap increment.
+
+### Added
 - Added `odrl/odrl-policy-reference.schema.json` and `odrl/samples/odrl-policy-reference.json` as the experimental ODRL artifact family for bounded policy publication.
 - Added `docs/odrl-artifact-family.md` to document the architectural boundary for ODRL in the canonical trust artifact layer.
 

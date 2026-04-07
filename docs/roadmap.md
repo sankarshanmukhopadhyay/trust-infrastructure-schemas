@@ -74,3 +74,12 @@ This roadmap is a living artifact. Items may move as downstream repos harden. Th
 - keep authority-boundary notes explicit so canonical schema consumers do not mistake identity state for delegated authority
 
 **Outcome:** AIS-1 remains reusable infrastructure input rather than repo-local schema folklore, while clearly staying marked experimental until the profile proves durable across more implementations.
+
+
+## Completed in the current increment
+
+- published a machine-readable cross-repo composition pack under `examples/composition/`
+- normalized stale and placeholder `$id` values to the current repository and stable release tag
+- documented identifier update rules in `docs/identifier-governance.md`
+- added reusable `artifact-reference` and `authority-boundary` contracts for downstream opt-in reuse
+- extended registry, conformance, OASF, and AIS-1 artifacts so authority boundaries and reusable artifact references can travel without local field invention

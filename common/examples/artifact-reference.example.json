@@ -1,0 +1,10 @@
+{
+  "uri": "https://example.invalid/anab/example.agent.beta/evidence.json",
+  "media_type": "application/json",
+  "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+  "issued_at": "2026-03-25T00:00:00Z",
+  "fresh_until": "2026-06-25T00:00:00Z",
+  "schema_uri": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.6.0/common/artifact-reference.schema.json",
+  "role": "evidence",
+  "notes": "Reusable artifact reference shape for evidence bundle discovery."
+}

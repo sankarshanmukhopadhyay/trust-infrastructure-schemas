@@ -13,7 +13,7 @@
   },
   "result": {
     "status": "pass",
-    "summary": "ANAB subject satisfied mapped controls and published an evidence bundle discoverable through OASF."
+    "summary": "The subject satisfied mapped controls and published evidence discoverable through the canonical artifact layer."
   },
   "assurance": {
     "assurance_level": "AL3",
@@ -31,25 +31,20 @@
     ],
     "sha256": "3333333333333333333333333333333333333333333333333333333333333333"
   },
-  "semantic_bindings": [
-    {
-      "model": "TSMM",
-      "entity_id": "TSMM-ENT-AGENT",
-      "binding_uri": "https://example.invalid/tsmm/bindings/agent-beta.json"
-    },
-    {
-      "model": "DCAS",
-      "entity_id": "DCAS-EVAL-AGENT",
-      "binding_uri": "https://example.invalid/dcas/oasf-envelope.json"
-    }
-  ],
   "authority_boundary": {
-    "statement": "The evaluation result is authoritative only for the assessed scope and evidence set captured in this envelope.",
+    "statement": "This evaluation result attests to conformance and evidence sufficiency for the declared scope. It does not grant runtime authority outside that scope.",
     "authoritative_party": "Example DCAS Evaluator",
     "delegation_required": true,
     "scope": [
       "evaluation",
       "assurance"
     ]
-  }
+  },
+  "semantic_bindings": [
+    {
+      "model": "TSMM",
+      "entity_id": "TSMM-ENT-AGENT",
+      "binding_uri": "https://example.invalid/tsmm/bindings/agent-beta.json"
+    }
+  ]
 }
