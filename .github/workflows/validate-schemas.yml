@@ -23,7 +23,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: "npm"
 
       - name: Install AJV CLI
         run: npm install -g ajv-cli@5
@@ -76,6 +75,13 @@ jobs:
           set -euo pipefail
           echo "== Validating registry simulation =="
           ajv validate -s registry/registry.schema.json -d registry/sample-registry.json --strict=false
+
+      - name: Validate reusable contracts
+        run: |
+          set -euo pipefail
+          echo "== Validating reusable contracts =="
+          ajv validate -s common/artifact-reference.schema.json -d common/examples/artifact-reference.example.json --strict=false
+          ajv validate -s governance/authority-boundary.schema.json -d governance/examples/authority-boundary.example.json --strict=false
 
       - name: Lint schemas
         run: |
