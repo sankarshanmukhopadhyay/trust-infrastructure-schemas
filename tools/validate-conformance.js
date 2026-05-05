@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
- * Reference validator for this repository.
+ * Reference validator for trust-infrastructure-schemas.
  *
- * This tool intentionally avoids dependencies and shells out to `ajv` (ajv-cli).
+ * This tool intentionally shells out to `ajv` so local validation mirrors CI.
  * Usage:
  *   node tools/validate-conformance.js
  */
@@ -17,43 +17,73 @@ function exists(p) {
   try { fs.accessSync(p); return true; } catch { return false; }
 }
 
+function validate(schema, data, label) {
+  if (!exists(schema)) throw new Error(`Missing schema: ${schema}`);
+  if (!exists(data)) throw new Error(`Missing data/example: ${data}`);
+  console.log(`== Validating ${label} ==`);
+  run(`ajv validate -s ${schema} -d ${data} --strict=false`);
+}
+
+function validateCredentialFamilies() {
+  for (const domain of ["dtg", "agent", "reputation"]) {
+    console.log(`== Validating credential family: ${domain} ==`);
+    const files = fs.readdirSync(`credentials/${domain}/v1`).filter((f) => f.endsWith(".json"));
+    for (const base of files) {
+      const schema = `credentials/${domain}/v1/${base}`;
+      const example = `examples/${domain}/v1/${base.replace(/\.json$/, ".example.json")}`;
+      validate(schema, example, `${domain}/${base}`);
+    }
+  }
+}
+
+function validateCoverageManifest() {
+  validate("validation/artifact-coverage.schema.json", "validation/artifact-coverage.json", "artifact coverage manifest");
+  const manifest = JSON.parse(fs.readFileSync("validation/artifact-coverage.json", "utf8"));
+  for (const artifact of manifest.artifacts) {
+    for (const field of ["schema", "documentation"]) {
+      const value = artifact[field];
+      if (Array.isArray(value)) {
+        for (const p of value) if (!exists(p)) throw new Error(`Coverage manifest references missing ${field}: ${p}`);
+      } else if (value && !exists(value)) {
+        throw new Error(`Coverage manifest references missing ${field}: ${value}`);
+      }
+    }
+    for (const p of artifact.examples || []) {
+      if (!exists(p)) throw new Error(`Coverage manifest references missing example: ${p}`);
+    }
+  }
+}
+
 if (!exists("conformance/conformance-declaration.schema.json")) {
   console.error("ERROR: run from repository root.");
   process.exit(1);
 }
 
 try {
-  console.log("== Validating conformance declaration example ==");
-  run('ajv validate -s conformance/conformance-declaration.schema.json -d conformance/examples/example-declaration.json --strict=false');
+  validateCredentialFamilies();
 
-  console.log("== Validating controls registry ==");
-  run('ajv validate -s controls/controls.schema.json -d controls/controls.json --strict=false');
-
-  console.log("== Validating assurance registry ==");
-  run('ajv validate -s assurance/assurance.schema.json -d assurance/assurance-levels.json --strict=false');
-
-  console.log("== Validating control-to-assurance matrix ==");
-  run('ajv validate -s controls/mappings/control-assurance-matrix.schema.json -d controls/mappings/control-assurance-matrix.json --strict=false');
-
-  console.log("== Validating registry simulation ==");
-  run('ajv validate -s registry/registry.schema.json -d registry/sample-registry.json --strict=false');
-
-  console.log("== Validating OASF publication profile example ==");
-  run('ajv validate -s oasf/oasf-publication-profile.schema.json -d oasf/examples/oasf-publication-profile.example.json --strict=false');
-
-  console.log("== Validating OASF evaluation envelope example ==");
-  run('ajv validate -s oasf/oasf-evaluation-envelope.schema.json -d oasf/examples/oasf-evaluation-envelope.example.json --strict=false');
-
-  console.log("== Validating OASF control crosswalk ==");
-  run('ajv validate -s oasf/mappings/oasf-control-crosswalk.schema.json -d oasf/mappings/oasf-control-crosswalk.json --strict=false');
-
-  console.log("== Validating reusable artifact reference example ==");
-  run('ajv validate -s common/artifact-reference.schema.json -d common/examples/artifact-reference.example.json --strict=false');
-
-  console.log("== Validating authority boundary example ==");
-  run('ajv validate -s governance/authority-boundary.schema.json -d governance/examples/authority-boundary.example.json --strict=false');
+  validate("conformance/conformance-declaration.schema.json", "conformance/examples/example-declaration.json", "conformance declaration example");
+  validate("controls/controls.schema.json", "controls/controls.json", "controls registry");
+  validate("assurance/assurance.schema.json", "assurance/assurance-levels.json", "assurance registry");
+  validate("controls/mappings/control-assurance-matrix.schema.json", "controls/mappings/control-assurance-matrix.json", "control-to-assurance matrix");
+  validate("registry/registry.schema.json", "registry/sample-registry.json", "registry simulation");
+  validate("registry/registry-entry.schema.json", "examples/composition/registry-entry.example.json", "composition registry entry");
+  validate("common/artifact-reference.schema.json", "common/examples/artifact-reference.example.json", "reusable artifact reference example");
+  validate("governance/authority-boundary.schema.json", "governance/examples/authority-boundary.example.json", "authority boundary example");
+  validate("evidence/evidence-bundle-manifest.schema.json", "examples/composition/evidence-bundle-manifest.example.json", "evidence bundle manifest example");
+  validate("oasf/oasf-publication-profile.schema.json", "oasf/examples/oasf-publication-profile.example.json", "OASF publication profile example");
+  validate("oasf/oasf-evaluation-envelope.schema.json", "oasf/examples/oasf-evaluation-envelope.example.json", "OASF evaluation envelope example");
+  validate("oasf/oasf-evaluation-envelope.schema.json", "examples/composition/verifier-evaluation.example.json", "composition verifier evaluation example");
+  validate("oasf/mappings/oasf-control-crosswalk.schema.json", "oasf/mappings/oasf-control-crosswalk.json", "OASF control crosswalk");
+  validate("odrl/odrl-policy-reference.schema.json", "odrl/samples/odrl-policy-reference.json", "ODRL policy reference sample");
+  validate("profiles/ais1/schema.json", "profiles/ais1/examples/bonded-agent-profile.example.json", "AIS-1 bonded agent profile example");
+  validate("model/trust-artifact-taxonomy.schema.json", "model/trust-artifact-taxonomy.json", "trust artifact taxonomy");
+  validate("decision/decision-receipt.schema.json", "decision/examples/decision-receipt.example.json", "decision receipt example");
+  validate("conformance/conformance-declaration.schema.json", "examples/composition/domain-baseline-declaration.example.json", "composition domain baseline declaration");
+  validateCoverageManifest();
 
   console.log("OK");
 } catch (e) {
+  console.error(e.message || e);
   process.exit(2);
 }

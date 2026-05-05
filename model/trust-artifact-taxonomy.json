@@ -1,7 +1,7 @@
 {
   "$schema": "./trust-artifact-taxonomy.schema.json",
   "model": "Open Trust Artifact Model",
-  "version": "v0.6.0+composition-governance",
+  "version": "v0.7.0+executable-governance-contracts",
   "artifact_classes": [
     {
       "id": "identity-authority",
@@ -52,6 +52,12 @@
           "path": "governance/authority-boundary.schema.json",
           "status": "implemented",
           "notes": "Reusable contract for stating scope, authoritative party, and revocation boundary."
+        },
+        {
+          "name": "Decision receipt schema",
+          "path": "decision/decision-receipt.schema.json",
+          "status": "experimental",
+          "notes": "Records policy-bound trust decisions, evaluated artifacts, authority boundary, and relying-party outcome."
         }
       ]
     },
@@ -103,7 +109,13 @@
           "name": "Cross-repo composition examples",
           "path": "examples/composition/",
           "status": "implemented",
-          "notes": "End-to-end pack showing declaration, evidence bundle, evaluation output, and registry publication."
+          "notes": "End-to-end pack showing declaration, evidence bundle, evaluation output, decision receipt, and registry publication."
+        },
+        {
+          "name": "Evidence bundle manifest schema",
+          "path": "evidence/evidence-bundle-manifest.schema.json",
+          "status": "implemented",
+          "notes": "Reusable manifest for evidence artifacts supporting declarations and decisions."
         }
       ]
     },
@@ -161,6 +173,30 @@
           "path": "registry/sample-registry.json",
           "status": "experimental",
           "notes": "Registry entries may now carry optional ODRL policy references."
+        },
+        {
+          "name": "Registry entry schema",
+          "path": "registry/registry-entry.schema.json",
+          "status": "implemented",
+          "notes": "Reusable schema for a single discoverable registry entry carrying declaration, evidence, evaluation, decision, policy, and authority references."
+        }
+      ]
+    },
+    {
+      "id": "validation-coverage",
+      "name": "Validation and coverage",
+      "description": "Artifacts that describe repository validation coverage, release evidence, and implementation readiness.",
+      "artifacts": [
+        {
+          "name": "Artifact coverage manifest",
+          "path": "validation/artifact-coverage.json",
+          "status": "implemented",
+          "notes": "Machine-readable index of schema, example, documentation, and validation coverage for each artifact family."
+        },
+        {
+          "name": "Artifact coverage schema",
+          "path": "validation/artifact-coverage.schema.json",
+          "status": "implemented"
         }
       ]
     }

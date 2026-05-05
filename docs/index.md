@@ -1,49 +1,56 @@
-# Trust Infrastructure Schemas documentation
+# Trust Infrastructure Schemas Documentation
 
-This documentation set is the canonical reference for the repository as an **Open Trust Artifact Model**.
+**Current release:** `v0.7.0`  
+**Last reviewed:** 2026-05-05
+
+This documentation describes the repository as an executable governance artifact layer for operational trust infrastructure.
 
 ## Start here
 
-- **Repository README:** `../README.md`
-- **Open Trust Artifact Model:** `open-trust-artifact-model.md`
-- **AIS-1 schema profile (experimental):** `ais1-schema-profile.md`
-- **Artifact taxonomy:** `artifact-taxonomy.md`
-- **Stable identifier governance:** `identifier-governance.md`
+| Need | Document |
+|---|---|
+| Understand the model | `open-trust-artifact-model.md` |
+| Understand trust assumptions | `TRUST-ASSUMPTIONS.md` |
+| Understand authority and evidence | `TRUST-MODEL.md` |
+| See the end-to-end flow | `cross-repo-example.md` |
+| Understand validation coverage | `validation-coverage.md` |
+| Use decision receipts | `decision-receipts.md` |
+| Use OASF artifacts | `oasf-artifact-family.md` |
+| Use ODRL policy references | `odrl-artifact-family.md` |
+| Use AIS-1 profile artifacts | `ais1-schema-profile.md` |
+| Review release history | `releases/` |
 
-## Schema families
+## Canonical artifact flow
 
-- Agent: `../credentials/agent/v1/README.md`
-- DTG: `../credentials/dtg/v1/README.md`
-- Reputation: `../credentials/reputation/v1/README.md`
-- Assurance: `../assurance/assurance-levels.md`
-- Conformance: `../conformance/IMPLEMENTER-DECLARATION.md`
-- Controls: `../controls/controls.md`
-- Registry: `../registry/README.md`
-- AIS-1 profile *(experimental)*: `ais1-schema-profile.md`
-- OASF artifact family: `oasf-artifact-family.md`
-- ODRL artifact family *(experimental)*: `odrl-artifact-family.md`
-- Artifact references: `../common/artifact-reference.schema.json`
-- Authority boundaries: `../governance/authority-boundary.schema.json`
+```text
+Declaration -> Evidence Bundle -> Evaluation Envelope -> Decision Receipt -> Registry Entry
+```
 
-## Governance and trust framing
+This flow is the core implementation path for `v0.7.0`. It ensures that trust artifacts do not merely exist, but can be evaluated, decisioned, published, and audited.
 
-- Trust model: `TRUST-MODEL.md`
-- Trust assumptions and threat model: `TRUST-ASSUMPTIONS.md`
-- Cross-repo drift prevention: `cross-repo-governance.md`
+## Machine-verifiable surfaces
 
-## Architecture and interoperability
+The repository now includes validated schemas and examples for:
 
-- Architecture snapshot: `architecture.md`
-- Ecosystem interoperability: `ecosystem-interoperability.md`
-- Transport alignment (TSP): `tsp-alignment.md`
+- credential artifacts;
+- assurance levels;
+- conformance declarations;
+- controls and control mappings;
+- OASF publication and evaluation artifacts;
+- ODRL policy references;
+- AIS-1 bonded-agent profiles;
+- reusable artifact references;
+- authority boundaries;
+- evidence bundle manifests;
+- decision receipts;
+- registry entries;
+- artifact taxonomy and validation coverage manifests.
 
-## Machine-readable model metadata
+## Release notes
 
-- Taxonomy JSON: `../model/trust-artifact-taxonomy.json`
-- Taxonomy schema: `../model/trust-artifact-taxonomy.schema.json`
-
-## GitHub Pages
-
-This repository can be published via GitHub Pages from the `/docs` folder.
-
-- [A2A-bound trust artifacts](a2a-bound-trust-artifacts.md)
+- `releases/v0.7.0.md`
+- `releases/v0.6.0.md`
+- `releases/v0.5.0.md`
+- `releases/v0.4.0.md`
+- `releases/v0.3.0.md`
+- `releases/v0.2.1.md`

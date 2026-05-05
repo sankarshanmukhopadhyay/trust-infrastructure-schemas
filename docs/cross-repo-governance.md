@@ -1,36 +1,41 @@
-# Cross-repo governance and drift prevention
+# Cross-Repo Governance
 
-This ecosystem is intentionally split across multiple repositories. That split only works if we prevent **semantic drift** across duplicated concepts.
+**Last reviewed:** 2026-05-05  
+**Current release:** `v0.7.0`
 
-## Canonical sources
+This repository is designed to interoperate with downstream assurance, conformance, registry, baseline, and meta-model repositories. Its role is to provide canonical artifact contracts, not to own every domain policy.
 
-- **Assurance Levels (AL1–AL4):** canonical definition lives in `assurance/assurance-levels.md` in this repository.
-- **Schema identifiers (`$id`) and registries:** canonical definition lives in this repository.
+## Authority and scope
 
-Downstream repositories MUST reference canonical sources rather than copy-pasting definitions.
+| Layer | Responsibility |
+|---|---|
+| This repository | Defines reusable artifact contracts and validation expectations. |
+| Domain baseline repositories | Define domain-specific requirements and evidence expectations. |
+| Evaluator repositories | Execute assessments and publish evaluation envelopes. |
+| Registry repositories | Publish discoverable state and references. |
+| Relying-party systems | Apply policy and produce or preserve decision receipts. |
 
-## Reuse rules
+## Canonical ownership
 
-1. **Do not duplicate AL semantics** in downstream repos.
-   - Downstream repos MAY publish *operational interpretations* (for example, evidence depth and audit cadence) but MUST not redefine AL meaning.
-2. **Do not fork schema IDs (`$id`)** without a version bump and an explicit compatibility note.
-3. **If a downstream repo needs extensions, prefer “extend” over “copy”.**
-   - Add an extension schema that references the canonical schema.
+- AL1–AL4 semantics are owned by `assurance/assurance-levels.md`.
+- Artifact shape is owned by schema files in this repository.
+- Domain-specific control interpretation belongs in downstream baseline repositories.
+- Runtime authorization belongs to systems that evaluate delegation, policy, and revocation at the time of action.
 
-## Change management
+## Delegation principle
 
-Changes that affect interoperability SHOULD be coordinated:
+Publication is not delegation. Discovery is not authorization. Evaluation is not unlimited reliance. A decision receipt is bounded evidence of a decision under a policy and authority boundary.
 
-- A breaking change MUST include:
-  - a version bump (SemVer),
-  - a compatibility note,
-  - and a short migration guide.
-- Cross-repo changes SHOULD be tracked as a single issue thread (or a small set of linked issues) across the impacted repos.
+## Evidence principle
 
-## Version alignment guidance
+Downstream repositories SHOULD produce artifacts that can be referenced by the canonical artifact layer:
 
-When referencing canonical concepts across repos:
+- declarations;
+- evidence bundle manifests;
+- evaluation envelopes;
+- decision receipts;
+- registry entries.
 
-- Prefer pinning to a released tag when available.
-- If referencing `main`, document the expected commit or version in downstream compatibility notes.
+## Revocation principle
 
+Any operational reliance flow SHOULD preserve enough metadata to check revocation or status before reuse. Authority-boundary metadata and decision receipts are the primary carriers for this requirement in `v0.7.0`.

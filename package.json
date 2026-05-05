@@ -1,0 +1,14 @@
+{
+  "name": "trust-infrastructure-schemas",
+  "version": "0.7.0",
+  "private": true,
+  "description": "Machine-readable schemas and governance artifacts for operational trust infrastructure.",
+  "scripts": {
+    "lint": "node tools/lint-schemas.js",
+    "validate": "node tools/validate-conformance.js",
+    "check": "npm run validate && npm run lint"
+  },
+  "devDependencies": {
+    "ajv-cli": "^5.0.0"
+  }
+}

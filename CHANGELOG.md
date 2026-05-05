@@ -1,80 +1,75 @@
 # Changelog
 
-## [Unreleased]
+All notable changes to this repository are documented here.
+
+## [v0.7.0] - 2026-05-05
 
 ### Added
-- Added `common/artifact-reference.schema.json` and example payloads to normalize reusable references to declarations, evidence bundles, evaluation results, policies, and bindings.
-- Added `governance/authority-boundary.schema.json` and example payloads to carry explicit scope, revocation, and delegation-boundary metadata.
-- Added `examples/composition/` as a machine-readable cross-repo composition pack covering declaration, evidence bundle, evaluator output, and registry publication.
-- Added `docs/identifier-governance.md` to document stable `$id` rules and release-pinning expectations.
+
+- Added `decision/decision-receipt.schema.json` as a first-class trust decision receipt artifact.
+- Added `decision/examples/decision-receipt.example.json` and decision receipt documentation.
+- Added `evidence/evidence-bundle-manifest.schema.json` for runnable evidence bundle composition examples.
+- Added `registry/registry-entry.schema.json` for validating single registry entries used in composition packs.
+- Added `validation/artifact-coverage.json` and `validation/artifact-coverage.schema.json` as machine-readable validation coverage evidence.
+- Added `docs/decision-receipts.md` and `docs/validation-coverage.md`.
+- Added `package.json` with local validation scripts.
+- Added `.gitignore` for local artifact hygiene.
 
 ### Changed
-- Refreshed stale and placeholder schema `$id` values so canonical identifiers align to `trust-infrastructure-schemas` at `v0.6.0`.
-- Extended conformance, registry, OASF, and AIS-1 artifacts to carry reusable artifact references and explicit authority-boundary metadata.
-- Refreshed README, docs index, taxonomy metadata, roadmap, and sample artifacts to match the completed roadmap increment.
+
+- Expanded `governance/authority-boundary.schema.json` with structured authority type, authority ID, delegation chain, revocation metadata, scope constraints, relying-party constraints, and evidence references.
+- Updated artifact reference role vocabulary to include `decision` and `receipt` roles.
+- Updated conformance declaration scope handling so composition examples can reference profiles, policies, and decision artifacts in addition to credential schemas.
+- Updated composition examples to show the full declaration → evidence → evaluation → decision → registry flow.
+- Updated `registry/sample-registry.json` to include decision receipt references.
+- Updated `model/trust-artifact-taxonomy.json` for v0.7.0 artifact families and validation coverage.
+- Refreshed README, documentation index, architecture, trust model, trust assumptions, artifact taxonomy, roadmap, and cross-repo governance documents.
+- Expanded `tools/validate-conformance.js` and GitHub Actions validation across all major artifact families.
+- Expanded `tools/lint-schemas.js` to check release documentation, schema namespace hygiene, coverage references, and local-only artifacts.
+
+### Fixed
+
+- Removed stale local `.DS_Store` artifact.
+- Backfilled missing `docs/releases/v0.6.0.md` release documentation.
+- Cleaned release traceability by aligning `VERSION`, README, docs, taxonomy, and release notes around `v0.7.0`.
+
+## [v0.6.0] - 2026-04-07
 
 ### Added
-- Added `odrl/odrl-policy-reference.schema.json` and `odrl/samples/odrl-policy-reference.json` as the experimental ODRL artifact family for bounded policy publication.
-- Added `docs/odrl-artifact-family.md` to document the architectural boundary for ODRL in the canonical trust artifact layer.
+
+- Introduced OASF publication profile and evaluation envelope schemas.
+- Added OASF control crosswalk artifacts.
+- Added ODRL policy reference schema and sample.
+- Added AIS-1 experimental profile materials.
+- Added reusable artifact-reference and authority-boundary contracts.
+- Added cross-repo composition examples connecting baseline declarations, evidence, evaluation, and registry publication.
 
 ### Changed
-- Refreshed README, docs index, taxonomy metadata, registry schema, and sample registry to carry optional ODRL policy references.
 
-## v0.6.0 - 2026-03-31
+- Repositioned the repository as an Open Trust Artifact Model rather than a loose schema catalog.
+- Expanded registry examples to support OASF-aware and ODRL-aware references.
+
+## [v0.5.0] - 2026-03-25
 
 ### Added
-- Experimental ODRL policy-reference artifact family.
-- Optional registry support for policy artifacts that point at ODRL-compatible policy objects.
 
-### Changed
-- Clarified that this repository carries ODRL artifacts but does not evaluate ODRL semantics or claim that publication equals enforcement.
+- Added cross-repo governance and composition documentation.
+- Added expanded schema governance and identifier guidance.
 
-
-### Added
-- Added `docs/a2a-bound-trust-artifacts.md` to record how the canonical schema layer should treat reusable patterns exposed by ANAB-over-A2A.
-- Added `oasf/oasf-publication-profile.schema.json` and `oasf/oasf-evaluation-envelope.schema.json` as canonical OASF-shaped carrier contracts.
-- Added `oasf/mappings/oasf-control-crosswalk.json` and its schema to normalize cross-repo OASF control mappings.
-- Added `docs/oasf-artifact-family.md` to document the OASF artifact family and its architectural boundary.
-
-### Changed
-- Refreshed README, cross-repo composition, roadmap, taxonomy, and registry sample artifacts to account for A2A-bound trust descriptions.
-- Extended conformance and registry artifacts so they can carry optional OASF publication, evaluation, evidence, and semantic-binding references.
-- Extended validation tooling to check OASF schemas and example payloads.
-
-
-## v0.5.1 - 2026-03-24
+## [v0.4.0] - 2026-03-10
 
 ### Added
-- Added `docs/roadmap.md` to record the next composition-focused increments for the canonical trust artifact layer.
-- Added `docs/cross-repo-example.md` to explain how OTAM, ANAB, and DCAS compose end to end.
-- Expanded `registry/sample-registry.json` with a downstream baseline example carrying `ANAGB-*` control identifiers.
 
-### Changed
-- Generalized generic conformance and registry artifacts to accept namespaced control identifiers beyond the local `SC-*` catalog.
-- Refreshed `$id` references so published schemas point at `trust-infrastructure-schemas` instead of the retired `schemas` path.
-- Refreshed README freshness metadata and removed stray `.DS_Store` artifacts from the archive.
+- Added assurance-level and control mapping materials.
 
-## v0.5.0 - 2026-03-14
+## [v0.3.0] - 2026-02-20
 
 ### Added
-- Added an explicit **Open Trust Artifact Model** framing for the repository.
-- Added `docs/open-trust-artifact-model.md` to define the repository as an artifact model, not only a schema collection.
-- Added `docs/artifact-taxonomy.md` to document artifact classes across identity, governance, assurance, controls, and registry state.
-- Added `model/trust-artifact-taxonomy.json` as a machine-readable taxonomy of trust artifacts.
-- Added `model/trust-artifact-taxonomy.schema.json` to validate the taxonomy file.
+
+- Added conformance declaration schema and implementer declaration template.
+
+## [v0.2.1] - 2026-02-01
 
 ### Changed
-- Repositioned the README around operational digital trust infrastructure.
-- Updated documentation index and architecture narrative to reflect the trust-artifact-layer concept.
-- Clarified how this repository composes with TSMM-style meta-model work, DCAS, and downstream baselines.
-- Removed stray `.DS_Store` files from the repository archive.
 
-## v0.4.0 - 2026-03-05
-- Published release v0.4.0.
-- Added assurance, controls, conformance, and registry documentation and schemas.
-
-## v0.3.0 - 2026-03-04
-- Added ecosystem interoperability and architecture documentation.
-
-## v0.2.1 - 2026-03-03
-- Documentation and workflow hygiene updates.
+- Refined schema documentation and example validation practices.

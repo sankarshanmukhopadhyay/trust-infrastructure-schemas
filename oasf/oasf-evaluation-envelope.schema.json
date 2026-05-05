@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.6.0/oasf/oasf-evaluation-envelope.schema.json",
+  "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.7.0/oasf/oasf-evaluation-envelope.schema.json",
   "title": "OASF Evaluation Envelope",
   "description": "Canonical shared artifact shape for publishing evaluator results against an OASF-described subject or declaration set.",
   "type": "object",

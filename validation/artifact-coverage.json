@@ -1,0 +1,302 @@
+{
+  "release": "v0.7.0",
+  "generated_at": "2026-05-05T00:00:00Z",
+  "artifacts": [
+    {
+      "artifact_id": "dtg-credentials",
+      "status": "implemented",
+      "schema": "credentials/dtg/v1/membership-credential.json",
+      "examples": [
+        "examples/dtg/v1/membership-credential.example.json"
+      ],
+      "documentation": [
+        "credentials/dtg/v1/README.md"
+      ],
+      "validated_by": [
+        ".github/workflows/validate-schemas.yml",
+        "tools/validate-conformance.js"
+      ]
+    },
+    {
+      "artifact_id": "agent-credentials",
+      "status": "implemented",
+      "schema": "credentials/agent/v1/capability-attestation.json",
+      "examples": [
+        "examples/agent/v1/capability-attestation.example.json"
+      ],
+      "documentation": [
+        "credentials/agent/v1/README.md"
+      ],
+      "validated_by": [
+        ".github/workflows/validate-schemas.yml",
+        "tools/validate-conformance.js"
+      ]
+    },
+    {
+      "artifact_id": "reputation-credentials",
+      "status": "implemented",
+      "schema": "credentials/reputation/v1/reputation-credential.json",
+      "examples": [
+        "examples/reputation/v1/reputation-credential.example.json"
+      ],
+      "documentation": [
+        "credentials/reputation/v1/README.md"
+      ],
+      "validated_by": [
+        ".github/workflows/validate-schemas.yml",
+        "tools/validate-conformance.js"
+      ]
+    },
+    {
+      "artifact_id": "conformance-declaration",
+      "status": "implemented",
+      "schema": "conformance/conformance-declaration.schema.json",
+      "examples": [
+        "conformance/examples/example-declaration.json",
+        "examples/composition/domain-baseline-declaration.example.json"
+      ],
+      "documentation": [
+        "conformance/IMPLEMENTER-DECLARATION.md",
+        "docs/cross-repo-example.md"
+      ],
+      "validated_by": [
+        ".github/workflows/validate-schemas.yml",
+        "tools/validate-conformance.js"
+      ]
+    },
+    {
+      "artifact_id": "assurance-levels",
+      "status": "normative",
+      "schema": "assurance/assurance.schema.json",
+      "examples": [
+        "assurance/assurance-levels.json"
+      ],
+      "documentation": [
+        "assurance/assurance-levels.md"
+      ],
+      "validated_by": [
+        ".github/workflows/validate-schemas.yml",
+        "tools/validate-conformance.js"
+      ]
+    },
+    {
+      "artifact_id": "controls-registry",
+      "status": "implemented",
+      "schema": "controls/controls.schema.json",
+      "examples": [
+        "controls/controls.json"
+      ],
+      "documentation": [
+        "controls/controls.md"
+      ],
+      "validated_by": [
+        ".github/workflows/validate-schemas.yml",
+        "tools/validate-conformance.js"
+      ]
+    },
+    {
+      "artifact_id": "control-assurance-matrix",
+      "status": "implemented",
+      "schema": "controls/mappings/control-assurance-matrix.schema.json",
+      "examples": [
+        "controls/mappings/control-assurance-matrix.json"
+      ],
+      "documentation": [
+        "controls/controls.md"
+      ],
+      "validated_by": [
+        ".github/workflows/validate-schemas.yml",
+        "tools/validate-conformance.js"
+      ]
+    },
+    {
+      "artifact_id": "registry-simulation",
+      "status": "illustrative",
+      "schema": "registry/registry.schema.json",
+      "examples": [
+        "registry/sample-registry.json"
+      ],
+      "documentation": [
+        "registry/README.md",
+        "docs/cross-repo-example.md"
+      ],
+      "validated_by": [
+        ".github/workflows/validate-schemas.yml",
+        "tools/validate-conformance.js"
+      ]
+    },
+    {
+      "artifact_id": "registry-entry",
+      "status": "implemented",
+      "schema": "registry/registry-entry.schema.json",
+      "examples": [
+        "examples/composition/registry-entry.example.json"
+      ],
+      "documentation": [
+        "registry/README.md",
+        "docs/cross-repo-example.md"
+      ],
+      "validated_by": [
+        ".github/workflows/validate-schemas.yml",
+        "tools/validate-conformance.js"
+      ]
+    },
+    {
+      "artifact_id": "artifact-reference",
+      "status": "implemented",
+      "schema": "common/artifact-reference.schema.json",
+      "examples": [
+        "common/examples/artifact-reference.example.json"
+      ],
+      "documentation": [
+        "docs/open-trust-artifact-model.md"
+      ],
+      "validated_by": [
+        ".github/workflows/validate-schemas.yml",
+        "tools/validate-conformance.js"
+      ]
+    },
+    {
+      "artifact_id": "authority-boundary",
+      "status": "implemented",
+      "schema": "governance/authority-boundary.schema.json",
+      "examples": [
+        "governance/examples/authority-boundary.example.json"
+      ],
+      "documentation": [
+        "docs/TRUST-MODEL.md",
+        "docs/TRUST-ASSUMPTIONS.md"
+      ],
+      "validated_by": [
+        ".github/workflows/validate-schemas.yml",
+        "tools/validate-conformance.js"
+      ]
+    },
+    {
+      "artifact_id": "evidence-bundle-manifest",
+      "status": "implemented",
+      "schema": "evidence/evidence-bundle-manifest.schema.json",
+      "examples": [
+        "examples/composition/evidence-bundle-manifest.example.json"
+      ],
+      "documentation": [
+        "docs/cross-repo-example.md",
+        "docs/validation-coverage.md"
+      ],
+      "validated_by": [
+        ".github/workflows/validate-schemas.yml",
+        "tools/validate-conformance.js"
+      ]
+    },
+    {
+      "artifact_id": "oasf-publication-profile",
+      "status": "implemented",
+      "schema": "oasf/oasf-publication-profile.schema.json",
+      "examples": [
+        "oasf/examples/oasf-publication-profile.example.json"
+      ],
+      "documentation": [
+        "docs/oasf-artifact-family.md"
+      ],
+      "validated_by": [
+        ".github/workflows/validate-schemas.yml",
+        "tools/validate-conformance.js"
+      ]
+    },
+    {
+      "artifact_id": "oasf-evaluation-envelope",
+      "status": "implemented",
+      "schema": "oasf/oasf-evaluation-envelope.schema.json",
+      "examples": [
+        "oasf/examples/oasf-evaluation-envelope.example.json",
+        "examples/composition/verifier-evaluation.example.json"
+      ],
+      "documentation": [
+        "docs/oasf-artifact-family.md"
+      ],
+      "validated_by": [
+        ".github/workflows/validate-schemas.yml",
+        "tools/validate-conformance.js"
+      ]
+    },
+    {
+      "artifact_id": "oasf-control-crosswalk",
+      "status": "implemented",
+      "schema": "oasf/mappings/oasf-control-crosswalk.schema.json",
+      "examples": [
+        "oasf/mappings/oasf-control-crosswalk.json"
+      ],
+      "documentation": [
+        "docs/oasf-artifact-family.md"
+      ],
+      "validated_by": [
+        ".github/workflows/validate-schemas.yml",
+        "tools/validate-conformance.js"
+      ]
+    },
+    {
+      "artifact_id": "odrl-policy-reference",
+      "status": "experimental",
+      "schema": "odrl/odrl-policy-reference.schema.json",
+      "examples": [
+        "odrl/samples/odrl-policy-reference.json"
+      ],
+      "documentation": [
+        "odrl/README.md",
+        "docs/odrl-artifact-family.md"
+      ],
+      "validated_by": [
+        ".github/workflows/validate-schemas.yml",
+        "tools/validate-conformance.js"
+      ]
+    },
+    {
+      "artifact_id": "ais1-bonded-agent-profile",
+      "status": "experimental",
+      "schema": "profiles/ais1/schema.json",
+      "examples": [
+        "profiles/ais1/examples/bonded-agent-profile.example.json"
+      ],
+      "documentation": [
+        "profiles/ais1/README.md",
+        "docs/ais1-schema-profile.md"
+      ],
+      "validated_by": [
+        ".github/workflows/validate-schemas.yml",
+        "tools/validate-conformance.js"
+      ]
+    },
+    {
+      "artifact_id": "trust-artifact-taxonomy",
+      "status": "implemented",
+      "schema": "model/trust-artifact-taxonomy.schema.json",
+      "examples": [
+        "model/trust-artifact-taxonomy.json"
+      ],
+      "documentation": [
+        "docs/artifact-taxonomy.md",
+        "docs/open-trust-artifact-model.md"
+      ],
+      "validated_by": [
+        ".github/workflows/validate-schemas.yml",
+        "tools/validate-conformance.js"
+      ]
+    },
+    {
+      "artifact_id": "decision-receipt",
+      "status": "experimental",
+      "schema": "decision/decision-receipt.schema.json",
+      "examples": [
+        "decision/examples/decision-receipt.example.json"
+      ],
+      "documentation": [
+        "decision/README.md",
+        "docs/decision-receipts.md"
+      ],
+      "validated_by": [
+        ".github/workflows/validate-schemas.yml",
+        "tools/validate-conformance.js"
+      ]
+    }
+  ]
+}

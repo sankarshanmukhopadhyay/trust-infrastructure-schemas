@@ -1,58 +1,45 @@
-# Architecture snapshot
+# Architecture
 
-This diagram is a non-normative view of where this repository sits in a broader trust stack.
+**Last reviewed:** 2026-05-05  
+**Current release:** `v0.7.0`
+
+The repository architecture is organized around artifact families that support executable governance.
 
 ```mermaid
-flowchart TB
-  subgraph I[Identity Layer]
-    DID[DIDs and identifiers]
-    VC[Verifiable credentials]
-  end
-
-  subgraph A[Trust Artifact Layer]
-    OTAM[Open Trust Artifact Model]
-    AS[Assurance artifacts]
-    CF[Conformance artifacts]
-    OASF[OASF publication and evaluation artifacts]
-    CT[Control artifacts]
-    RG[Registry artifacts]
-    OTAM --> AS
-    OTAM --> CF
-    OTAM --> OASF
-    OTAM --> CT
-    OTAM --> RG
-  end
-
-  subgraph G[Governance Layer]
-    TF[Trust frameworks]
-    PL[Policies and rules]
-    MM[TSMM-style meta-models]
-  end
-
-  subgraph O[Operational Systems]
-    DCAS[DCAS and assurance workflows]
-    BAS[Domain baselines]
-    REG[Trust registries]
-    AG[Agent ecosystems]
-  end
-
-  DID --> VC --> OTAM
-  TF --> OTAM
-  PL --> OTAM
-  MM -. semantic alignment .- OTAM
-  AS --> DCAS
-  CF --> DCAS
-  OASF --> DCAS
-  OASF --> AG
-  CT --> BAS
-  RG --> REG
-  OTAM --> AG
+flowchart TD
+  A[Domain Baseline Declaration] --> B[Evidence Bundle Manifest]
+  B --> C[OASF Evaluation Envelope]
+  C --> D[Decision Receipt]
+  D --> E[Registry Entry]
+  F[Authority Boundary] --> A
+  F --> B
+  F --> C
+  F --> D
+  G[Controls and Assurance Levels] --> A
+  G --> C
+  H[Policy Reference] --> D
+  I[Artifact Coverage Manifest] --> A
+  I --> B
+  I --> C
+  I --> D
+  I --> E
 ```
 
-## Notes
+## Architectural layers
 
-- The repository is positioned as the machine-readable artifact layer between identity primitives and governance systems.
-- Schemas in this repository are implementations of a broader artifact model.
-- Downstream assurance, registry, and agent systems can reuse the same artifact classes without copying semantics into each repository.
+| Layer | Files | Purpose |
+|---|---|---|
+| Identity and authority | `credentials/`, `profiles/ais1/`, `governance/` | Defines identity, profile, and authority-boundary contracts. |
+| Assurance and conformance | `assurance/`, `conformance/`, `evidence/` | Defines claims, assurance levels, and evidence manifests. |
+| Evaluation and policy | `oasf/`, `odrl/`, `decision/` | Defines publication, evaluation, policy reference, and decision artifacts. |
+| Registry state | `registry/`, `examples/composition/` | Defines discoverable state and composition examples. |
+| Model metadata | `model/`, `validation/` | Defines artifact taxonomy and validation coverage. |
+| Tooling | `tools/`, `.github/workflows/` | Validates examples, schemas, diagrams, coverage, and release hygiene. |
 
-- OASF publication profiles and evaluation envelopes now sit inside the trust artifact layer as shared carrier contracts between semantic models, domain baselines, evaluators, and registry surfaces.
+## Design principles
+
+- Prefer explicit artifact references over implicit trust.
+- Preserve authority boundaries separately from identity claims.
+- Keep domain policy outside generic schemas unless it is expressed as a reusable profile.
+- Make all examples runnable through CI.
+- Treat validation coverage as part of release evidence.

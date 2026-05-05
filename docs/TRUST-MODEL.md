@@ -1,31 +1,58 @@
-# Trust Model (Minimal)
+# Trust Model
 
-This document explains what this repository **does** and **does not** guarantee.
+**Last reviewed:** 2026-05-05  
+**Current release:** `v0.7.0`
 
-## What these schemas provide
+The trust model for this repository is based on bounded authority, explicit evidence, machine-readable assurance, and auditable decisions.
 
-- **Structural interoperability:** A shared JSON shape for credentials and related artifacts.
-- **Validation discipline:** Example payloads validated in CI to prevent schema regressions.
-- **Governance handles:** Controls and assurance level registries to support ecosystem profiling.
-- **Conformance mechanism:** A machine-readable declaration format for implementers.
+## Core assumptions
 
-## What these schemas do NOT provide
+1. Trust claims are only useful when they can be independently inspected.
+2. Authority must be scoped, delegated, and revocable.
+3. Evidence should be represented as addressable artifacts, not only prose.
+4. Assurance should connect controls, evidence, and evaluation outputs.
+5. Reliance should produce a decision record when operational action depends on trust artifacts.
 
-- **Issuer legitimacy:** A schema-valid credential can still be issued by an untrusted party.
-- **Cryptographic authenticity:** Schemas do not guarantee signatures, key custody, or verification success.
-- **Policy correctness:** Whether a credential should be accepted is a *policy decision* outside the schema.
-- **Operational security:** Rate limits, storage security, and endpoint hardening are implementation responsibilities.
+## Artifact roles
 
-## Actors
+| Artifact | Role in trust model |
+|---|---|
+| Credential schemas | Define identity, relationship, capability, and reputation artifact shapes. |
+| Conformance declaration | Records implementer claims and covered schema scope. |
+| Evidence bundle manifest | Lists the artifacts supporting a claim. |
+| OASF publication profile | Publishes discoverable subject, declaration, evidence, and semantic-binding references. |
+| OASF evaluation envelope | Records evaluator output and assurance/control results. |
+| Authority boundary | States scope, delegation, revocation, and relying-party constraints. |
+| Decision receipt | Records the trust decision made under policy and authority constraints. |
+| Registry entry | Publishes indexable state and artifact references. |
 
-- **Issuer:** Produces credentials that conform to these schemas.
-- **Holder / Subject:** Holds or is described by credentials.
-- **Verifier / Relying Party:** Validates structure and then applies policy.
-- **Registry / Trust Operator:** Publishes schemas, controls, and assurance profiles; may curate implementer declarations.
-- **Auditor (optional):** Independently reviews evidence and conformance claims (AL4).
+## Authority boundaries
 
-## Trust posture in one sentence
+Authority boundaries are central to the model. Every artifact that may influence reliance SHOULD make clear:
 
-**Schema-validity is necessary for interoperability, but insufficient for trust.**
+- who is authoritative;
+- what scope applies;
+- whether separate delegation is required;
+- how revocation or status should be checked;
+- which relying-party actions are allowed, prohibited, or conditional.
 
-Ecosystems SHOULD adopt assurance levels and controls to turn conformance into a decision-support signal.
+The canonical schema is `governance/authority-boundary.schema.json`.
+
+## Decision receipts
+
+Decision receipts are introduced in `v0.7.0` to preserve the link between evidence and reliance. A verifier may validate an artifact, but a relying party needs to know what decision was made, under what policy, and with what conditions. The receipt records this decision context.
+
+## Revocation and freshness
+
+Any artifact used for operational reliance SHOULD carry freshness or revocation information either directly or through an authority boundary. A previously valid artifact may become unsafe if revocation status changes or freshness expires.
+
+## Auditability
+
+Auditability requires more than logs. This model expects structured artifacts that can be retained and revalidated:
+
+- declarations;
+- evidence manifests;
+- evaluation envelopes;
+- decision receipts;
+- registry entries;
+- coverage manifests.

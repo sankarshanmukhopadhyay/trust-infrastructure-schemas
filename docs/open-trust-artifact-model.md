@@ -1,42 +1,58 @@
 # Open Trust Artifact Model
 
-The repository is best understood not as a miscellaneous schema library, but as an **Open Trust Artifact Model** implemented through schemas.
+**Last reviewed:** 2026-05-05  
+**Current release:** `v0.7.0`
 
-## Problem
+The Open Trust Artifact Model is the repository’s organizing model for executable governance. It defines the machine-readable artifacts needed to move from narrative trust frameworks to verifiable trust infrastructure.
 
-Most digital trust frameworks define governance in prose. Operational systems, however, need structured objects that can be exchanged, validated, indexed, and audited.
+## Core proposition
 
-Without those objects, ecosystems fall back to brittle interpretation, repository-specific formats, and duplicated semantics.
+Trust infrastructure needs more than identifiers and credentials. It needs artifacts that can express:
 
-## Thesis
+- identity and authority;
+- evidence and assurance;
+- policy and constraints;
+- conformance and control mappings;
+- registry and ecosystem state;
+- decision outcomes and auditability.
 
-Trust infrastructure needs machine-readable primitives for the artifacts that prove how trust is governed, asserted, evaluated, and maintained.
-
-This repository provides those primitives.
+The model treats these artifacts as composable governance contracts.
 
 ## Artifact classes
 
-### Identity and authority artifacts
-These identify actors, issuers, delegated roles, and related trust-bearing entities.
+| Class | Purpose | Representative artifacts |
+|---|---|---|
+| Identity and authority | Identify actors and authority-bearing entities | DTG, agent, reputation, AIS-1, authority boundary |
+| Governance and policy | Express policy references and control-plane limits | ODRL references, trust assumptions, authority boundaries |
+| Assurance and conformance | Capture claims, evidence, evaluations, and assurance levels | conformance declarations, evidence manifests, OASF envelopes |
+| Decision evidence | Record policy-bound decisions and reliance outcomes | decision receipts |
+| Controls and mappings | Define requirements and crosswalks | controls registry, assurance matrix, OASF crosswalk |
+| Registry state | Publish discoverable trust facts | registry entries and registry simulation |
+| Model metadata | Explain and validate the artifact catalog | taxonomy and coverage manifest |
 
-### Governance artifacts
-These express policies, framework definitions, and ecosystem rules.
+## Canonical lifecycle
 
-### Assurance and conformance artifacts
-These express assurance posture, implementation claims, and evaluable declarations.
+```text
+Declare -> Evidence -> Evaluate -> Decide -> Publish -> Audit
+```
 
-### Control artifacts
-These define the control set and mappings used to interpret assurance levels and conformance obligations.
+The `v0.7.0` release makes this lifecycle explicit:
 
-### Ecosystem state artifacts
-These express membership, registry state, status, and other indexable trust facts.
+1. `conformance/conformance-declaration.schema.json` records the claim.
+2. `evidence/evidence-bundle-manifest.schema.json` records supporting artifacts.
+3. `oasf/oasf-evaluation-envelope.schema.json` records evaluation results.
+4. `decision/decision-receipt.schema.json` records the reliance decision.
+5. `registry/registry-entry.schema.json` and `registry/registry.schema.json` publish discoverable state.
+6. `validation/artifact-coverage.json` records which repository artifacts are covered by validation.
 
-## Relationship to adjacent work
+## Authority is bounded
 
-- **TSMM-style models** define entities, relationships, and high-level governance semantics.
-- **This repository** defines the machine-readable artifact layer that operational systems exchange and validate.
-- **DCAS and related workflows** consume these artifacts to evaluate trust assertions and conformance claims.
+No artifact in this repository should be interpreted as unlimited trust. The authority boundary model requires implementers to state what is authoritative, what is out of scope, whether delegation is required, and how revocation or status should be checked.
 
-## Design principle
+## Evidence is inspectable
 
-The model SHOULD be stable enough for implementers to adopt, while remaining extensible enough for new trust domains and ecosystem-specific profiles.
+Evidence is represented through reusable artifact references, evidence bundle manifests, evaluation envelopes, and decision receipts. Implementers should preserve these artifacts because they support auditability, conformance review, and relying-party accountability.
+
+## Experimental profiles
+
+Experimental artifacts, such as the AIS-1 profile and ODRL policy reference, are included to support cross-repo normalization. Experimental status means that the artifact is validated and documented but still subject to semantic refinement.

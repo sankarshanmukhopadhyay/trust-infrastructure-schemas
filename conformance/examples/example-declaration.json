@@ -1,7 +1,7 @@
 {
   "declaration": {
-    "repository": "https://github.com/<org>/<repo>",
-    "release": "v0.4.0",
+    "repository": "https://github.com/example/trust-implementer",
+    "release": "v0.7.0",
     "declared_at": "2026-02-21",
     "statement": "We implement issuer and verifier logic and claim conformance to the listed schemas as validated by our CI."
   },
@@ -37,10 +37,10 @@
   "evidence": {
     "tooling": "ajv-cli@5",
     "ci_runs": [
-      "https://github.com/<org>/<repo>/actions/runs/<run-id>"
+      "https://github.com/example/trust-implementer/actions/runs/1001"
     ],
     "fixtures": [
-      "https://github.com/<org>/<repo>/tree/main/test-vectors"
+      "https://github.com/example/trust-implementer/tree/main/test-vectors"
     ]
   },
   "integrity": {
@@ -92,7 +92,7 @@
       "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
       "issued_at": "2026-03-25T00:00:00Z",
       "fresh_until": "2026-06-25T00:00:00Z",
-      "schema_uri": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.6.0/common/artifact-reference.schema.json",
+      "schema_uri": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.7.0/common/artifact-reference.schema.json",
       "role": "evidence",
       "notes": "Reusable artifact reference shape for evidence bundle discovery."
     }

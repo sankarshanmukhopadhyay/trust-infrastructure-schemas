@@ -1,51 +1,35 @@
-# Artifact taxonomy
+# Artifact Taxonomy
 
-This taxonomy provides the conceptual classification for schemas and examples in the repository.
+**Last reviewed:** 2026-05-05  
+**Current release:** `v0.7.0`
 
-## 1. Identity and authority
+The artifact taxonomy is the navigation layer for the Open Trust Artifact Model. It gives implementers a stable overview of which artifact families exist, where they live, and whether they are normative, implemented, experimental, or illustrative.
 
-Artifacts that identify actors and delegated authority.
+## Machine-readable source
 
-- agent capability attestation
-- collaboration partner credential
-- identity link
-- infrastructure authorization
-- persona, membership, relationship, endorsement, and witness credentials
-- reputation credentials and profiles
+- Taxonomy: `model/trust-artifact-taxonomy.json`
+- Schema: `model/trust-artifact-taxonomy.schema.json`
 
-## 2. Governance and policy
+## Status semantics
 
-Artifacts that express ecosystem rules, policy references, and framework-level semantics.
+| Status | Meaning |
+|---|---|
+| `normative` | Canonical source of semantics for this repository. |
+| `implemented` | Schema or artifact family with validated examples and documentation. |
+| `experimental` | Validated artifact intended for careful cross-repo reuse while semantics mature. |
+| `illustrative` | Example pattern or simulation, not an ecosystem mandate. |
 
-Current repository support is indirect through assurance levels, controls, and documentation. Additional explicit policy schemas can be introduced under future versions without changing the core model.
+## v0.7.0 taxonomy additions
 
-## 3. Assurance and conformance
+This release adds or elevates:
 
-Artifacts that express how an entity claims or demonstrates trust posture.
+- decision receipt artifacts;
+- evidence bundle manifests;
+- registry entry schema;
+- validation coverage manifest;
+- richer authority boundary metadata;
+- validation coverage across OASF, ODRL, AIS-1, taxonomy, registry, composition, and decision examples.
 
-- assurance levels
-- conformance declarations
-- implementer declarations
-- OASF publication profiles
-- OASF evaluation envelopes
+## Implementation guidance
 
-## 4. Controls and mappings
-
-Artifacts that define obligations, control objectives, and level mappings.
-
-- controls registry
-- control-to-assurance matrix
-- OASF control crosswalks
-
-## 5. Registry and ecosystem state
-
-Artifacts that express the current indexable state of an ecosystem.
-
-- registry entries
-- registry snapshots
-- declaration references
-- OASF publication, evidence, evaluation, and semantic-binding references
-
-## Taxonomy use
-
-Implementers SHOULD use this taxonomy as the navigation layer for selecting schemas, designing profiles, and documenting interoperability boundaries.
+Consumers should use the taxonomy to decide which artifacts are appropriate for their assurance flow. A domain baseline may only need conformance declarations and evidence manifests. A relying party should also preserve decision receipts. A public registry should publish registry entries referencing declarations, evidence, evaluations, and relevant decisions.

@@ -1,22 +1,32 @@
 #!/usr/bin/env node
 /**
- * Lightweight schema linter (no deps).
- * Enforces a minimal baseline of documentation and identity hygiene.
+ * Lightweight schema and release linter (no external dependencies).
  *
- * Usage:
- *   node tools/lint-schemas.js
+ * Enforces a minimal baseline for schema identity, documentation hygiene,
+ * release traceability, and local-artifact cleanliness.
  */
 const fs = require("fs");
 const path = require("path");
 
-const ROOTS = ["credentials", "assurance", "conformance", "controls", "model", "oasf", "odrl", "registry", "profiles", "common", "governance"];
+const ROOTS = ["credentials", "assurance", "conformance", "controls", "model", "oasf", "odrl", "registry", "profiles", "common", "governance", "decision", "evidence", "validation"];
 const REQUIRED_TOP_LEVEL = ["$schema", "$id", "title", "description", "type"];
+const EXPECTED_NAMESPACE = "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/";
 
-function walk(dir, out=[]) {
+function walk(dir, out = []) {
+  if (!fs.existsSync(dir)) return out;
   for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
     const p = path.join(dir, ent.name);
     if (ent.isDirectory()) walk(p, out);
-    else if (ent.isFile() && (p.endsWith(".schema.json") || p.includes("/credentials/"))) out.push(p);
+    else if (ent.isFile() && (p.endsWith(".schema.json") || p.includes("/credentials/") || p === "profiles/ais1/schema.json")) out.push(p);
+  }
+  return out;
+}
+
+function walkAll(dir, out = []) {
+  for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
+    const p = path.join(dir, ent.name);
+    if (ent.isDirectory() && ![".git", "node_modules"].includes(ent.name)) walkAll(p, out);
+    else if (ent.isFile()) out.push(p);
   }
   return out;
 }
@@ -26,31 +36,49 @@ function load(p) {
 }
 
 let failed = false;
+function fail(msg) {
+  console.error(`LINT: ${msg}`);
+  failed = true;
+}
+
+const version = fs.existsSync("VERSION") ? fs.readFileSync("VERSION", "utf8").trim() : "";
+if (!version) fail("missing VERSION value");
+if (version && !fs.existsSync(`docs/releases/${version}.md`)) fail(`missing release document docs/releases/${version}.md`);
+
+for (const p of walkAll(".")) {
+  if (path.basename(p) === ".DS_Store") fail(`local-only artifact found: ${p}`);
+}
 
 for (const root of ROOTS) {
   const files = walk(root);
   for (const f of files) {
-    // Skip non-schema JSON under credentials if any appear in future.
     const obj = load(f);
 
     for (const k of REQUIRED_TOP_LEVEL) {
-      if (!(k in obj)) {
-        console.error(`LINT: missing '${k}' in ${f}`);
-        failed = true;
-      }
+      if (!(k in obj)) fail(`missing '${k}' in ${f}`);
     }
 
-    // Prefer explicit additionalProperties at the top-level object.
     if (obj.type === "object" && !("additionalProperties" in obj)) {
-      console.error(`LINT: missing top-level 'additionalProperties' in ${f}`);
-      failed = true;
+      fail(`missing top-level 'additionalProperties' in ${f}`);
     }
 
-    // Encourage non-empty descriptions.
     if (typeof obj.description === "string" && obj.description.trim().length < 10) {
-      console.error(`LINT: description too short in ${f}`);
-      failed = true;
+      fail(`description too short in ${f}`);
     }
+
+    if (obj.$id && !obj.$id.startsWith(EXPECTED_NAMESPACE)) {
+      fail(`unexpected $id namespace in ${f}: ${obj.$id}`);
+    }
+  }
+}
+
+const coverage = "validation/artifact-coverage.json";
+if (fs.existsSync(coverage)) {
+  const manifest = load(coverage);
+  for (const artifact of manifest.artifacts || []) {
+    if (artifact.schema && !fs.existsSync(artifact.schema)) fail(`coverage schema missing: ${artifact.schema}`);
+    for (const ex of artifact.examples || []) if (!fs.existsSync(ex)) fail(`coverage example missing: ${ex}`);
+    for (const doc of artifact.documentation || []) if (!fs.existsSync(doc)) fail(`coverage documentation missing: ${doc}`);
   }
 }
 

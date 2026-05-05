@@ -1,85 +1,51 @@
-# Roadmap (Schedule-Free)
+# Roadmap
 
-This roadmap captures the next logical increments for the **trust-infrastructure-schemas** repository as the canonical trust artifact layer. It intentionally does not include dates.
+**Last reviewed:** 2026-05-05  
+**Current release:** `v0.7.0`
 
-## Product direction
+The roadmap prioritizes adoption, validation, and governance interoperability over unconstrained schema expansion.
 
-The repository should do three things well:
+## Delivered in v0.7.0
 
-1. define the canonical machine-readable contracts that other repos can safely depend on
-2. keep shared semantics stable, especially Assurance Levels and artifact identifiers
-3. make cross-repo composition legible enough that implementers do not need tribal knowledge
+- Decision receipt schema, example, and documentation.
+- Hardened authority-boundary schema.
+- Evidence bundle manifest schema.
+- Registry entry schema.
+- Artifact coverage manifest and coverage schema.
+- Expanded CI/local validation for all major artifact families.
+- Refreshed README, documentation index, trust model, trust assumptions, taxonomy, cross-repo guidance, and release notes.
+- Repository hygiene improvements, including `.gitignore` and local-artifact cleanup.
 
-## Delivered foundations
+## Near-term backlog
 
-- Canonical Assurance Level model (`assurance/`)
-- Control registry and mappings (`controls/`)
-- Conformance declaration schema (`conformance/`)
-- Registry simulation artifacts (`registry/`)
-- Open Trust Artifact Model framing (`docs/open-trust-artifact-model.md`)
-- OASF artifact family for publication profiles, evaluation envelopes, and crosswalks (`oasf/`)
+### 1. Decision receipt interoperability profile
 
-## Next increments
+Define profiles for common relying-party contexts:
 
-### 1. Cross-repo composition pack
+- registry discovery;
+- credential acceptance;
+- agent identity-state reliance;
+- runtime delegation pre-check;
+- conformance certification acceptance.
 
-- show how a domain baseline declaration, an evidence bundle, and a verifier evaluation result compose end to end
-- make control identifier handling robust across repos and namespaces
-- publish an example registry entry that can carry downstream declarations without custom rewriting
+### 2. Evidence bundle integrity profile
 
-**Outcome:** downstream repos can compose through the canonical artifact layer without inventing local glue code.
+Add optional manifest-level integrity controls, including canonicalization expectations, bundle hash calculation, signature metadata, and detached-proof references.
 
-### 2. Stable identifier hygiene
+### 3. Authority boundary conformance tests
 
-- keep `$id` references aligned to the current repository name and release tags
-- document identifier update rules for minor vs major releases
-- make example artifacts useful as pinned references, not placeholder prose
+Add test fixtures that show valid and invalid authority boundaries, including revoked, stale, delegated, and out-of-scope examples.
 
-**Outcome:** implementers can pin contracts with less ambiguity and less drift.
+### 4. Registry publication profile
 
-### 3. Artifact family expansion
+Clarify the minimum artifact references that a registry entry should carry at AL2, AL3, and AL4.
 
-- add more explicit governance and policy artifact contracts where reuse pressure is high
-- keep those additions orthogonal so downstream repos can opt in without breaking older integrations
+### 5. Crosswalk hardening
 
-**Outcome:** the model grows by addition, not by semantic confusion.
+Extend OASF and control crosswalk examples to carry confidence, equivalence type, and review status.
 
-## Tracking philosophy
+## Deferred
 
-This roadmap is a living artifact. Items may move as downstream repos harden. The governing principle is simple: this repository should stay boring, dependable, and composable.
-
-
-### 4. A2A-bound trust artifact patterns
-
-- document how A2A Agent Card extensions can carry trust-artifact references without forcing domain baselines into a shared local vocabulary
-- identify which fields are generic reusable patterns, such as declaration references, evidence references, trust anchors, freshness, and authority boundaries
-- wait to promote those patterns into normative schemas until reuse pressure is visible across more than one downstream baseline
-
-**Outcome:** the canonical layer stays stable while remaining ready to generalize the right parts of A2A-bound trust descriptions.
-
-
-### 5. OASF profile hardening
-
-- observe reuse pressure across more downstream baselines before expanding OASF profile semantics
-- keep optional fields optional unless at least two independent downstream repos need the same stronger contract
-- publish cross-repo examples that show how OASF publication and evaluation artifacts flow through registry entries and declarations
-
-**Outcome:** OASF support grows as shared infrastructure, not as a dumping ground for downstream local fields.
-
-
-### 6. AIS-1 profile hardening
-
-- observe whether the current bonded-agent profile is reused beyond one downstream baseline before promoting more fields into common contracts
-- add registry examples that show how issuer trust, sponsor authority, and status policies can be distributed without inventing AIS-1-specific registry semantics
-- keep authority-boundary notes explicit so canonical schema consumers do not mistake identity state for delegated authority
-
-**Outcome:** AIS-1 remains reusable infrastructure input rather than repo-local schema folklore, while clearly staying marked experimental until the profile proves durable across more implementations.
-
-
-## Completed in the current increment
-
-- published a machine-readable cross-repo composition pack under `examples/composition/`
-- normalized stale and placeholder `$id` values to the current repository and stable release tag
-- documented identifier update rules in `docs/identifier-governance.md`
-- added reusable `artifact-reference` and `authority-boundary` contracts for downstream opt-in reuse
-- extended registry, conformance, OASF, and AIS-1 artifacts so authority boundaries and reusable artifact references can travel without local field invention
+- New domain-specific credential families unless they are backed by a clear adoption use case.
+- Runtime policy-engine implementation details.
+- Cryptographic proof format standardization beyond reference and integrity metadata.

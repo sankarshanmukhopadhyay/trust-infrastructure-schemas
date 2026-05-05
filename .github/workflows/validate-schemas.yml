@@ -27,66 +27,14 @@ jobs:
       - name: Install AJV CLI
         run: npm install -g ajv-cli@5
 
-      - name: Validate examples against schemas (DTG, Agent, Reputation)
+      - name: Validate all published artifact examples
         run: |
           set -euo pipefail
+          node tools/validate-conformance.js
 
-          for domain in dtg agent reputation; do
-            echo "== Validating domain: ${domain} =="
-            for f in credentials/${domain}/v1/*.json; do
-              base=$(basename "$f")
-              example="examples/${domain}/v1/${base%.json}.example.json"
-              if [ -f "$example" ]; then
-                echo "Validating $example against $f"
-                ajv validate -s "$f" -d "$example" --strict=false
-              else
-                echo "ERROR: no example found for $f (expected $example)"
-                exit 1
-              fi
-            done
-          done
-
-      - name: Validate conformance declaration example
+      - name: Lint schemas and release hygiene
         run: |
           set -euo pipefail
-          echo "== Validating conformance declaration =="
-          ajv validate -s conformance/conformance-declaration.schema.json -d conformance/examples/example-declaration.json --strict=false
-
-      - name: Validate controls registry
-        run: |
-          set -euo pipefail
-          echo "== Validating controls registry =="
-          ajv validate -s controls/controls.schema.json -d controls/controls.json --strict=false
-
-      - name: Validate assurance registry
-        run: |
-          set -euo pipefail
-          echo "== Validating assurance registry =="
-          ajv validate -s assurance/assurance.schema.json -d assurance/assurance-levels.json --strict=false
-
-      - name: Validate control-to-assurance matrix
-        run: |
-          set -euo pipefail
-          echo "== Validating control-to-assurance matrix =="
-          ajv validate -s controls/mappings/control-assurance-matrix.schema.json -d controls/mappings/control-assurance-matrix.json --strict=false
-
-      - name: Validate registry simulation
-        run: |
-          set -euo pipefail
-          echo "== Validating registry simulation =="
-          ajv validate -s registry/registry.schema.json -d registry/sample-registry.json --strict=false
-
-      - name: Validate reusable contracts
-        run: |
-          set -euo pipefail
-          echo "== Validating reusable contracts =="
-          ajv validate -s common/artifact-reference.schema.json -d common/examples/artifact-reference.example.json --strict=false
-          ajv validate -s governance/authority-boundary.schema.json -d governance/examples/authority-boundary.example.json --strict=false
-
-      - name: Lint schemas
-        run: |
-          set -euo pipefail
-          echo "== Linting schemas =="
           node tools/lint-schemas.js
 
       - name: Validate Mermaid diagrams

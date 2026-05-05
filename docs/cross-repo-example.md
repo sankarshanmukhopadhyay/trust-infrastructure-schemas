@@ -1,41 +1,56 @@
-# Cross-repo composition example
+# Cross-Repo Composition Example
 
-This note shows the intended layering across the current trust artifact stack.
+**Last reviewed:** 2026-05-05  
+**Release:** `v0.7.0`
 
-## The composition pattern
+The composition examples show how a domain baseline, evidence bundle, evaluator output, relying-party decision, and registry publication can use the same canonical artifact layer.
 
-1. **`trust-infrastructure-schemas`** defines the shared artifact contracts and canonical Assurance Level semantics.
-2. **A domain baseline** such as `agent-name-assurance-baseline` produces a domain-specific conformance declaration and evidence bundle.
-3. **A verifier method** such as DCAS evaluates that declaration and evidence using a repeatable workflow.
-4. **A registry or catalog** can index the resulting declaration and its assurance posture without needing to understand domain-specific prose.
+## Example files
 
-## Why this increment matters
+| Step | File | Schema |
+|---|---|---|
+| 1. Declaration | `examples/composition/domain-baseline-declaration.example.json` | `conformance/conformance-declaration.schema.json` |
+| 2. Evidence | `examples/composition/evidence-bundle-manifest.example.json` | `evidence/evidence-bundle-manifest.schema.json` |
+| 3. Evaluation | `examples/composition/verifier-evaluation.example.json` | `oasf/oasf-evaluation-envelope.schema.json` |
+| 4. Decision | `decision/examples/decision-receipt.example.json` | `decision/decision-receipt.schema.json` |
+| 5. Registry | `examples/composition/registry-entry.example.json` | `registry/registry-entry.schema.json` |
 
-The main interoperability risk was not schema syntax. It was control identifier drift across repositories. Some artifacts assumed only `SC-*` control IDs. That made the canonical layer unnecessarily narrow, because downstream baselines use their own namespaces such as `ANAGB-*`.
+## Flow
 
-This release removes that bottleneck for the registry and generic conformance declaration artifacts. The shared layer now accepts namespaced control identifiers so downstream assurance packs can travel without lossy translation.
+```text
+Domain baseline declaration
+        ↓
+Evidence bundle manifest
+        ↓
+Verifier evaluation envelope
+        ↓
+Decision receipt
+        ↓
+Registry entry
+```
 
-## Example
+## Why this matters
 
-See `registry/sample-registry.json` for an illustrative entry showing how a registry can carry a declaration emitted by a downstream baseline while still preserving the canonical Assurance Level vocabulary.
+The flow separates five governance functions that are often collapsed into one narrative claim:
 
-## Practical takeaway
+1. **Declaration** says what the implementer claims.
+2. **Evidence** lists the artifacts supporting the claim.
+3. **Evaluation** records the verifier’s assessment.
+4. **Decision** records the relying-party or verifier outcome under a policy.
+5. **Registry** publishes discoverable state and references.
 
-The canonical layer should standardize **how trust artifacts travel**, not force every downstream baseline to collapse into one local control namespace.
+This separation improves auditability because each step has its own artifact and authority boundary.
 
+## Authority and delegation
 
-## ANAB-over-A2A follow-on
+The composition example is deliberately conservative. The registry entry makes the agent discoverable. The decision receipt may accept identity-state reliance. Neither artifact automatically grants runtime task delegation. Runtime delegation remains a separate control-plane decision.
 
-With the new ANAB-over-A2A binding, the composition chain can now include an Agent Card that carries references to a declaration, evidence bundle, card-binding material, and trust-anchor metadata. The canonical repo does not need to own the ANAB schema to make this legible. It needs to make clear that these are recognizable trust-artifact patterns traveling through the stack.
+## Validation
 
+The examples are validated by:
 
-## Machine-readable composition pack
+```bash
+node tools/validate-conformance.js
+```
 
-This repository now also carries a concrete composition pack under `examples/composition/`:
-
-- `domain-baseline-declaration.example.json`
-- `evidence-bundle-manifest.example.json`
-- `verifier-evaluation.example.json`
-- `registry-entry.example.json`
-
-The pack is intentionally boring. It shows how a downstream baseline declaration, an evidence bundle, a verifier result, and a registry entry can travel together through the canonical layer while preserving namespaced controls, artifact references, and explicit authority boundaries.
+Coverage is recorded in `validation/artifact-coverage.json`.

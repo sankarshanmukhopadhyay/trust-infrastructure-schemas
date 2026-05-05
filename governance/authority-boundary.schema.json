@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.6.0/governance/authority-boundary.schema.json",
+  "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.7.0/governance/authority-boundary.schema.json",
   "title": "Authority Boundary Statement",
-  "description": "Reusable contract for stating what an artifact does and does not authorize, who stands behind it, and where revocation or override authority lives.",
+  "description": "Reusable contract for stating what an artifact authorizes, what it does not authorize, who is authoritative for the claim, which delegation or revocation controls apply, and what relying-party actions remain outside scope.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -11,20 +11,137 @@
   "properties": {
     "statement": {
       "type": "string",
-      "minLength": 10
+      "minLength": 10,
+      "description": "Human-readable boundary statement. This should identify the operational claim and its limits."
+    },
+    "authority_type": {
+      "type": "string",
+      "enum": [
+        "issuer",
+        "registry",
+        "verifier",
+        "sponsor",
+        "controller",
+        "delegate",
+        "auditor",
+        "policy_authority",
+        "trust_anchor",
+        "other"
+      ],
+      "description": "Role of the party asserting or maintaining the boundary."
     },
     "authoritative_party": {
-      "type": "string"
+      "type": "string",
+      "description": "Party considered authoritative for the bounded claim."
+    },
+    "authority_id": {
+      "type": "string",
+      "description": "Stable identifier for the authoritative party, such as a DID, URI, registry identifier, or organizational identifier."
     },
     "delegation_required": {
-      "type": "boolean"
+      "type": "boolean",
+      "description": "Whether a separate delegation artifact is required before relying parties may treat this artifact as authorizing action."
+    },
+    "delegation_chain": {
+      "type": "array",
+      "description": "Optional ordered references to delegation artifacts or authorities used to establish scope.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "delegate",
+          "scope"
+        ],
+        "properties": {
+          "delegate": {
+            "type": "string"
+          },
+          "delegator": {
+            "type": "string"
+          },
+          "scope": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "artifact_uri": {
+            "type": "string",
+            "format": "uri"
+          },
+          "valid_from": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "valid_until": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "active",
+              "suspended",
+              "revoked",
+              "expired",
+              "unknown"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
     },
     "revocation_actor": {
-      "type": "string"
+      "type": "string",
+      "description": "Party capable of revoking, suspending, or overriding the bounded claim."
     },
     "revocation_uri": {
       "type": "string",
-      "format": "uri"
+      "format": "uri",
+      "description": "Machine-readable location for status, revocation, or suspension checks."
+    },
+    "revocation": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Structured revocation and status-check requirements for the boundary.",
+      "properties": {
+        "revocation_actor": {
+          "type": "string"
+        },
+        "revocation_uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "status_check_required": {
+          "type": "boolean"
+        },
+        "fresh_until": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "status_values": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "active",
+              "suspended",
+              "revoked",
+              "expired",
+              "unknown"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
     },
     "scope": {
       "type": "array",
@@ -32,7 +149,99 @@
         "type": "string",
         "minLength": 1
       },
+      "uniqueItems": true,
+      "description": "Scope labels for the boundary."
+    },
+    "scope_constraints": {
+      "type": "array",
+      "description": "Structured constraints limiting how the artifact may be relied upon.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "constraint"
+        ],
+        "properties": {
+          "constraint": {
+            "type": "string"
+          },
+          "applies_to": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "evidence_required": {
+            "type": "boolean"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "relying_party_constraints": {
+      "type": "array",
+      "description": "Operational constraints a relying party must observe before acting on the artifact.",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
       "uniqueItems": true
+    },
+    "evidence_references": {
+      "type": "array",
+      "description": "Artifact references supporting this boundary assertion.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "uri"
+        ],
+        "properties": {
+          "uri": {
+            "type": "string",
+            "format": "uri"
+          },
+          "media_type": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-fA-F0-9]{64}$"
+          },
+          "issued_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "fresh_until": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "schema_uri": {
+            "type": "string",
+            "format": "uri"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "declaration",
+              "evidence",
+              "evaluation",
+              "policy",
+              "binding",
+              "decision",
+              "receipt",
+              "other"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
     },
     "notes": {
       "type": "string"
