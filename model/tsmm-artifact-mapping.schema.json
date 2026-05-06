@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.8.0/model/tsmm-artifact-mapping.schema.json",
+  "title": "TSMM Artifact Mapping",
+  "description": "Machine-readable mapping from TSMM semantic concepts to Trust Infrastructure Schemas executable artifact contracts.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "mapping_id",
+    "version",
+    "semantic_model",
+    "artifact_contract_layer",
+    "mappings"
+  ],
+  "properties": {
+    "mapping_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "semantic_model": {
+      "type": "string",
+      "const": "TSMM"
+    },
+    "artifact_contract_layer": {
+      "type": "string",
+      "const": "trust-infrastructure-schemas"
+    },
+    "canonical_layering": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "mappings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "tsmm_concept",
+          "tis_artifact",
+          "mapping_strength",
+          "rule"
+        ],
+        "properties": {
+          "tsmm_concept": {
+            "type": "string"
+          },
+          "tis_artifact": {
+            "type": "string"
+          },
+          "schema_path": {
+            "type": "string"
+          },
+          "mapping_strength": {
+            "type": "string",
+            "enum": [
+              "strong",
+              "moderate",
+              "weak"
+            ]
+          },
+          "rule": {
+            "type": "string"
+          },
+          "evidence_produced": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "non_equivalence_rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "$schema": {
+      "type": "string"
+    }
+  }
+}

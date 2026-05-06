@@ -49,3 +49,9 @@ Extend OASF and control crosswalk examples to carry confidence, equivalence type
 - New domain-specific credential families unless they are backed by a clear adoption use case.
 - Runtime policy-engine implementation details.
 - Cryptographic proof format standardization beyond reference and integrity metadata.
+
+## vNext alignment priorities
+
+- Promote the TSMM artifact mapping from candidate to supported after implementation feedback.
+- Add transform tooling from TSMM graph references to TIS authority boundary and decision receipt drafts.
+- Add richer negative examples for registry-publication-is-not-authorization cases.

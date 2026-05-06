@@ -31,7 +31,7 @@
           "media_type": "application/json",
           "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
           "role": "decision",
-          "schema_uri": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.7.0/decision/decision-receipt.schema.json",
+          "schema_uri": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.8.0/decision/decision-receipt.schema.json",
           "notes": "Decision receipt produced after declaration, evidence bundle, and OASF evaluation envelope were evaluated."
         }
       ]
@@ -89,7 +89,7 @@
         {
           "type": "odrl_policy_reference",
           "reference": "https://example.invalid/odrl/example-agent-beta-disclosure.json",
-          "schema": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.7.0/odrl/odrl-policy-reference.schema.json",
+          "schema": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.8.0/odrl/odrl-policy-reference.schema.json",
           "notes": "Optional machine-readable policy reference for metadata disclosure conditions."
         }
       ],
@@ -117,7 +117,7 @@
           "media_type": "application/json",
           "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
           "role": "decision",
-          "schema_uri": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.7.0/decision/decision-receipt.schema.json",
+          "schema_uri": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.8.0/decision/decision-receipt.schema.json",
           "notes": "Decision receipt produced after declaration, evidence bundle, and OASF evaluation envelope were evaluated."
         }
       ],

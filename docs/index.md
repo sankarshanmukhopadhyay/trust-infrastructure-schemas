@@ -54,3 +54,12 @@ The repository now includes validated schemas and examples for:
 - `releases/v0.4.0.md`
 - `releases/v0.3.0.md`
 - `releases/v0.2.1.md`
+
+## TSMM alignment
+
+- [TSMM alignment](tsmm-alignment.md)
+- [TSMM decision receipt profile](tsmm-decision-receipt-profile.md)
+- [Authority boundary TSMM profile](authority-boundary-tsmm-profile.md)
+- [TSMM evidence alignment](tsmm-evidence-alignment.md)
+- [TSMM registry alignment](tsmm-registry-alignment.md)
+- [TSMM executable artifact walkthrough](tsmm-executable-artifact-walkthrough.md)

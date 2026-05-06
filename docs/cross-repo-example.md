@@ -54,3 +54,7 @@ node tools/validate-conformance.js
 ```
 
 Coverage is recorded in `validation/artifact-coverage.json`.
+
+## v0.8.0 TSMM-aligned composition
+
+A full TSMM-aligned runtime decision composition is available at `examples/composition/tsmm-aligned/`. It demonstrates authority boundary, evidence bundle, evaluation envelope, decision receipt, and registry entry artifacts connected into one audit chain.

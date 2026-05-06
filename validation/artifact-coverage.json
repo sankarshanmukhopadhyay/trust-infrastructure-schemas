@@ -1,5 +1,5 @@
 {
-  "release": "v0.7.0",
+  "release": "v0.8.0",
   "generated_at": "2026-05-05T00:00:00Z",
   "artifacts": [
     {
@@ -292,6 +292,86 @@
       "documentation": [
         "decision/README.md",
         "docs/decision-receipts.md"
+      ],
+      "validated_by": [
+        ".github/workflows/validate-schemas.yml",
+        "tools/validate-conformance.js"
+      ]
+    },
+    {
+      "artifact_id": "tsmm-artifact-mapping",
+      "status": "implemented",
+      "schema": "model/tsmm-artifact-mapping.schema.json",
+      "examples": [
+        "model/tsmm-artifact-mapping.json"
+      ],
+      "documentation": [
+        "docs/tsmm-alignment.md"
+      ],
+      "validated_by": [
+        ".github/workflows/validate-schemas.yml",
+        "tools/validate-conformance.js"
+      ]
+    },
+    {
+      "artifact_id": "tsmm-aligned-authority-boundary",
+      "status": "implemented",
+      "schema": "governance/authority-boundary.schema.json",
+      "examples": [
+        "governance/examples/tsmm-derived-authority-boundary.example.json",
+        "examples/composition/tsmm-aligned/01-authority-boundary.example.json"
+      ],
+      "documentation": [
+        "docs/authority-boundary-tsmm-profile.md"
+      ],
+      "validated_by": [
+        ".github/workflows/validate-schemas.yml",
+        "tools/validate-conformance.js"
+      ]
+    },
+    {
+      "artifact_id": "tsmm-aligned-evidence-bundle",
+      "status": "implemented",
+      "schema": "evidence/evidence-bundle-manifest.schema.json",
+      "examples": [
+        "evidence/examples/tsmm-evidence-bundle-manifest.example.json",
+        "examples/composition/tsmm-aligned/02-evidence-bundle-manifest.example.json"
+      ],
+      "documentation": [
+        "docs/tsmm-evidence-alignment.md"
+      ],
+      "validated_by": [
+        ".github/workflows/validate-schemas.yml",
+        "tools/validate-conformance.js"
+      ]
+    },
+    {
+      "artifact_id": "tsmm-mapped-decision-receipt",
+      "status": "implemented",
+      "schema": "decision/decision-receipt.schema.json",
+      "examples": [
+        "decision/examples/tsmm-mapped-decision-receipt.example.json",
+        "examples/composition/tsmm-aligned/04-decision-receipt.example.json"
+      ],
+      "documentation": [
+        "docs/tsmm-decision-receipt-profile.md"
+      ],
+      "validated_by": [
+        ".github/workflows/validate-schemas.yml",
+        "tools/validate-conformance.js"
+      ]
+    },
+    {
+      "artifact_id": "tsmm-derived-registry-entry",
+      "status": "implemented",
+      "schema": "registry/registry-entry.schema.json",
+      "examples": [
+        "registry/examples/tsmm-derived-registry-entry.example.json",
+        "examples/composition/tsmm-aligned/05-registry-entry.example.json"
+      ],
+      "documentation": [
+        "docs/tsmm-registry-alignment.md",
+        "docs/tsmm-executable-artifact-walkthrough.md"
       ],
       "validated_by": [
         ".github/workflows/validate-schemas.yml",

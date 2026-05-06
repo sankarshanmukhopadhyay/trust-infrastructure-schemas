@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.7.0/evidence/evidence-bundle-manifest.schema.json",
+  "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.8.0/evidence/evidence-bundle-manifest.schema.json",
   "title": "Evidence Bundle Manifest",
   "description": "Reusable manifest for listing evidence artifacts evaluated in a conformance or trust decision flow.",
   "type": "object",

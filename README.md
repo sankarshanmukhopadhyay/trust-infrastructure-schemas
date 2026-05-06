@@ -1,7 +1,7 @@
 # Trust Infrastructure Schemas
 
-**Current release:** `v0.7.0`  
-**Release theme:** Executable Governance Contract Pack and Validation Hardening  
+**Current release:** `v0.8.0`  
+**Release theme:** TSMM Alignment Profile and Cross-Repo Artifact Interoperability  
 **Last reviewed:** 2026-05-05
 
 This repository publishes canonical **machine-readable trust artifacts** for operational digital trust infrastructure.
@@ -23,30 +23,47 @@ Most trust ecosystems still depend on websites, PDFs, and narrative governance. 
 
 `trust-infrastructure-schemas` provides the artifact layer for those questions.
 
-## What changed in v0.7.0
+## What changed in v0.8.0
 
-`v0.7.0` turns the repository into a stronger executable-governance contract pack.
+`v0.8.0` turns the repository into a TSMM-aligned executable-governance artifact layer.
 
 Major changes:
 
-- added first-class **decision receipt** schema, example, and documentation;
-- hardened the **authority boundary** contract with structured delegation, scope, revocation, relying-party constraint, and evidence-reference metadata;
-- added an **evidence bundle manifest** schema for composition examples;
-- added a reusable **registry entry** schema;
-- added a machine-readable **artifact coverage manifest**;
-- expanded CI/local validation to cover all major artifact families;
-- refreshed documentation, release notes, roadmap, and cross-repo implementation guidance;
-- cleaned repository hygiene and release traceability.
+- added a machine-readable **TSMM artifact mapping** schema and mapping instance;
+- added TSMM alignment documentation for authority, evidence, decision receipts, registries, and executable artifact composition;
+- added a complete **TSMM-aligned runtime decision composition pack**;
+- validated TSMM-derived authority boundary, evidence bundle, evaluation envelope, decision receipt, and registry entry examples;
+- updated schema identifiers and artifact references to v0.8.0;
+- removed stale local-only artifacts and refreshed release traceability.
 
 ## Canonical governance flow
 
 The recommended cross-repo flow is now:
 
 ```text
-Declaration -> Evidence Bundle -> Evaluation Envelope -> Decision Receipt -> Registry Entry
+TSMM Model -> Authority Boundary -> Evidence Bundle -> Evaluation Envelope -> Decision Receipt -> Registry Entry
 ```
 
 This makes the trust lifecycle auditable. A registry entry can point to a declaration. The declaration can point to evidence. The evidence can be evaluated. The evaluation can support a decision receipt. The decision receipt can record the policy, authority boundary, and relying-party result.
+
+
+## TSMM alignment
+
+This repository is now explicitly aligned with the Trust Systems Meta Model (TSMM):
+
+```text
+TSMM = semantic model and cross-ecosystem grammar
+TIS  = canonical executable artifact contracts
+```
+
+Key artifacts:
+
+- Alignment guide: `docs/tsmm-alignment.md`
+- Mapping schema: `model/tsmm-artifact-mapping.schema.json`
+- Mapping instance: `model/tsmm-artifact-mapping.json`
+- Decision receipt profile: `docs/tsmm-decision-receipt-profile.md`
+- Executable walkthrough: `docs/tsmm-executable-artifact-walkthrough.md`
+- Composition pack: `examples/composition/tsmm-aligned/`
 
 ## Artifact families
 

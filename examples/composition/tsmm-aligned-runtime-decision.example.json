@@ -1,0 +1,15 @@
+{
+  "composition_id": "tsmm-aligned-runtime-decision-001",
+  "version": "v0.8.0",
+  "flow": [
+    "01-authority-boundary.example.json",
+    "02-evidence-bundle-manifest.example.json",
+    "03-evaluation-envelope.example.json",
+    "04-decision-receipt.example.json",
+    "05-registry-entry.example.json"
+  ],
+  "semantic_model": "TSMM v0.20.0",
+  "artifact_contract_layer": "trust-infrastructure-schemas v0.8.0",
+  "decision_summary": "Allow submit-status-update; prohibit payment, registry modification, and onward delegation.",
+  "audit_pivot": "04-decision-receipt.example.json"
+}

@@ -1,0 +1,110 @@
+{
+  "implementer_id": "example.agent.beta",
+  "display_name": "Example Agent Beta",
+  "declaration": {
+    "url": "https://example.invalid/tis/declarations/agent-beta.json",
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "assurance_level": "AL3",
+  "control_namespace": "TSMM-TIS",
+  "controls": [
+    "AUTH-BOUNDARY-01",
+    "EVID-BUNDLE-01",
+    "DECISION-RECEIPT-01"
+  ],
+  "scope": {
+    "baseline": "tsmm-tis-agent-reliance-baseline",
+    "verification_tier": "AL3",
+    "conformance_profile": "TSMM-TIS cross-repo composition"
+  },
+  "artifacts": [
+    {
+      "uri": "https://example.invalid/tis/authority/agent-beta-boundary.json",
+      "media_type": "application/json",
+      "sha256": "4444444444444444444444444444444444444444444444444444444444444444",
+      "role": "evidence",
+      "schema_uri": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.8.0/governance/authority-boundary.schema.json"
+    },
+    {
+      "uri": "https://example.invalid/tis/evidence/agent-beta-bundle.json",
+      "media_type": "application/json",
+      "sha256": "6666666666666666666666666666666666666666666666666666666666666666",
+      "role": "evidence"
+    },
+    {
+      "uri": "https://example.invalid/tis/evaluations/agent-beta.json",
+      "media_type": "application/json",
+      "sha256": "8888888888888888888888888888888888888888888888888888888888888888",
+      "role": "evaluation"
+    },
+    {
+      "uri": "https://example.invalid/tis/decisions/agent-beta-decision.json",
+      "media_type": "application/json",
+      "sha256": "9999999999999999999999999999999999999999999999999999999999999999",
+      "role": "decision",
+      "schema_uri": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.8.0/decision/decision-receipt.schema.json",
+      "notes": "TSMM-mapped runtime trust decision receipt."
+    }
+  ],
+  "authority_boundary": {
+    "statement": "TSMM authority edge sponsor-to-agent-beta permits identity-state reliance only; runtime task authority remains scope-limited and revocation-sensitive.",
+    "authority_type": "sponsor",
+    "authoritative_party": "Example Sponsor Authority",
+    "authority_id": "did:web:example.invalid:sponsor-authority",
+    "delegation_required": true,
+    "delegation_chain": [
+      {
+        "delegator": "Example Sponsor Authority",
+        "delegate": "Example Agent Beta",
+        "scope": [
+          "identity-state",
+          "submit-status-update"
+        ],
+        "artifact_uri": "https://example.invalid/tsmm/authority/sponsor-to-agent-beta.json",
+        "valid_from": "2026-05-05T00:00:00Z",
+        "valid_until": "2026-06-05T00:00:00Z",
+        "status": "active"
+      }
+    ],
+    "revocation_actor": "Example Sponsor Authority",
+    "revocation_uri": "https://example.invalid/agents/beta/revocation",
+    "revocation": {
+      "revocation_actor": "Example Sponsor Authority",
+      "revocation_uri": "https://example.invalid/agents/beta/revocation",
+      "status_check_required": true,
+      "fresh_until": "2026-05-06T00:00:00Z",
+      "status_values": [
+        "active",
+        "suspended",
+        "revoked"
+      ]
+    },
+    "scope": [
+      "identity-state",
+      "submit-status-update"
+    ],
+    "scope_constraints": [
+      {
+        "constraint": "The boundary does not authorize payments, registry modification, or onward delegation.",
+        "applies_to": [
+          "runtime-effect",
+          "delegation"
+        ],
+        "evidence_required": true
+      }
+    ],
+    "relying_party_constraints": [
+      "Check revocation status before reuse.",
+      "Reject requests outside the submit-status-update scope."
+    ],
+    "evidence_references": [
+      {
+        "uri": "https://example.invalid/tis/evidence/agent-beta-bundle.json",
+        "media_type": "application/json",
+        "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+        "role": "evidence"
+      }
+    ],
+    "notes": "Derived from TSMM authority graph edge sponsor-to-agent-beta."
+  }
+}

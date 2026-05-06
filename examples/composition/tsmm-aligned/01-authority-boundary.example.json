@@ -1,0 +1,61 @@
+{
+  "statement": "TSMM authority edge sponsor-to-agent-beta permits identity-state reliance only; runtime task authority remains scope-limited and revocation-sensitive.",
+  "authority_type": "sponsor",
+  "authoritative_party": "Example Sponsor Authority",
+  "authority_id": "did:web:example.invalid:sponsor-authority",
+  "delegation_required": true,
+  "delegation_chain": [
+    {
+      "delegator": "Example Sponsor Authority",
+      "delegate": "Example Agent Beta",
+      "scope": [
+        "identity-state",
+        "submit-status-update"
+      ],
+      "artifact_uri": "https://example.invalid/tsmm/authority/sponsor-to-agent-beta.json",
+      "valid_from": "2026-05-05T00:00:00Z",
+      "valid_until": "2026-06-05T00:00:00Z",
+      "status": "active"
+    }
+  ],
+  "revocation_actor": "Example Sponsor Authority",
+  "revocation_uri": "https://example.invalid/agents/beta/revocation",
+  "revocation": {
+    "revocation_actor": "Example Sponsor Authority",
+    "revocation_uri": "https://example.invalid/agents/beta/revocation",
+    "status_check_required": true,
+    "fresh_until": "2026-05-06T00:00:00Z",
+    "status_values": [
+      "active",
+      "suspended",
+      "revoked"
+    ]
+  },
+  "scope": [
+    "identity-state",
+    "submit-status-update"
+  ],
+  "scope_constraints": [
+    {
+      "constraint": "The boundary does not authorize payments, registry modification, or onward delegation.",
+      "applies_to": [
+        "runtime-effect",
+        "delegation"
+      ],
+      "evidence_required": true
+    }
+  ],
+  "relying_party_constraints": [
+    "Check revocation status before reuse.",
+    "Reject requests outside the submit-status-update scope."
+  ],
+  "evidence_references": [
+    {
+      "uri": "https://example.invalid/tis/evidence/agent-beta-bundle.json",
+      "media_type": "application/json",
+      "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+      "role": "evidence"
+    }
+  ],
+  "notes": "Derived from TSMM authority graph edge sponsor-to-agent-beta."
+}

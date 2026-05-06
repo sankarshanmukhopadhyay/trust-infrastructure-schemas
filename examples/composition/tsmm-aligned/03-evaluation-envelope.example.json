@@ -1,0 +1,58 @@
+{
+  "evaluation_id": "tsmm-aligned-eval-agent-beta-001",
+  "subject_ref": {
+    "subject_id": "did:web:example.invalid:agents:beta",
+    "publication_profile_uri": "https://example.invalid/oasf/profile/agent-beta.json",
+    "declaration_uri": "https://example.invalid/tis/declarations/agent-beta.json"
+  },
+  "evaluator": {
+    "name": "Example Relying Party Evaluator",
+    "engine": "tis-reference-validator",
+    "run_uri": "https://example.invalid/evaluations/agent-beta/tsmm-aligned-001",
+    "generated_at": "2026-05-05T00:10:00Z"
+  },
+  "result": {
+    "status": "pass",
+    "summary": "Authority boundary, evidence bundle, and revocation freshness satisfy policy for submit-status-update only."
+  },
+  "assurance": {
+    "assurance_level": "AL3",
+    "controls_checked": [
+      "AUTH-BOUNDARY-01",
+      "EVID-BUNDLE-01",
+      "DECISION-RECEIPT-01"
+    ],
+    "control_mapping_ref": "https://example.invalid/tis/controls/tsmm-aligned-control-map.json"
+  },
+  "evidence": {
+    "bundle_uri": "https://example.invalid/tis/evidence/agent-beta-bundle.json",
+    "artifacts": [
+      "https://example.invalid/tis/evidence/agent-beta-bundle.json"
+    ],
+    "sha256": "6666666666666666666666666666666666666666666666666666666666666666"
+  },
+  "semantic_bindings": [
+    {
+      "model": "TSMM",
+      "entity_id": "TrustDecision",
+      "binding_uri": "https://example.invalid/tsmm/bindings/tis/tsmm-tis-binding.json"
+    },
+    {
+      "model": "TSMM",
+      "entity_id": "Effect",
+      "binding_uri": "https://example.invalid/tsmm/examples/cross-repo/trust-decision-system.graph.json#decision-produces-effect"
+    }
+  ],
+  "authority_boundary": {
+    "statement": "TSMM authority edge sponsor-to-agent-beta permits identity-state reliance only; runtime task authority remains scope-limited and revocation-sensitive.",
+    "authoritative_party": "Example Sponsor Authority",
+    "delegation_required": true,
+    "revocation_actor": "Example Sponsor Authority",
+    "revocation_uri": "https://example.invalid/agents/beta/revocation",
+    "scope": [
+      "identity-state",
+      "submit-status-update"
+    ],
+    "notes": "Derived from TSMM authority graph edge sponsor-to-agent-beta."
+  }
+}

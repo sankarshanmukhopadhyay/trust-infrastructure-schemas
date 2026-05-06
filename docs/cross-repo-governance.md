@@ -39,3 +39,7 @@ Downstream repositories SHOULD produce artifacts that can be referenced by the c
 ## Revocation principle
 
 Any operational reliance flow SHOULD preserve enough metadata to check revocation or status before reuse. Authority-boundary metadata and decision receipts are the primary carriers for this requirement in `v0.7.0`.
+
+## v0.8.0 TSMM alignment
+
+The cross-repo governance model now treats TSMM as the semantic model layer and this repository as the executable artifact contract layer. Cross-repo implementations SHOULD preserve TSMM concept references in TIS artifacts where those references support auditability, conformance, or interoperability.

@@ -21,7 +21,7 @@
     ],
     "schemas": [
       {
-        "id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.7.0/profiles/ais1/schema.json",
+        "id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.8.0/profiles/ais1/schema.json",
         "path": "profiles/ais1/schema.json",
         "notes": "Experimental AIS-1 profile reused as the bonded-agent identity input."
       }
@@ -93,7 +93,7 @@
       "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
       "issued_at": "2026-03-25T00:05:00Z",
       "fresh_until": "2026-04-01T00:00:00Z",
-      "schema_uri": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.7.0/decision/decision-receipt.schema.json",
+      "schema_uri": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.8.0/decision/decision-receipt.schema.json",
       "role": "decision",
       "notes": "Relying-party receipt generated after declaration, evidence, and evaluation were checked."
     }

@@ -80,6 +80,18 @@ try {
   validate("model/trust-artifact-taxonomy.schema.json", "model/trust-artifact-taxonomy.json", "trust artifact taxonomy");
   validate("decision/decision-receipt.schema.json", "decision/examples/decision-receipt.example.json", "decision receipt example");
   validate("conformance/conformance-declaration.schema.json", "examples/composition/domain-baseline-declaration.example.json", "composition domain baseline declaration");
+
+  validate("model/tsmm-artifact-mapping.schema.json", "model/tsmm-artifact-mapping.json", "TSMM artifact mapping");
+  validate("governance/authority-boundary.schema.json", "governance/examples/tsmm-derived-authority-boundary.example.json", "TSMM-derived authority boundary example");
+  validate("evidence/evidence-bundle-manifest.schema.json", "evidence/examples/tsmm-evidence-bundle-manifest.example.json", "TSMM evidence bundle manifest example");
+  validate("oasf/oasf-evaluation-envelope.schema.json", "examples/composition/tsmm-aligned/03-evaluation-envelope.example.json", "TSMM-aligned evaluation envelope example");
+  validate("decision/decision-receipt.schema.json", "decision/examples/tsmm-mapped-decision-receipt.example.json", "TSMM-mapped decision receipt example");
+  validate("registry/registry-entry.schema.json", "registry/examples/tsmm-derived-registry-entry.example.json", "TSMM-derived registry entry example");
+  validate("governance/authority-boundary.schema.json", "examples/composition/tsmm-aligned/01-authority-boundary.example.json", "TSMM composition authority boundary");
+  validate("evidence/evidence-bundle-manifest.schema.json", "examples/composition/tsmm-aligned/02-evidence-bundle-manifest.example.json", "TSMM composition evidence bundle");
+  validate("decision/decision-receipt.schema.json", "examples/composition/tsmm-aligned/04-decision-receipt.example.json", "TSMM composition decision receipt");
+  validate("registry/registry-entry.schema.json", "examples/composition/tsmm-aligned/05-registry-entry.example.json", "TSMM composition registry entry");
+
   validateCoverageManifest();
 
   console.log("OK");

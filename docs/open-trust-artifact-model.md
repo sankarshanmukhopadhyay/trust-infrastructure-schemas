@@ -56,3 +56,7 @@ Evidence is represented through reusable artifact references, evidence bundle ma
 ## Experimental profiles
 
 Experimental artifacts, such as the AIS-1 profile and ODRL policy reference, are included to support cross-repo normalization. Experimental status means that the artifact is validated and documented but still subject to semantic refinement.
+
+## TSMM alignment role
+
+The Open Trust Artifact Model is the executable artifact layer for TSMM-aligned governance. TSMM supplies semantic meaning; this model supplies schema-constrained artifacts that can be validated, published, preserved, and audited.

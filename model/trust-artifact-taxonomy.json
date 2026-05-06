@@ -199,6 +199,19 @@
           "status": "implemented"
         }
       ]
+    },
+    {
+      "id": "semantic-mapping-artifacts",
+      "name": "Semantic Mapping Artifacts",
+      "description": "Artifacts that bind external semantic models to executable trust infrastructure schemas.",
+      "artifacts": [
+        {
+          "name": "TSMM artifact mapping",
+          "path": "model/tsmm-artifact-mapping.json",
+          "status": "implemented",
+          "notes": "Maps TSMM semantic concepts to TIS executable artifact contracts."
+        }
+      ]
     }
   ]
 }
