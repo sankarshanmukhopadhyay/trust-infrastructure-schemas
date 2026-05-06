@@ -1,7 +1,7 @@
 # Trust Model
 
 **Last reviewed:** 2026-05-05  
-**Current release:** `v0.7.0`
+**Current release:** `v0.9.0`
 
 The trust model for this repository is based on bounded authority, explicit evidence, machine-readable assurance, and auditable decisions.
 

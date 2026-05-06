@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.9.0/profiles/openvtc/openvtc-profile.schema.json",
+  "title": "OpenVTC Runtime Profile",
+  "description": "Top-level OpenVTC runtime profile binding persona DID, relationship state, VRC issuance, configuration evidence, and DIDComm routing evidence.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "profile_id",
+    "persona_did",
+    "assurance_level",
+    "last_verified_at"
+  ],
+  "properties": {
+    "profile_id": {
+      "type": "string"
+    },
+    "persona_did": {
+      "type": "string",
+      "pattern": "^did:[a-z0-9]+:[A-Za-z0-9.\\-_:%]+$"
+    },
+    "relationship_state_ref": {
+      "type": "string"
+    },
+    "vrc_issuance_ref": {
+      "type": "string"
+    },
+    "configuration_evidence_ref": {
+      "type": "string"
+    },
+    "didcomm_routing_ref": {
+      "type": "string"
+    },
+    "assurance_level": {
+      "type": "string",
+      "enum": [
+        "AL1",
+        "AL2",
+        "AL3",
+        "AL4"
+      ]
+    },
+    "last_verified_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

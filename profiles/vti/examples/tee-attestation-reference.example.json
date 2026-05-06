@@ -1,0 +1,9 @@
+{
+  "attestation_id": "attest-001",
+  "environment": "aws-nitro",
+  "measurement_digest": "sha256:mockmeasurementdigest",
+  "attestation_document_ref": "urn:evidence:nitro-attestation-doc-001",
+  "verified_at": "2026-05-06T00:00:00Z",
+  "verifier": "did:web:auditor.example",
+  "result": "verified"
+}

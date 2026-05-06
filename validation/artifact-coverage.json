@@ -1,6 +1,6 @@
 {
-  "release": "v0.8.0",
-  "generated_at": "2026-05-05T00:00:00Z",
+  "release": "v0.9.0",
+  "generated_at": "2026-05-06T00:00:00Z",
   "artifacts": [
     {
       "artifact_id": "dtg-credentials",
@@ -375,6 +375,150 @@
       ],
       "validated_by": [
         ".github/workflows/validate-schemas.yml",
+        "tools/validate-conformance.js"
+      ]
+    },
+    {
+      "artifact_id": "dtg-vc-envelope",
+      "status": "experimental",
+      "schema": "credentials/dtg/v1/dtg-vc-envelope.json",
+      "examples": [
+        "examples/dtg/v1/dtg-vc-envelope.example.json"
+      ],
+      "documentation": [
+        "docs/dtg-compatibility-profile.md",
+        "upstream/dtg-credentials.md"
+      ],
+      "validated_by": [
+        "tools/validate-conformance.js",
+        ".github/workflows/validate-schemas.yml"
+      ]
+    },
+    {
+      "artifact_id": "dtg-personhood-membership-profile",
+      "status": "experimental",
+      "schema": "credentials/dtg/v1/personhood-membership-profile.json",
+      "examples": [
+        "examples/dtg/v1/personhood-membership-profile.example.json"
+      ],
+      "documentation": [
+        "docs/dtg-compatibility-profile.md"
+      ],
+      "validated_by": [
+        "tools/validate-conformance.js"
+      ]
+    },
+    {
+      "artifact_id": "dtg-relationship-card-profile",
+      "status": "experimental",
+      "schema": "credentials/dtg/v1/rcard-credential.json",
+      "examples": [
+        "examples/dtg/v1/rcard-credential.example.json"
+      ],
+      "documentation": [
+        "docs/dtg-compatibility-profile.md"
+      ],
+      "validated_by": [
+        "tools/validate-conformance.js"
+      ]
+    },
+    {
+      "artifact_id": "openvtc-runtime-profile",
+      "status": "experimental",
+      "schema": "profiles/openvtc/openvtc-profile.schema.json",
+      "examples": [
+        "profiles/openvtc/examples/openvtc-profile.example.json"
+      ],
+      "documentation": [
+        "docs/openvtc-runtime-profile.md",
+        "upstream/openvtc.md"
+      ],
+      "validated_by": [
+        "tools/validate-conformance.js"
+      ]
+    },
+    {
+      "artifact_id": "openvtc-relationship-state",
+      "status": "experimental",
+      "schema": "profiles/openvtc/openvtc-relationship-state.schema.json",
+      "examples": [
+        "profiles/openvtc/examples/relationship-established.example.json"
+      ],
+      "documentation": [
+        "docs/openvtc-runtime-profile.md"
+      ],
+      "validated_by": [
+        "tools/validate-conformance.js"
+      ]
+    },
+    {
+      "artifact_id": "openvtc-vrc-issuance-receipt",
+      "status": "experimental",
+      "schema": "profiles/openvtc/openvtc-vrc-issuance-receipt.schema.json",
+      "examples": [
+        "profiles/openvtc/examples/vrc-issued.example.json"
+      ],
+      "documentation": [
+        "docs/openvtc-runtime-profile.md"
+      ],
+      "validated_by": [
+        "tools/validate-conformance.js"
+      ]
+    },
+    {
+      "artifact_id": "vti-runtime-assurance-profile",
+      "status": "experimental",
+      "schema": "profiles/vti/provision-integration-receipt.schema.json",
+      "examples": [
+        "profiles/vti/examples/provision-integration-receipt.example.json"
+      ],
+      "documentation": [
+        "docs/vti-runtime-assurance-profile.md",
+        "upstream/verifiable-trust-infrastructure.md"
+      ],
+      "validated_by": [
+        "tools/validate-conformance.js"
+      ]
+    },
+    {
+      "artifact_id": "vti-vta-context",
+      "status": "experimental",
+      "schema": "profiles/vti/vta-context.schema.json",
+      "examples": [
+        "profiles/vti/examples/vta-context.example.json"
+      ],
+      "documentation": [
+        "docs/vti-runtime-assurance-profile.md"
+      ],
+      "validated_by": [
+        "tools/validate-conformance.js"
+      ]
+    },
+    {
+      "artifact_id": "vti-sealed-transfer-envelope",
+      "status": "experimental",
+      "schema": "profiles/vti/sealed-transfer-envelope.schema.json",
+      "examples": [
+        "profiles/vti/examples/sealed-transfer-envelope.example.json"
+      ],
+      "documentation": [
+        "docs/vti-runtime-assurance-profile.md"
+      ],
+      "validated_by": [
+        "tools/validate-conformance.js"
+      ]
+    },
+    {
+      "artifact_id": "cross-repo-compatibility-matrix",
+      "status": "implemented",
+      "schema": "model/cross-repo-compatibility-matrix.schema.json",
+      "examples": [
+        "model/cross-repo-compatibility-matrix.json"
+      ],
+      "documentation": [
+        "docs/dtg-openvtc-vti-interoperability.md"
+      ],
+      "validated_by": [
         "tools/validate-conformance.js"
       ]
     }

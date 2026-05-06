@@ -1,0 +1,20 @@
+{
+  "receipt_id": "vrc-receipt-001",
+  "relationship_id": "rel-001",
+  "issuer_did": "did:web:bob.example",
+  "holder_did": "did:web:alice.example",
+  "subject_did": "did:web:alice.example",
+  "credential_id": "urn:uuid:vrc-001",
+  "credential_type": [
+    "VerifiableCredential",
+    "DTGCredential",
+    "RelationshipCredential"
+  ],
+  "issued_at": "2026-05-06T00:00:00Z",
+  "valid_until": "2027-05-06T00:00:00Z",
+  "verification_result": "verified",
+  "storage_location": "openvtc://wallet/vrc-001",
+  "evidence_refs": [
+    "urn:evidence:vrc-proof-001"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.9.0/profiles/vti/tee-attestation-reference.schema.json",
+  "title": "VTI TEE Attestation Reference",
+  "description": "Reference to trusted execution environment attestation evidence used to support runtime assurance claims for VTA operations.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "attestation_id",
+    "environment",
+    "measurement_digest",
+    "attestation_document_ref",
+    "verified_at",
+    "result"
+  ],
+  "properties": {
+    "attestation_id": {
+      "type": "string"
+    },
+    "environment": {
+      "type": "string",
+      "enum": [
+        "aws-nitro",
+        "sgx",
+        "sev-snp",
+        "mock",
+        "other"
+      ]
+    },
+    "measurement_digest": {
+      "type": "string"
+    },
+    "attestation_document_ref": {
+      "type": "string"
+    },
+    "verified_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "verifier": {
+      "type": "string"
+    },
+    "result": {
+      "type": "string",
+      "enum": [
+        "verified",
+        "failed",
+        "not_checked"
+      ]
+    }
+  }
+}

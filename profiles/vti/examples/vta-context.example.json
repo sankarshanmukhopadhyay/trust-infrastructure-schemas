@@ -1,0 +1,17 @@
+{
+  "context_id": "ctx-production-issuer",
+  "vta_did": "did:web:vta.example",
+  "name": "Production issuer context",
+  "allowed_operations": [
+    "issue-vta-authorization",
+    "sign-did-update",
+    "seal-transfer"
+  ],
+  "allowed_contexts": [
+    "ctx-production-issuer"
+  ],
+  "policy_ref": "urn:policy:vti-production-issuer",
+  "created_at": "2026-05-06T00:00:00Z",
+  "expires_at": "2026-11-06T00:00:00Z",
+  "status": "active"
+}

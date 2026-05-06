@@ -1,0 +1,19 @@
+{
+  "relationship_id": "rel-001",
+  "requester_did": "did:web:alice.example",
+  "responder_did": "did:web:bob.example",
+  "state": "finalized",
+  "state_changed_at": "2026-05-06T00:00:00Z",
+  "mediator_did": "did:web:mediator.example",
+  "messages": [
+    {
+      "message_id": "msg-001",
+      "message_type": "relationship-request",
+      "timestamp": "2026-05-06T00:00:00Z",
+      "digest": "sha256:mockdigest"
+    }
+  ],
+  "evidence_refs": [
+    "urn:evidence:relationship-log-001"
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.9.0/profiles/vti/provision-integration-receipt.schema.json",
+  "title": "VTI Provision Integration Receipt",
+  "description": "Decision and evidence receipt for VTI provision-integration flows connecting DID templates, VTA authorization, sealed transfer, and attestation evidence.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "receipt_id",
+    "integration_id",
+    "requester_did",
+    "vta_did",
+    "context_id",
+    "decision",
+    "decided_at"
+  ],
+  "properties": {
+    "receipt_id": {
+      "type": "string"
+    },
+    "integration_id": {
+      "type": "string"
+    },
+    "requester_did": {
+      "type": "string",
+      "pattern": "^did:[a-z0-9]+:[A-Za-z0-9.\\-_:%]+$"
+    },
+    "vta_did": {
+      "type": "string",
+      "pattern": "^did:[a-z0-9]+:[A-Za-z0-9.\\-_:%]+$"
+    },
+    "context_id": {
+      "type": "string"
+    },
+    "did_template_ref": {
+      "type": "string"
+    },
+    "authorization_credential_ref": {
+      "type": "string"
+    },
+    "sealed_transfer_ref": {
+      "type": "string"
+    },
+    "attestation_ref": {
+      "type": "string"
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "approved",
+        "denied",
+        "conditional",
+        "revoked"
+      ]
+    },
+    "decided_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

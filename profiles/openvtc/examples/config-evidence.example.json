@@ -1,0 +1,11 @@
+{
+  "evidence_id": "cfg-001",
+  "subject_did": "did:web:alice.example",
+  "config_class": "secured",
+  "config_path": "openvtc/secured-config.json",
+  "digest": "sha256:mockconfigdigest",
+  "encryption_state": "encrypted-at-rest",
+  "contains_secret_material": false,
+  "captured_at": "2026-05-06T00:00:00Z",
+  "access_control_ref": "urn:policy:openvtc-config-access"
+}

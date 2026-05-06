@@ -1,0 +1,11 @@
+{
+  "member": "did:web:alice.example",
+  "memberOf": "did:web:vtc.example",
+  "personhoodAssurance": "vtc-attested",
+  "proofOfUniqueness": "urn:sha256:mock-personhood-proof",
+  "status": "active",
+  "effectiveFrom": "2026-05-06T00:00:00Z",
+  "evidence": [
+    "urn:evidence:personhood-assessment-001"
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "release": "v0.9.0",
+  "reviewed_at": "2026-05-06T00:00:00Z",
+  "upstreams": [
+    {
+      "repo": "OpenVTC/dtg-credentials",
+      "url": "https://github.com/OpenVTC/dtg-credentials",
+      "tracked_ref": "main",
+      "role": "DTG credential creation and verification implementation",
+      "local_archive_reviewed": "dtg-credentials-main.zip"
+    },
+    {
+      "repo": "OpenVTC/openvtc",
+      "url": "https://github.com/OpenVTC/openvtc",
+      "tracked_ref": "main",
+      "role": "OpenVTC relationship, VRC, DID, and runtime workflow implementation",
+      "local_archive_reviewed": "openvtc-main.zip"
+    },
+    {
+      "repo": "OpenVTC/verifiable-trust-infrastructure",
+      "url": "https://github.com/OpenVTC/verifiable-trust-infrastructure",
+      "tracked_ref": "main",
+      "role": "VTI/VTA authority, sealed transfer, DID template, attestation, and integration implementation",
+      "local_archive_reviewed": "verifiable-trust-infrastructure-main.zip"
+    }
+  ],
+  "mappings": [
+    {
+      "repo": "OpenVTC/dtg-credentials",
+      "artifact": "DTG VC envelope",
+      "role": "Credential wire compatibility",
+      "authority_surface": "Issuer DID, VC type array, validity window, proof suite, and credentialSubject binding",
+      "evidence_produced": [
+        "VerifiableCredential",
+        "DataIntegrityProof"
+      ],
+      "tis_profile": [
+        "credentials/dtg/v1/dtg-vc-envelope.json",
+        "credentials/dtg/v1/dtg-credential-subject.json"
+      ],
+      "assurance_implication": "Establishes minimum interoperable shape before applying stronger TIS semantic overlays.",
+      "validation_status": "validated-example"
+    },
+    {
+      "repo": "OpenVTC/openvtc",
+      "artifact": "Relationship and VRC workflow state",
+      "role": "Runtime evidence capture",
+      "authority_surface": "Persona DID, relationship counterparty, mediator, VRC issuer, and storage state",
+      "evidence_produced": [
+        "relationship-state",
+        "vrc-issuance-receipt",
+        "config-evidence",
+        "didcomm-routing-evidence"
+      ],
+      "tis_profile": [
+        "profiles/openvtc/openvtc-relationship-state.schema.json",
+        "profiles/openvtc/openvtc-vrc-issuance-receipt.schema.json"
+      ],
+      "assurance_implication": "Makes OpenVTC workflow state replayable as evidence for decision receipts and relying-party evaluation.",
+      "validation_status": "validated-example"
+    },
+    {
+      "repo": "OpenVTC/verifiable-trust-infrastructure",
+      "artifact": "VTA authorization and provision integration",
+      "role": "Executable authority and enforcement profile",
+      "authority_surface": "VTA context, ACL entry, authorization credential, sealed transfer, DID template, and attestation reference",
+      "evidence_produced": [
+        "vta-context",
+        "acl-entry",
+        "sealed-transfer-envelope",
+        "tee-attestation-reference",
+        "provision-integration-receipt"
+      ],
+      "tis_profile": [
+        "profiles/vti/vta-context.schema.json",
+        "profiles/vti/provision-integration-receipt.schema.json"
+      ],
+      "assurance_implication": "Captures authority, delegation, scope, enforcement, revocation, and audit evidence for runtime trust operations.",
+      "validation_status": "validated-example"
+    }
+  ],
+  "drift_review": {
+    "cadence": "Review upstream release notes and schema-relevant implementation changes before each TIS minor release and at least monthly while profiles remain experimental.",
+    "signals": [
+      "credential type or context changes",
+      "new DID method support",
+      "relationship/VRC state machine changes",
+      "VTA ACL or context model changes",
+      "sealed transfer envelope changes",
+      "attestation or DID template changes",
+      "breaking changes in CLI output or examples"
+    ],
+    "required_action": "Open a TIS drift review issue when upstream changes alter artifact shape, authority semantics, evidence requirements, or validation fixtures."
+  }
+}

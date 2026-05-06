@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/credentials/v2",
+    "https://firstperson.network/credentials/dtg/v1"
+  ],
+  "id": "urn:uuid:dtg-vc-envelope-example",
+  "type": [
+    "VerifiableCredential",
+    "DTGCredential",
+    "MembershipCredential"
+  ],
+  "issuer": "did:web:issuer.example",
+  "validFrom": "2026-05-06T00:00:00Z",
+  "validUntil": "2027-05-06T00:00:00Z",
+  "credentialSubject": {
+    "id": "did:web:alice.example",
+    "member": "did:web:alice.example",
+    "memberOf": "did:web:vtc.example",
+    "status": "active"
+  },
+  "proof": {
+    "type": "DataIntegrityProof",
+    "cryptosuite": "eddsa-jcs-2022",
+    "created": "2026-05-06T00:00:00Z",
+    "verificationMethod": "did:web:issuer.example#key-1",
+    "proofPurpose": "assertionMethod",
+    "proofValue": "zMockProofValueForValidationOnly"
+  }
+}

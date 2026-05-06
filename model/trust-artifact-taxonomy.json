@@ -1,7 +1,7 @@
 {
   "$schema": "./trust-artifact-taxonomy.schema.json",
   "model": "Open Trust Artifact Model",
-  "version": "v0.7.0+executable-governance-contracts",
+  "version": "v0.9.0+dtg-openvtc-vti-runtime-alignment",
   "artifact_classes": [
     {
       "id": "identity-authority",
@@ -210,6 +210,37 @@
           "path": "model/tsmm-artifact-mapping.json",
           "status": "implemented",
           "notes": "Maps TSMM semantic concepts to TIS executable artifact contracts."
+        }
+      ]
+    },
+    {
+      "id": "runtime-compatibility-profiles",
+      "name": "Runtime Compatibility Profiles",
+      "description": "Executable schemas and examples that bind TIS to DTG Credentials, OpenVTC, and Verifiable Trust Infrastructure runtime surfaces.",
+      "artifacts": [
+        {
+          "name": "DTG VC envelope",
+          "path": "credentials/dtg/v1/dtg-vc-envelope.json",
+          "status": "experimental",
+          "notes": "Wire-compatibility profile for DTG Verifiable Credential envelopes."
+        },
+        {
+          "name": "OpenVTC runtime profile",
+          "path": "profiles/openvtc/openvtc-profile.schema.json",
+          "status": "experimental",
+          "notes": "Evidence contracts for relationship, VRC, configuration, and routing state."
+        },
+        {
+          "name": "VTI runtime assurance profile",
+          "path": "profiles/vti/provision-integration-receipt.schema.json",
+          "status": "experimental",
+          "notes": "Authority and evidence contracts for VTA execution, sealed transfer, DID templates, and attestation."
+        },
+        {
+          "name": "Cross-repo compatibility matrix",
+          "path": "model/cross-repo-compatibility-matrix.json",
+          "status": "implemented",
+          "notes": "Machine-readable drift tracking and artifact mapping."
         }
       ]
     }

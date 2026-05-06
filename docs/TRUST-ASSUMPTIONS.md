@@ -1,7 +1,7 @@
 # Trust Assumptions
 
 **Last reviewed:** 2026-05-05  
-**Current release:** `v0.7.0`
+**Current release:** `v0.9.0`
 
 This repository makes the following assumptions explicit so downstream systems do not mistake schema validity for operational trustworthiness.
 

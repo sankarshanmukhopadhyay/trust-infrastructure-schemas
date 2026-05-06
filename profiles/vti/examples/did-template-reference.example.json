@@ -1,0 +1,13 @@
+{
+  "template_id": "did-webvh-default",
+  "template_type": "did:webvh",
+  "version": "1.0.0",
+  "source_ref": "https://github.com/OpenVTC/verifiable-trust-infrastructure/tree/main/vta-sdk/src/did_templates",
+  "variables": [
+    "domain",
+    "controller",
+    "serviceEndpoint"
+  ],
+  "policy_ref": "urn:policy:did-template-use",
+  "verified_at": "2026-05-06T00:00:00Z"
+}

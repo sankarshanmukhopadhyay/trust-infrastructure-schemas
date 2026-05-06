@@ -1,12 +1,23 @@
-# openVTC (upstream reference)
+# Upstream Reference: OpenVTC
 
-- Upstream repo: https://github.com/LF-Decentralized-Trust-labs/openvtc
+**Repository:** <https://github.com/OpenVTC/openvtc>  
+**Tracked branch/ref:** `main`  
+**TIS release:** `v0.9.0`  
+**Last reviewed:** 2026-05-06
 
-## Why it matters here
+## Role
 
-`openVTC` provides implementation surfaces and deployment patterns that can act as **reference targets** for conformance and evaluation.
+`openvtc` is treated by TIS as the implementation reference for persona DID operations, relationship workflow state, VRC issuance/verification/storage, secured configuration evidence, DIDComm routing, robotic maintainer behavior, and DID-based git signing evidence.
 
-## Interoperability touchpoints
+## TIS artifacts
 
-- Treat openVTC deployments as reference implementations to validate evaluation workflows.
-- Use implementation artifacts (configs, logs, policies, attestations) as evidence inputs where applicable.
+- `profiles/openvtc/openvtc-profile.schema.json`
+- `profiles/openvtc/openvtc-relationship-state.schema.json`
+- `profiles/openvtc/openvtc-vrc-issuance-receipt.schema.json`
+- `profiles/openvtc/openvtc-config-evidence.schema.json`
+- `profiles/openvtc/openvtc-didcomm-routing-evidence.schema.json`
+- `docs/openvtc-runtime-profile.md`
+
+## Drift watch
+
+Monitor upstream changes to DID methods, relationship states, VRC issuance events, config data classification, DIDComm mediator assumptions, maintainer automation, and CLI outputs used as validation fixtures.

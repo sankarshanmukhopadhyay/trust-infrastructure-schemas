@@ -1,7 +1,7 @@
 # Artifact Taxonomy
 
 **Last reviewed:** 2026-05-05  
-**Current release:** `v0.7.0`
+**Current release:** `v0.9.0`
 
 The artifact taxonomy is the navigation layer for the Open Trust Artifact Model. It gives implementers a stable overview of which artifact families exist, where they live, and whether they are normative, implemented, experimental, or illustrative.
 

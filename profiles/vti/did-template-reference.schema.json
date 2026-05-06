@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.9.0/profiles/vti/did-template-reference.schema.json",
+  "title": "VTI DID Template Reference",
+  "description": "Reference to a DID template used for controlled DID creation, DID document update, or DIDComm service materialization.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "template_id",
+    "template_type",
+    "version",
+    "source_ref",
+    "verified_at"
+  ],
+  "properties": {
+    "template_id": {
+      "type": "string"
+    },
+    "template_type": {
+      "type": "string",
+      "enum": [
+        "did:web",
+        "did:webvh",
+        "did:key",
+        "custom"
+      ]
+    },
+    "version": {
+      "type": "string"
+    },
+    "source_ref": {
+      "type": "string"
+    },
+    "variables": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "policy_ref": {
+      "type": "string"
+    },
+    "verified_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

@@ -1,9 +1,9 @@
 # Trust Infrastructure Schemas Documentation
 
-**Current release:** `v0.7.0`  
-**Last reviewed:** 2026-05-05
+**Current release:** `v0.9.0`  
+**Last reviewed:** 2026-05-06
 
-This documentation describes the repository as an executable governance artifact layer for operational trust infrastructure.
+This documentation describes TIS as an executable governance artifact layer for operational trust infrastructure.
 
 ## Start here
 
@@ -12,12 +12,13 @@ This documentation describes the repository as an executable governance artifact
 | Understand the model | `open-trust-artifact-model.md` |
 | Understand trust assumptions | `TRUST-ASSUMPTIONS.md` |
 | Understand authority and evidence | `TRUST-MODEL.md` |
+| Use DTG compatibility artifacts | `dtg-compatibility-profile.md` |
+| Use OpenVTC runtime artifacts | `openvtc-runtime-profile.md` |
+| Use VTI runtime assurance artifacts | `vti-runtime-assurance-profile.md` |
+| Track DTG/OpenVTC/VTI drift | `dtg-openvtc-vti-interoperability.md` |
 | See the end-to-end flow | `cross-repo-example.md` |
 | Understand validation coverage | `validation-coverage.md` |
 | Use decision receipts | `decision-receipts.md` |
-| Use OASF artifacts | `oasf-artifact-family.md` |
-| Use ODRL policy references | `odrl-artifact-family.md` |
-| Use AIS-1 profile artifacts | `ais1-schema-profile.md` |
 | Review release history | `releases/` |
 
 ## Canonical artifact flow
@@ -26,28 +27,16 @@ This documentation describes the repository as an executable governance artifact
 Declaration -> Evidence Bundle -> Evaluation Envelope -> Decision Receipt -> Registry Entry
 ```
 
-This flow is the core implementation path for `v0.7.0`. It ensures that trust artifacts do not merely exist, but can be evaluated, decisioned, published, and audited.
+## DTG/OpenVTC/VTI flow
 
-## Machine-verifiable surfaces
-
-The repository now includes validated schemas and examples for:
-
-- credential artifacts;
-- assurance levels;
-- conformance declarations;
-- controls and control mappings;
-- OASF publication and evaluation artifacts;
-- ODRL policy references;
-- AIS-1 bonded-agent profiles;
-- reusable artifact references;
-- authority boundaries;
-- evidence bundle manifests;
-- decision receipts;
-- registry entries;
-- artifact taxonomy and validation coverage manifests.
+```text
+DTG VC Envelope -> OpenVTC Relationship/VRC Evidence -> VTI Runtime Authority Evidence -> TIS Decision Receipt
+```
 
 ## Release notes
 
+- `releases/v0.9.0.md`
+- `releases/v0.8.0.md`
 - `releases/v0.7.0.md`
 - `releases/v0.6.0.md`
 - `releases/v0.5.0.md`

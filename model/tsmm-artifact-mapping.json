@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.8.0/model/tsmm-artifact-mapping.schema.json",
+  "$schema": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.9.0/model/tsmm-artifact-mapping.schema.json",
   "mapping_id": "tis-tsmm-artifact-mapping-v0.8.0",
   "version": "v0.8.0",
   "semantic_model": "TSMM",

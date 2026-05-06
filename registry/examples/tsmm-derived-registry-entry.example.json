@@ -23,7 +23,7 @@
       "media_type": "application/json",
       "sha256": "4444444444444444444444444444444444444444444444444444444444444444",
       "role": "evidence",
-      "schema_uri": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.8.0/governance/authority-boundary.schema.json"
+      "schema_uri": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.9.0/governance/authority-boundary.schema.json"
     },
     {
       "uri": "https://example.invalid/tis/evidence/agent-beta-bundle.json",
@@ -42,7 +42,7 @@
       "media_type": "application/json",
       "sha256": "9999999999999999999999999999999999999999999999999999999999999999",
       "role": "decision",
-      "schema_uri": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.8.0/decision/decision-receipt.schema.json",
+      "schema_uri": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.9.0/decision/decision-receipt.schema.json",
       "notes": "TSMM-mapped runtime trust decision receipt."
     }
   ],

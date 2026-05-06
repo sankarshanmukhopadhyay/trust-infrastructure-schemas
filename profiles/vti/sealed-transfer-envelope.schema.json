@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.9.0/profiles/vti/sealed-transfer-envelope.schema.json",
+  "title": "VTI Sealed Transfer Envelope",
+  "description": "Evidence envelope for sealed transfer of sensitive bootstrap, key, or configuration material between VTI actors or contexts.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "envelope_id",
+    "producer_did",
+    "consumer_did",
+    "payload_digest",
+    "encryption_alg",
+    "sealed_at",
+    "status"
+  ],
+  "properties": {
+    "envelope_id": {
+      "type": "string"
+    },
+    "producer_did": {
+      "type": "string",
+      "pattern": "^did:[a-z0-9]+:[A-Za-z0-9.\\-_:%]+$"
+    },
+    "consumer_did": {
+      "type": "string",
+      "pattern": "^did:[a-z0-9]+:[A-Za-z0-9.\\-_:%]+$"
+    },
+    "context_id": {
+      "type": "string"
+    },
+    "payload_digest": {
+      "type": "string"
+    },
+    "encryption_alg": {
+      "type": "string"
+    },
+    "sealed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "attestation_ref": {
+      "type": "string"
+    },
+    "policy_ref": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "sealed",
+        "opened",
+        "expired",
+        "revoked"
+      ]
+    }
+  }
+}

@@ -1,7 +1,7 @@
 # Validation Coverage
 
 **Last reviewed:** 2026-05-05  
-**Release:** `v0.7.0`
+**Release:** `v0.9.0`
 
 This repository treats validation coverage as a governance artifact. The repository should not advertise a schema family unless at least one representative example is validated by CI or by the local validation script.
 

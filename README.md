@@ -1,146 +1,90 @@
 # Trust Infrastructure Schemas
 
-**Current release:** `v0.8.0`  
-**Release theme:** TSMM Alignment Profile and Cross-Repo Artifact Interoperability  
-**Last reviewed:** 2026-05-05
+**Current release:** `v0.9.0`  
+**Release theme:** DTG/OpenVTC/VTI Compatibility Profiles and Runtime Trust Artifact Alignment  
+**Last reviewed:** 2026-05-06
 
-This repository publishes canonical **machine-readable trust artifacts** for operational digital trust infrastructure.
-
-The repository is not only a JSON Schema catalog. It is an implementation-oriented **Open Trust Artifact Model** for expressing authority, evidence, assurance, conformance, registry state, policy references, and bounded trust decisions in a form that can be validated by machines and reviewed by humans.
+This repository publishes canonical **machine-readable trust artifacts** for operational digital trust infrastructure. It is an implementation-oriented **Open Trust Artifact Model** for expressing authority, evidence, assurance, conformance, registry state, policy references, runtime workflow state, and bounded trust decisions in forms that can be validated by machines and reviewed by humans.
 
 ## Why this repository exists
 
-Most trust ecosystems still depend on websites, PDFs, and narrative governance. Those materials are useful for interpretation but weak as operational contracts. A verifier, registry, auditor, or relying party needs artifacts that can answer concrete questions:
+Trust infrastructure fails when governance remains trapped in websites, PDFs, and informal operational practice. A verifier, registry, auditor, agent, or relying party needs executable artifacts that can answer:
 
 - What claim is being made?
-- Who has authority to make it?
-- What evidence supports it?
-- Which assurance level applies?
-- Which controls were checked?
-- What policy was applied?
-- What decision was made?
-- What can be audited later?
+- Who had authority to make it?
+- What scope, delegation, and revocation rules applied?
+- What evidence supports the claim?
+- Which assurance level and controls were checked?
+- What runtime decision was made?
+- What can be independently audited later?
 
-`trust-infrastructure-schemas` provides the artifact layer for those questions.
+`trust-infrastructure-schemas` provides the artifact contracts for those questions.
 
-## What changed in v0.8.0
+## What changed in v0.9.0
 
-`v0.8.0` turns the repository into a TSMM-aligned executable-governance artifact layer.
+`v0.9.0` moves TIS from related-work awareness to executable cross-repo interoperability with DTG Credentials, OpenVTC, and Verifiable Trust Infrastructure.
 
 Major changes:
 
-- added a machine-readable **TSMM artifact mapping** schema and mapping instance;
-- added TSMM alignment documentation for authority, evidence, decision receipts, registries, and executable artifact composition;
-- added a complete **TSMM-aligned runtime decision composition pack**;
-- validated TSMM-derived authority boundary, evidence bundle, evaluation envelope, decision receipt, and registry entry examples;
-- updated schema identifiers and artifact references to v0.8.0;
-- removed stale local-only artifacts and refreshed release traceability.
+- added a DTG VC envelope compatibility profile aligned to <https://github.com/OpenVTC/dtg-credentials>;
+- added DTG personhood and relationship-card overlay profiles;
+- added OpenVTC runtime evidence profiles for relationship state, VRC issuance, configuration evidence, and DIDComm routing;
+- added VTI runtime assurance profiles for VTA contexts, ACL entries, authorization credentials, sealed transfer, DID templates, TEE attestation, and provision-integration receipts;
+- added a machine-readable cross-repo compatibility matrix and drift-review process;
+- refreshed stale release references and documentation navigation;
+- expanded validation coverage across all new examples.
 
 ## Canonical governance flow
 
-The recommended cross-repo flow is now:
-
 ```text
-TSMM Model -> Authority Boundary -> Evidence Bundle -> Evaluation Envelope -> Decision Receipt -> Registry Entry
+Model -> Authority Boundary -> Runtime Evidence -> Evaluation -> Decision Receipt -> Registry Entry
 ```
 
-This makes the trust lifecycle auditable. A registry entry can point to a declaration. The declaration can point to evidence. The evidence can be evaluated. The evaluation can support a decision receipt. The decision receipt can record the policy, authority boundary, and relying-party result.
-
-
-## TSMM alignment
-
-This repository is now explicitly aligned with the Trust Systems Meta Model (TSMM):
+For DTG/OpenVTC/VTI workflows, the executable flow is:
 
 ```text
-TSMM = semantic model and cross-ecosystem grammar
-TIS  = canonical executable artifact contracts
+DTG Credential -> OpenVTC Relationship/VRC Evidence -> VTI Authority Evidence -> TIS Decision Receipt -> Registry Entry
 ```
-
-Key artifacts:
-
-- Alignment guide: `docs/tsmm-alignment.md`
-- Mapping schema: `model/tsmm-artifact-mapping.schema.json`
-- Mapping instance: `model/tsmm-artifact-mapping.json`
-- Decision receipt profile: `docs/tsmm-decision-receipt-profile.md`
-- Executable walkthrough: `docs/tsmm-executable-artifact-walkthrough.md`
-- Composition pack: `examples/composition/tsmm-aligned/`
 
 ## Artifact families
 
-### 1. Identity and authority artifacts
+### Identity, credential, and authority artifacts
 
-- Agent credential schemas: `credentials/agent/v1/README.md`
 - DTG credential schemas: `credentials/dtg/v1/README.md`
+- DTG compatibility profile: `docs/dtg-compatibility-profile.md`
+- Agent credential schemas: `credentials/agent/v1/README.md`
 - Reputation credential schemas: `credentials/reputation/v1/README.md`
-- AIS-1 bonded agent profile: `profiles/ais1/schema.json` *(experimental)*
 - Authority boundary schema: `governance/authority-boundary.schema.json`
 
-### 2. Assurance and conformance artifacts
+### Runtime profiles
+
+- OpenVTC runtime profile: `docs/openvtc-runtime-profile.md`
+- VTI runtime assurance profile: `docs/vti-runtime-assurance-profile.md`
+- AIS-1 bonded agent profile: `profiles/ais1/schema.json` *(experimental)*
+
+### Assurance and conformance artifacts
 
 - Assurance levels: `assurance/assurance-levels.md`
-- Assurance schema: `assurance/assurance.schema.json`
-- Implementer declaration template: `conformance/IMPLEMENTER-DECLARATION.md`
 - Conformance declaration schema: `conformance/conformance-declaration.schema.json`
 - Evidence bundle manifest schema: `evidence/evidence-bundle-manifest.schema.json`
 - Decision receipt schema: `decision/decision-receipt.schema.json`
 
-### 3. OASF, policy, and evaluation artifacts
-
-- OASF publication profile schema: `oasf/oasf-publication-profile.schema.json`
-- OASF evaluation envelope schema: `oasf/oasf-evaluation-envelope.schema.json`
-- OASF control crosswalk: `oasf/mappings/oasf-control-crosswalk.json`
-- ODRL policy reference schema: `odrl/odrl-policy-reference.schema.json` *(experimental)*
-
-### 4. Control framework artifacts
-
-- Controls registry: `controls/controls.md`
-- Controls data: `controls/controls.json`
-- Controls schema: `controls/controls.schema.json`
-- Control-to-assurance mapping: `controls/mappings/control-assurance-matrix.json`
-
-### 5. Registry and ecosystem-state artifacts
+### Registry and ecosystem-state artifacts
 
 - Registry schema: `registry/registry.schema.json`
 - Registry entry schema: `registry/registry-entry.schema.json`
-- Sample registry: `registry/sample-registry.json`
-- Composition examples: `examples/composition/`
-
-### 6. Artifact model metadata and validation coverage
-
 - Trust artifact taxonomy: `model/trust-artifact-taxonomy.json`
-- Taxonomy schema: `model/trust-artifact-taxonomy.schema.json`
-- Artifact coverage manifest: `validation/artifact-coverage.json`
-- Coverage schema: `validation/artifact-coverage.schema.json`
-- Coverage documentation: `docs/validation-coverage.md`
+- Cross-repo compatibility matrix: `model/cross-repo-compatibility-matrix.json`
 
-## Normative and experimental status
+## Upstream implementation references
 
-This repository distinguishes between stable implementation contracts and experimental profiles.
+TIS tracks these repositories as operational references:
 
-| Status | Meaning |
-|---|---|
-| `normative` | Canonical source of semantics within this repository. |
-| `implemented` | Supported schema or artifact family with validated examples. |
-| `experimental` | Available for careful reuse but still under semantic pressure-testing. |
-| `illustrative` | Example or simulation intended to show composition, not impose ecosystem policy. |
+- <https://github.com/OpenVTC/dtg-credentials>
+- <https://github.com/OpenVTC/openvtc>
+- <https://github.com/OpenVTC/verifiable-trust-infrastructure>
 
-Assurance Levels AL1–AL4 are defined normatively in `assurance/assurance-levels.md`. Downstream repositories SHOULD reference this document instead of copying AL semantics.
-
-## Ecosystem and related repositories
-
-This repository is part of a broader assurance and governance stack:
-
-- **`trust-infrastructure-schemas`** — canonical schema and artifact model layer.
-- **DCAS / conformance tooling** — verifier workflows that evaluate conformance claims built on these contracts.
-- **Domain baselines** — domain-specific requirement sets that produce declarations and evidence bundles.
-- **TSMM-aligned models** — meta-models that describe entities, relationships, authority, delegation, evidence, and runtime governance.
-
-See:
-
-- `docs/cross-repo-governance.md`
-- `docs/cross-repo-example.md`
-- `docs/open-trust-artifact-model.md`
-- `docs/artifact-taxonomy.md`
+The tracking method is documented in `docs/dtg-openvtc-vti-interoperability.md` and expressed in `model/cross-repo-compatibility-matrix.json`.
 
 ## Validation
 
@@ -151,71 +95,4 @@ npm install
 npm run check
 ```
 
-Or, if `ajv` is already installed globally:
-
-```bash
-node tools/validate-conformance.js
-node tools/lint-schemas.js
-```
-
-The validation surface includes all major artifact families, including credentials, conformance declarations, controls, assurance levels, registry simulation, OASF artifacts, ODRL references, AIS-1 examples, evidence bundle manifests, authority boundaries, artifact references, decision receipts, taxonomy metadata, and coverage manifests.
-
-See `docs/validation-coverage.md`.
-
-## Schema versioning policy
-
-This repository follows semantic governance for schema evolution.
-
-### Major versions
-
-Major versions represent semantic compatibility boundaries. Breaking structural or validation changes require a new major version path or explicit migration guidance.
-
-### Minor / patch releases
-
-Within a compatible release line, the following changes are generally allowed:
-
-- clarifying descriptions and documentation;
-- adding optional properties;
-- adding new schemas and examples;
-- expanding artifact taxonomy entries;
-- expanding validation coverage without invalidating existing examples.
-
-Changes that MAY be breaking and SHOULD be treated cautiously:
-
-- tightening validation constraints;
-- changing required properties;
-- altering semantic interpretation of existing fields;
-- removing artifact fields or status values.
-
-## Consumer guidance
-
-Implementers SHOULD:
-
-- pin to tagged releases for production use;
-- avoid referencing `main` for production validation;
-- use `$id` as the canonical identifier for published schema references;
-- validate examples and manifests in CI;
-- preserve decision receipts and evidence bundles where relying-party actions depend on trust artifacts;
-- check authority-boundary and revocation metadata before relying on any artifact operationally.
-
-## Documentation index
-
-- Architecture: `docs/architecture.md`
-- Trust model: `docs/TRUST-MODEL.md`
-- Trust assumptions: `docs/TRUST-ASSUMPTIONS.md`
-- Open Trust Artifact Model: `docs/open-trust-artifact-model.md`
-- Artifact taxonomy: `docs/artifact-taxonomy.md`
-- Cross-repo example: `docs/cross-repo-example.md`
-- Cross-repo governance: `docs/cross-repo-governance.md`
-- Decision receipts: `docs/decision-receipts.md`
-- Validation coverage: `docs/validation-coverage.md`
-- OASF artifact family: `docs/oasf-artifact-family.md`
-- ODRL artifact family: `docs/odrl-artifact-family.md`
-- AIS-1 schema profile: `docs/ais1-schema-profile.md`
-- Identifier governance: `docs/identifier-governance.md`
-- GitHub Pages: `docs/github-pages.md`
-- Roadmap: `docs/roadmap.md`
-
-## Upstream origin
-
-This repository is forked from `https://github.com/archetech/schemas` and evolves the original schema structure toward operational trust infrastructure, assurance, and executable governance use cases.
+The validation pipeline checks schema examples, coverage references, release documentation, and local artifact hygiene.

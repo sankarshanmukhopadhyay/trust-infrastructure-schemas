@@ -1,7 +1,7 @@
 # Open Trust Artifact Model
 
 **Last reviewed:** 2026-05-05  
-**Current release:** `v0.7.0`
+**Current release:** `v0.9.0`
 
 The Open Trust Artifact Model is the repository’s organizing model for executable governance. It defines the machine-readable artifacts needed to move from narrative trust frameworks to verifiable trust infrastructure.
 

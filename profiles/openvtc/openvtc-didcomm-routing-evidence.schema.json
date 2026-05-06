@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.9.0/profiles/openvtc/openvtc-didcomm-routing-evidence.schema.json",
+  "title": "OpenVTC DIDComm Routing Evidence",
+  "description": "Evidence record for DIDComm mediator, routing, and transport assumptions used by OpenVTC workflows.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "routing_id",
+    "subject_did",
+    "mediator_did",
+    "service_endpoint",
+    "transport",
+    "verified_at"
+  ],
+  "properties": {
+    "routing_id": {
+      "type": "string"
+    },
+    "subject_did": {
+      "type": "string",
+      "pattern": "^did:[a-z0-9]+:[A-Za-z0-9.\\-_:%]+$"
+    },
+    "mediator_did": {
+      "type": "string",
+      "pattern": "^did:[a-z0-9]+:[A-Za-z0-9.\\-_:%]+$"
+    },
+    "service_endpoint": {
+      "type": "string"
+    },
+    "transport": {
+      "type": "string",
+      "enum": [
+        "didcomm-v2",
+        "http",
+        "https",
+        "websocket",
+        "other"
+      ]
+    },
+    "verified_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "verification_method": {
+      "type": "string"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

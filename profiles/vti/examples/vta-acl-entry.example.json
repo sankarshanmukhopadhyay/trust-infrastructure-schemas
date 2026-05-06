@@ -1,0 +1,17 @@
+{
+  "entry_id": "acl-001",
+  "subject_did": "did:web:operator.example",
+  "vta_did": "did:web:vta.example",
+  "role": "operator",
+  "permissions": [
+    "issue",
+    "sign",
+    "audit-read"
+  ],
+  "allowed_contexts": [
+    "ctx-production-issuer"
+  ],
+  "granted_at": "2026-05-06T00:00:00Z",
+  "granted_by": "did:web:admin.example",
+  "status": "active"
+}

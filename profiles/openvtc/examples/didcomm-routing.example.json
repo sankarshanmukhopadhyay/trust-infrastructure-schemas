@@ -1,0 +1,12 @@
+{
+  "routing_id": "route-001",
+  "subject_did": "did:web:alice.example",
+  "mediator_did": "did:web:mediator.example",
+  "service_endpoint": "https://mediator.example/didcomm",
+  "transport": "didcomm-v2",
+  "verified_at": "2026-05-06T00:00:00Z",
+  "verification_method": "did-resolution-and-service-check",
+  "evidence_refs": [
+    "urn:evidence:mediator-resolution-001"
+  ]
+}

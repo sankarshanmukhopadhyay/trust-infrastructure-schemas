@@ -1,7 +1,7 @@
 # Cross-Repo Composition Example
 
 **Last reviewed:** 2026-05-05  
-**Release:** `v0.7.0`
+**Release:** `v0.9.0`
 
 The composition examples show how a domain baseline, evidence bundle, evaluator output, relying-party decision, and registry publication can use the same canonical artifact layer.
 

@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.9.0/profiles/vti/vta-context.schema.json",
+  "title": "VTI VTA Context",
+  "description": "Authority and scope compartment used by a Verifiable Trust Authority for bounded signing, issuance, or integration operations.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "context_id",
+    "vta_did",
+    "allowed_operations",
+    "created_at",
+    "status"
+  ],
+  "properties": {
+    "context_id": {
+      "type": "string"
+    },
+    "vta_did": {
+      "type": "string",
+      "pattern": "^did:[a-z0-9]+:[A-Za-z0-9.\\-_:%]+$"
+    },
+    "name": {
+      "type": "string"
+    },
+    "allowed_operations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "allowed_contexts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "policy_ref": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "suspended",
+        "revoked",
+        "expired"
+      ]
+    }
+  }
+}

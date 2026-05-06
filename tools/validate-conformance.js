@@ -2,26 +2,34 @@
 /**
  * Reference validator for trust-infrastructure-schemas.
  *
- * This tool intentionally shells out to `ajv` so local validation mirrors CI.
+ * Uses Ajv in-process so validation remains fast enough for local and CI use.
  * Usage:
  *   node tools/validate-conformance.js
  */
-const { execSync } = require("child_process");
 const fs = require("fs");
-
-function run(cmd) {
-  execSync(cmd, { stdio: "inherit", shell: "/bin/bash" });
-}
+const Ajv = require("ajv");
+const Ajv2020 = require("ajv/dist/2020");
 
 function exists(p) {
   try { fs.accessSync(p); return true; } catch { return false; }
+}
+
+function loadJson(p) {
+  return JSON.parse(fs.readFileSync(p, "utf8"));
 }
 
 function validate(schema, data, label) {
   if (!exists(schema)) throw new Error(`Missing schema: ${schema}`);
   if (!exists(data)) throw new Error(`Missing data/example: ${data}`);
   console.log(`== Validating ${label} ==`);
-  run(`ajv validate -s ${schema} -d ${data} --strict=false`);
+  const schemaObj = loadJson(schema);
+  const AjvCtor = String(schemaObj.$schema || "").includes("2020-12") ? Ajv2020 : Ajv;
+  const ajv = new AjvCtor({ strict: false, validateFormats: false, allErrors: true });
+  const validateFn = ajv.compile(schemaObj);
+  const valid = validateFn(loadJson(data));
+  if (!valid) {
+    throw new Error(`${data} invalid against ${schema}: ${JSON.stringify(validateFn.errors, null, 2)}`);
+  }
 }
 
 function validateCredentialFamilies() {
@@ -38,7 +46,7 @@ function validateCredentialFamilies() {
 
 function validateCoverageManifest() {
   validate("validation/artifact-coverage.schema.json", "validation/artifact-coverage.json", "artifact coverage manifest");
-  const manifest = JSON.parse(fs.readFileSync("validation/artifact-coverage.json", "utf8"));
+  const manifest = loadJson("validation/artifact-coverage.json");
   for (const artifact of manifest.artifacts) {
     for (const field of ["schema", "documentation"]) {
       const value = artifact[field];
@@ -77,6 +85,22 @@ try {
   validate("oasf/mappings/oasf-control-crosswalk.schema.json", "oasf/mappings/oasf-control-crosswalk.json", "OASF control crosswalk");
   validate("odrl/odrl-policy-reference.schema.json", "odrl/samples/odrl-policy-reference.json", "ODRL policy reference sample");
   validate("profiles/ais1/schema.json", "profiles/ais1/examples/bonded-agent-profile.example.json", "AIS-1 bonded agent profile example");
+
+  validate("profiles/openvtc/openvtc-profile.schema.json", "profiles/openvtc/examples/openvtc-profile.example.json", "OpenVTC runtime profile example");
+  validate("profiles/openvtc/openvtc-relationship-state.schema.json", "profiles/openvtc/examples/relationship-established.example.json", "OpenVTC relationship state example");
+  validate("profiles/openvtc/openvtc-vrc-issuance-receipt.schema.json", "profiles/openvtc/examples/vrc-issued.example.json", "OpenVTC VRC issuance receipt example");
+  validate("profiles/openvtc/openvtc-config-evidence.schema.json", "profiles/openvtc/examples/config-evidence.example.json", "OpenVTC config evidence example");
+  validate("profiles/openvtc/openvtc-didcomm-routing-evidence.schema.json", "profiles/openvtc/examples/didcomm-routing.example.json", "OpenVTC DIDComm routing evidence example");
+
+  validate("profiles/vti/vta-context.schema.json", "profiles/vti/examples/vta-context.example.json", "VTI VTA context example");
+  validate("profiles/vti/vta-acl-entry.schema.json", "profiles/vti/examples/vta-acl-entry.example.json", "VTI VTA ACL entry example");
+  validate("profiles/vti/vta-authorization-credential.schema.json", "profiles/vti/examples/vta-authorization-credential.example.json", "VTI VTA authorization credential example");
+  validate("profiles/vti/sealed-transfer-envelope.schema.json", "profiles/vti/examples/sealed-transfer-envelope.example.json", "VTI sealed transfer envelope example");
+  validate("profiles/vti/did-template-reference.schema.json", "profiles/vti/examples/did-template-reference.example.json", "VTI DID template reference example");
+  validate("profiles/vti/tee-attestation-reference.schema.json", "profiles/vti/examples/tee-attestation-reference.example.json", "VTI TEE attestation reference example");
+  validate("profiles/vti/provision-integration-receipt.schema.json", "profiles/vti/examples/provision-integration-receipt.example.json", "VTI provision integration receipt example");
+
+  validate("model/cross-repo-compatibility-matrix.schema.json", "model/cross-repo-compatibility-matrix.json", "cross-repo compatibility matrix");
   validate("model/trust-artifact-taxonomy.schema.json", "model/trust-artifact-taxonomy.json", "trust artifact taxonomy");
   validate("decision/decision-receipt.schema.json", "decision/examples/decision-receipt.example.json", "decision receipt example");
   validate("conformance/conformance-declaration.schema.json", "examples/composition/domain-baseline-declaration.example.json", "composition domain baseline declaration");

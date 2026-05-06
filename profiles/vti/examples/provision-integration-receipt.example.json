@@ -1,0 +1,17 @@
+{
+  "receipt_id": "provision-receipt-001",
+  "integration_id": "integration-001",
+  "requester_did": "did:web:operator.example",
+  "vta_did": "did:web:vta.example",
+  "context_id": "ctx-production-issuer",
+  "did_template_ref": "profiles/vti/examples/did-template-reference.example.json",
+  "authorization_credential_ref": "profiles/vti/examples/vta-authorization-credential.example.json",
+  "sealed_transfer_ref": "profiles/vti/examples/sealed-transfer-envelope.example.json",
+  "attestation_ref": "profiles/vti/examples/tee-attestation-reference.example.json",
+  "decision": "approved",
+  "decided_at": "2026-05-06T00:00:00Z",
+  "evidence_refs": [
+    "urn:evidence:acl-001",
+    "urn:evidence:audit-event-001"
+  ]
+}

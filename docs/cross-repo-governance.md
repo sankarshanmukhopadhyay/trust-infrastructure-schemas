@@ -1,7 +1,7 @@
 # Cross-Repo Governance
 
 **Last reviewed:** 2026-05-05  
-**Current release:** `v0.7.0`
+**Current release:** `v0.9.0`
 
 This repository is designed to interoperate with downstream assurance, conformance, registry, baseline, and meta-model repositories. Its role is to provide canonical artifact contracts, not to own every domain policy.
 

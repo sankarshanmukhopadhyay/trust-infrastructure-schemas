@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.8.0/registry/registry-entry.schema.json",
+  "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.9.0/registry/registry-entry.schema.json",
   "title": "Registry Entry",
   "description": "Reusable schema for a single registry entry referencing declarations, evidence, evaluations, policy artifacts, decision receipts, and authority-boundary metadata.",
   "type": "object",

@@ -1,7 +1,7 @@
 # Architecture
 
 **Last reviewed:** 2026-05-05  
-**Current release:** `v0.7.0`
+**Current release:** `v0.9.0`
 
 The repository architecture is organized around artifact families that support executable governance.
 

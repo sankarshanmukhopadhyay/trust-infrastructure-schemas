@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.8.0/odrl/odrl-policy-reference.schema.json",
+  "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.9.0/odrl/odrl-policy-reference.schema.json",
   "title": "ODRL Policy Reference",
   "description": "Experimental machine-readable carrier for an ODRL policy or stable reference to one.",
   "type": "object",

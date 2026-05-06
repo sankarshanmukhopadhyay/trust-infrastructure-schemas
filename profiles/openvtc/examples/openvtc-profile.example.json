@@ -1,0 +1,10 @@
+{
+  "profile_id": "openvtc-profile-001",
+  "persona_did": "did:web:alice.example",
+  "relationship_state_ref": "profiles/openvtc/examples/relationship-established.example.json",
+  "vrc_issuance_ref": "profiles/openvtc/examples/vrc-issued.example.json",
+  "configuration_evidence_ref": "profiles/openvtc/examples/config-evidence.example.json",
+  "didcomm_routing_ref": "profiles/openvtc/examples/didcomm-routing.example.json",
+  "assurance_level": "AL2",
+  "last_verified_at": "2026-05-06T00:00:00Z"
+}

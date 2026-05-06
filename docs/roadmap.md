@@ -1,7 +1,7 @@
 # Roadmap
 
 **Last reviewed:** 2026-05-05  
-**Current release:** `v0.7.0`
+**Current release:** `v0.9.0`
 
 The roadmap prioritizes adoption, validation, and governance interoperability over unconstrained schema expansion.
 
