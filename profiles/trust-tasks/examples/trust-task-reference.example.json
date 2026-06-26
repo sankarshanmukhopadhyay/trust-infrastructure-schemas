@@ -1,0 +1,12 @@
+{
+  "task_id": "trust-task:vti:sign-trust-task",
+  "task_family": "auth",
+  "task_version": "1.0.0",
+  "task_uri": "https://example.org/trust-tasks/vti/sign-trust-task.json",
+  "manifest_uri": "https://example.org/trust-tasks/manifests/vti-runtime.json",
+  "tsmm_effect_ref": {
+    "uri": "https://example.org/tsmm/effects/sign-trust-task",
+    "artifact_id": "effect-sign-trust-task"
+  },
+  "notes": "Reference to the VTI trust task used for authority-bound signing."
+}

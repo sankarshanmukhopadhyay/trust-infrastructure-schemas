@@ -1,7 +1,7 @@
 {
   "$schema": "./trust-artifact-taxonomy.schema.json",
   "model": "Open Trust Artifact Model",
-  "version": "v0.9.0+dtg-openvtc-vti-runtime-alignment",
+  "version": "v0.10.0+tsmm-runtime-assurance-artifact-contracts",
   "artifact_classes": [
     {
       "id": "identity-authority",
@@ -116,6 +116,12 @@
           "path": "evidence/evidence-bundle-manifest.schema.json",
           "status": "implemented",
           "notes": "Reusable manifest for evidence artifacts supporting declarations and decisions."
+        },
+        {
+          "name": "Evidence bundle integrity profile",
+          "path": "docs/evidence-bundle-integrity-profile.md",
+          "status": "experimental",
+          "notes": "Adds bundle-level digest, canonicalization, detached proof, and signature metadata."
         }
       ]
     },
@@ -179,6 +185,12 @@
           "path": "registry/registry-entry.schema.json",
           "status": "implemented",
           "notes": "Reusable schema for a single discoverable registry entry carrying declaration, evidence, evaluation, decision, policy, and authority references."
+        },
+        {
+          "name": "Registry publication profile",
+          "path": "registry/registry-publication-profile.schema.json",
+          "status": "experimental",
+          "notes": "Defines assurance-level publication evidence while separating discovery from runtime authorization."
         }
       ]
     },
@@ -210,6 +222,12 @@
           "path": "model/tsmm-artifact-mapping.json",
           "status": "implemented",
           "notes": "Maps TSMM semantic concepts to TIS executable artifact contracts."
+        },
+        {
+          "name": "TSMM runtime governance projection",
+          "path": "profiles/tsmm/tsmm-runtime-governance-projection.schema.json",
+          "status": "experimental",
+          "notes": "Projects TSMM runtime governance envelopes into executable TIS artifact references."
         }
       ]
     },
@@ -241,6 +259,24 @@
           "path": "model/cross-repo-compatibility-matrix.json",
           "status": "implemented",
           "notes": "Machine-readable drift tracking and artifact mapping."
+        },
+        {
+          "name": "Trust Task runtime assurance profiles",
+          "path": "profiles/trust-tasks/",
+          "status": "experimental",
+          "notes": "Reference, manifest, lifecycle, and execution receipt artifacts for runtime task assurance."
+        },
+        {
+          "name": "OpenVTC state normalization",
+          "path": "profiles/openvtc/openvtc-state-normalization.schema.json",
+          "status": "experimental",
+          "notes": "Maps OpenVTC implementation states to normalized assurance states."
+        },
+        {
+          "name": "VTI status-list reference",
+          "path": "profiles/vti/status-list-reference.schema.json",
+          "status": "experimental",
+          "notes": "Captures revocation, suspension, expiry, and activation checks as evidence."
         }
       ]
     }

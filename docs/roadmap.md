@@ -55,3 +55,19 @@ Extend OASF and control crosswalk examples to carry confidence, equivalence type
 - Promote the TSMM artifact mapping from candidate to supported after implementation feedback.
 - Add transform tooling from TSMM graph references to TIS authority boundary and decision receipt drafts.
 - Add richer negative examples for registry-publication-is-not-authorization cases.
+
+
+## v0.10.0 delivered
+
+- TSMM runtime governance projection profile.
+- Trust Task lifecycle and execution receipt evidence.
+- VTI authorization evidence aligned with implementation roles and capability enforcement.
+- OpenVTC relationship state normalization and task evidence mapping.
+- Integrity-bound evidence bundle metadata.
+- Status, revocation, and registry publication profiles.
+
+## v0.11.0 candidate direction
+
+- Conformance assertions for effect-level authorization.
+- Negative fixtures for stale status, revoked authority, missing decision receipt, and mismatched effect admission.
+- Optional JSON-LD contexts for runtime assurance artifacts.

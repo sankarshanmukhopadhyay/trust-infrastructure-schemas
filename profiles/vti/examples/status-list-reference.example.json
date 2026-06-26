@@ -1,0 +1,21 @@
+{
+  "status_ref_id": "status-check-001",
+  "subject_ref": {
+    "uri": "https://example.org/tis/vti/acl/acl-001.json",
+    "artifact_id": "acl-001"
+  },
+  "status_purpose": "revocation",
+  "status": "active",
+  "checked_at": "2026-06-26T00:00:00Z",
+  "source_uri": "https://example.org/status/vti/acl-status-list.json",
+  "list_index": 42,
+  "fresh_until": "2026-06-27T00:00:00Z",
+  "evidence_ref": {
+    "uri": "https://example.org/tis/evidence/status-check-001.json",
+    "artifact_id": "status-check-001"
+  },
+  "tsmm_effect_ref": {
+    "uri": "https://example.org/tsmm/effects/sign-trust-task",
+    "artifact_id": "effect-sign-trust-task"
+  }
+}

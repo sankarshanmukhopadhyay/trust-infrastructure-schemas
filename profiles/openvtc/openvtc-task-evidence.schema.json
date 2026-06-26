@@ -1,0 +1,192 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.10.0/profiles/openvtc/openvtc-task-evidence.schema.json",
+  "title": "OpenVTC Task Evidence",
+  "description": "Runtime task evidence emitted from OpenVTC relationship and VRC workflows with TSMM-aligned lifecycle state mapping.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "task_id",
+    "task_type",
+    "owning_persona",
+    "relationship_id",
+    "lifecycle_state",
+    "created_at",
+    "evidence_refs"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "task_type": {
+      "type": "string",
+      "enum": [
+        "relationship-request",
+        "relationship-acceptance",
+        "relationship-rejection",
+        "vrc-issuance",
+        "didcomm-routing",
+        "config-update",
+        "other"
+      ]
+    },
+    "owning_persona": {
+      "type": "string",
+      "pattern": "^did:[a-z0-9]+:[A-Za-z0-9.\\-_%:]+$"
+    },
+    "relationship_id": {
+      "type": "string"
+    },
+    "remote_p_did": {
+      "type": "string",
+      "pattern": "^did:[a-z0-9]+:[A-Za-z0-9.\\-_%:]+$"
+    },
+    "local_did": {
+      "type": "string",
+      "pattern": "^did:[a-z0-9]+:[A-Za-z0-9.\\-_%:]+$"
+    },
+    "remote_did": {
+      "type": "string",
+      "pattern": "^did:[a-z0-9]+:[A-Za-z0-9.\\-_%:]+$"
+    },
+    "implementation_state": {
+      "type": "string",
+      "enum": [
+        "RequestSent",
+        "RequestAccepted",
+        "RequestRejected",
+        "Established",
+        "None"
+      ]
+    },
+    "normalized_relationship_state": {
+      "type": "string",
+      "enum": [
+        "requested",
+        "accepted",
+        "rejected",
+        "established",
+        "none"
+      ]
+    },
+    "lifecycle_state": {
+      "type": "string",
+      "enum": [
+        "submitted",
+        "working",
+        "input-required",
+        "auth-required",
+        "completed",
+        "failed",
+        "canceled",
+        "rejected"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "completed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "uri"
+        ],
+        "properties": {
+          "uri": {
+            "type": "string",
+            "format": "uri"
+          },
+          "artifact_id": {
+            "type": "string"
+          },
+          "schema_uri": {
+            "type": "string",
+            "format": "uri"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[A-Fa-f0-9]{64}$"
+          },
+          "media_type": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "description": "OpenVTC task evidence reference."
+      },
+      "uniqueItems": true
+    },
+    "trust_task_receipt_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "uri"
+      ],
+      "properties": {
+        "uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "artifact_id": {
+          "type": "string"
+        },
+        "schema_uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "media_type": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "description": "Trust Task execution receipt reference."
+    },
+    "tsmm_runtime_governance_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "uri"
+      ],
+      "properties": {
+        "uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "artifact_id": {
+          "type": "string"
+        },
+        "schema_uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "media_type": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "description": "TSMM runtime governance envelope reference."
+    }
+  }
+}

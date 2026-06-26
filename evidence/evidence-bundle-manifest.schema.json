@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.9.0/evidence/evidence-bundle-manifest.schema.json",
+  "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.10.0/evidence/evidence-bundle-manifest.schema.json",
   "title": "Evidence Bundle Manifest",
   "description": "Reusable manifest for listing evidence artifacts evaluated in a conformance or trust decision flow.",
   "type": "object",
@@ -86,6 +86,100 @@
         "statement": {
           "type": "string",
           "minLength": 10
+        }
+      }
+    },
+    "integrity": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "canonicalization": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "method"
+          ],
+          "properties": {
+            "method": {
+              "type": "string",
+              "enum": [
+                "jcs",
+                "json-ld-canonicalization",
+                "other"
+              ]
+            },
+            "profile_uri": {
+              "type": "string",
+              "format": "uri"
+            }
+          }
+        },
+        "bundle_digest": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "algorithm",
+            "value"
+          ],
+          "properties": {
+            "algorithm": {
+              "type": "string",
+              "enum": [
+                "sha256",
+                "sha512"
+              ]
+            },
+            "value": {
+              "type": "string",
+              "pattern": "^[A-Fa-f0-9]{64,128}$"
+            }
+          }
+        },
+        "detached_proofs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "proof_type",
+              "proof_uri",
+              "verification_method",
+              "created"
+            ],
+            "properties": {
+              "proof_type": {
+                "type": "string"
+              },
+              "proof_uri": {
+                "type": "string",
+                "format": "uri"
+              },
+              "verification_method": {
+                "type": "string"
+              },
+              "created": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          },
+          "uniqueItems": true
+        },
+        "signature": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "signed": {
+              "type": "boolean"
+            },
+            "signature_ref": {
+              "type": "string",
+              "format": "uri"
+            },
+            "verification_method": {
+              "type": "string"
+            }
+          }
         }
       }
     }

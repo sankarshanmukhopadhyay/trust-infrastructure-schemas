@@ -1,0 +1,28 @@
+{
+  "task_id": "openvtc-task-001",
+  "task_type": "vrc-issuance",
+  "owning_persona": "did:web:persona.example",
+  "relationship_id": "rel-001",
+  "remote_p_did": "did:web:counterparty.example",
+  "local_did": "did:web:local-rdid.example",
+  "remote_did": "did:web:remote-rdid.example",
+  "implementation_state": "Established",
+  "normalized_relationship_state": "established",
+  "lifecycle_state": "completed",
+  "created_at": "2026-06-26T00:00:00Z",
+  "completed_at": "2026-06-26T00:05:00Z",
+  "evidence_refs": [
+    {
+      "uri": "https://example.org/openvtc/evidence/vrc-issued-001.json",
+      "artifact_id": "vrc-issued-001"
+    }
+  ],
+  "trust_task_receipt_ref": {
+    "uri": "https://example.org/tis/trust-tasks/receipts/task-exec-001.json",
+    "artifact_id": "task-exec-001"
+  },
+  "tsmm_runtime_governance_ref": {
+    "uri": "https://example.org/tsmm/runtime/envelopes/rg-001",
+    "artifact_id": "rg-001"
+  }
+}

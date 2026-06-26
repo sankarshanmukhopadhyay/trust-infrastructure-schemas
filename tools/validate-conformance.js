@@ -100,6 +100,29 @@ try {
   validate("profiles/vti/tee-attestation-reference.schema.json", "profiles/vti/examples/tee-attestation-reference.example.json", "VTI TEE attestation reference example");
   validate("profiles/vti/provision-integration-receipt.schema.json", "profiles/vti/examples/provision-integration-receipt.example.json", "VTI provision integration receipt example");
 
+  validate("profiles/tsmm/tsmm-runtime-governance-projection.schema.json", "profiles/tsmm/examples/runtime-governance-projection.example.json", "TSMM runtime governance projection example");
+
+  validate("profiles/trust-tasks/trust-task-reference.schema.json", "profiles/trust-tasks/examples/trust-task-reference.example.json", "Trust Task reference example");
+  validate("profiles/trust-tasks/trust-task-lifecycle-event.schema.json", "profiles/trust-tasks/examples/trust-task-lifecycle-event.example.json", "Trust Task lifecycle event example");
+  validate("profiles/trust-tasks/trust-task-manifest-reference.schema.json", "profiles/trust-tasks/examples/trust-task-manifest-reference.example.json", "Trust Task manifest reference example");
+  validate("profiles/trust-tasks/trust-task-execution-receipt.schema.json", "profiles/trust-tasks/examples/trust-task-execution-receipt.example.json", "Trust Task execution receipt example");
+
+  validate("profiles/openvtc/openvtc-state-normalization.schema.json", "profiles/openvtc/examples/state-normalization.example.json", "OpenVTC state normalization example");
+  validate("profiles/openvtc/openvtc-task-evidence.schema.json", "profiles/openvtc/examples/task-evidence.example.json", "OpenVTC task evidence example");
+
+  validate("evidence/evidence-bundle-manifest.schema.json", "evidence/examples/integrity-bound-evidence-bundle.example.json", "integrity-bound evidence bundle example");
+  validate("profiles/vti/status-list-reference.schema.json", "profiles/vti/examples/status-list-reference.example.json", "VTI status-list reference example");
+  validate("registry/registry-publication-profile.schema.json", "registry/examples/registry-publication-profile.example.json", "registry publication profile example");
+
+  validate("profiles/tsmm/tsmm-runtime-governance-projection.schema.json", "examples/cross-repo/runtime-assurance-v0.10/01-tsmm-runtime-governance-projection.example.json", "v0.10 composition TSMM projection");
+  validate("profiles/vti/vta-acl-entry.schema.json", "examples/cross-repo/runtime-assurance-v0.10/02-vti-acl-entry.example.json", "v0.10 composition VTI ACL");
+  validate("profiles/openvtc/openvtc-task-evidence.schema.json", "examples/cross-repo/runtime-assurance-v0.10/03-openvtc-task-evidence.example.json", "v0.10 composition OpenVTC task evidence");
+  validate("profiles/trust-tasks/trust-task-lifecycle-event.schema.json", "examples/cross-repo/runtime-assurance-v0.10/04-trust-task-lifecycle-event.example.json", "v0.10 composition Trust Task lifecycle");
+  validate("profiles/trust-tasks/trust-task-execution-receipt.schema.json", "examples/cross-repo/runtime-assurance-v0.10/05-trust-task-execution-receipt.example.json", "v0.10 composition Trust Task execution receipt");
+  validate("evidence/evidence-bundle-manifest.schema.json", "examples/cross-repo/runtime-assurance-v0.10/06-integrity-bound-evidence-bundle.example.json", "v0.10 composition integrity-bound evidence bundle");
+  validate("decision/decision-receipt.schema.json", "examples/cross-repo/runtime-assurance-v0.10/07-decision-receipt.example.json", "v0.10 composition decision receipt");
+  validate("registry/registry-publication-profile.schema.json", "examples/cross-repo/runtime-assurance-v0.10/08-registry-publication-profile.example.json", "v0.10 composition registry publication profile");
+
   validate("model/cross-repo-compatibility-matrix.schema.json", "model/cross-repo-compatibility-matrix.json", "cross-repo compatibility matrix");
   validate("model/trust-artifact-taxonomy.schema.json", "model/trust-artifact-taxonomy.json", "trust artifact taxonomy");
   validate("decision/decision-receipt.schema.json", "decision/examples/decision-receipt.example.json", "decision receipt example");

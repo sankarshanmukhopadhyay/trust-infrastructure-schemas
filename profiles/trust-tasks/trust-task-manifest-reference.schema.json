@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.10.0/profiles/trust-tasks/trust-task-manifest-reference.schema.json",
+  "title": "Trust Task Manifest Reference",
+  "description": "Reference profile for a Trust Task manifest, its digest, authority scope, and compatible runtime profiles.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "manifest_id",
+    "manifest_uri",
+    "task_refs",
+    "published_at"
+  ],
+  "properties": {
+    "manifest_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "manifest_uri": {
+      "type": "string",
+      "format": "uri"
+    },
+    "task_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "uri"
+        ],
+        "properties": {
+          "uri": {
+            "type": "string",
+            "format": "uri"
+          },
+          "artifact_id": {
+            "type": "string"
+          },
+          "schema_uri": {
+            "type": "string",
+            "format": "uri"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[A-Fa-f0-9]{64}$"
+          },
+          "media_type": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "description": "Trust Task reference."
+      },
+      "uniqueItems": true
+    },
+    "publisher": {
+      "type": "string",
+      "pattern": "^did:[a-z0-9]+:[A-Za-z0-9.\\-_%:]+$"
+    },
+    "published_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    },
+    "compatible_profiles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    }
+  }
+}

@@ -2,6 +2,30 @@
 
 All notable changes to this repository are documented here.
 
+## [v0.10.0] - 2026-06-26
+
+### Added
+
+- Added TSMM runtime governance projection schema and validated example.
+- Added Trust Task reference, manifest-reference, lifecycle-event, and execution-receipt schemas.
+- Added OpenVTC state-normalization and task-evidence schemas.
+- Added VTI status-list reference schema for revocation, suspension, expiry, and activation evidence.
+- Added registry publication profile with assurance-level publication evidence requirements.
+- Added evidence bundle integrity metadata for canonicalization, bundle digest, detached proof, and signature references.
+- Added TSMM runtime governance crosswalks and v0.10.0 cross-repo runtime assurance example pack.
+
+### Changed
+
+- Updated VTI ACL and authorization credential profiles to align with implementation roles, capability vocabulary, allowed contexts, consumer kind, lifecycle state, step-up metadata, and TSMM authority/effect references.
+- Separated Trust Task lifecycle state from decision outcome and effect admission.
+- Updated cross-repo compatibility tracking to include TSMM as the semantic governance layer and TIS as the executable artifact contract layer.
+- Updated release metadata, documentation navigation, taxonomy, and validation coverage for v0.10.0.
+
+### Fixed
+
+- Removed `.DS_Store` local artifact that caused repository hygiene lint failure.
+- Added validation coverage for all new runtime assurance schemas and examples.
+
 ## [v0.9.0] - 2026-05-06
 
 ### Added

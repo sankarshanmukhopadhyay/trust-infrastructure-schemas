@@ -1,0 +1,38 @@
+{
+  "publication_id": "registry-publication-001",
+  "registry_id": "registry-production-001",
+  "entry_ref": {
+    "uri": "https://example.org/tis/registry/entries/vta-service-01.json",
+    "artifact_id": "registry-entry-vta-service-01"
+  },
+  "assurance_level": "AL4",
+  "publication_evidence": {
+    "declaration_ref": {
+      "uri": "https://example.org/tis/conformance/declaration-001.json",
+      "artifact_id": "declaration-001"
+    },
+    "evidence_bundle_ref": {
+      "uri": "https://example.org/tis/evidence/bundles/runtime-bundle-001.json",
+      "artifact_id": "runtime-bundle-001"
+    },
+    "decision_receipt_ref": {
+      "uri": "https://example.org/tis/decision/receipts/decision-001.json",
+      "artifact_id": "decision-001"
+    },
+    "authority_boundary_ref": {
+      "uri": "https://example.org/tis/governance/authority-boundaries/vta-admin-boundary.json",
+      "artifact_id": "authority-boundary-vta-admin"
+    },
+    "status_ref": {
+      "uri": "https://example.org/tis/status/status-check-001.json",
+      "artifact_id": "status-check-001"
+    },
+    "audit_trail_ref": {
+      "uri": "https://example.org/audit/events/audit-001.json",
+      "artifact_id": "audit-001"
+    }
+  },
+  "authorization_notice": "Registry publication is discovery evidence and MUST NOT be interpreted as runtime authorization without current authority, policy, evidence, revocation, and decision artifacts.",
+  "published_at": "2026-06-26T00:00:00Z",
+  "valid_until": "2026-09-26T00:00:00Z"
+}

@@ -1,0 +1,150 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.10.0/profiles/vti/status-list-reference.schema.json",
+  "title": "VTI Status List Reference",
+  "description": "Reference to a VTI status, suspension, revocation, or expiry source used as runtime assurance evidence.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "status_ref_id",
+    "subject_ref",
+    "status_purpose",
+    "status",
+    "checked_at",
+    "source_uri"
+  ],
+  "properties": {
+    "status_ref_id": {
+      "type": "string"
+    },
+    "subject_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "uri"
+      ],
+      "properties": {
+        "uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "artifact_id": {
+          "type": "string"
+        },
+        "schema_uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "media_type": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "description": "Subject or artifact whose status was checked."
+    },
+    "status_purpose": {
+      "type": "string",
+      "enum": [
+        "revocation",
+        "suspension",
+        "expiry",
+        "activation",
+        "other"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "suspended",
+        "revoked",
+        "expired",
+        "unknown"
+      ]
+    },
+    "checked_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_uri": {
+      "type": "string",
+      "format": "uri"
+    },
+    "list_index": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "fresh_until": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "evidence_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "uri"
+      ],
+      "properties": {
+        "uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "artifact_id": {
+          "type": "string"
+        },
+        "schema_uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "media_type": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "description": "Evidence for status check."
+    },
+    "tsmm_effect_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "uri"
+      ],
+      "properties": {
+        "uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "artifact_id": {
+          "type": "string"
+        },
+        "schema_uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "media_type": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "description": "TSMM effect impacted by this status check."
+    }
+  }
+}

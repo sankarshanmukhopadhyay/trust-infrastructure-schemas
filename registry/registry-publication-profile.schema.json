@@ -1,0 +1,272 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.10.0/registry/registry-publication-profile.schema.json",
+  "title": "Registry Publication Profile",
+  "description": "Assurance-level profile for registry publication evidence, explicitly distinguishing discovery from runtime authorization.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "publication_id",
+    "registry_id",
+    "entry_ref",
+    "assurance_level",
+    "publication_evidence",
+    "authorization_notice",
+    "published_at"
+  ],
+  "properties": {
+    "publication_id": {
+      "type": "string"
+    },
+    "registry_id": {
+      "type": "string"
+    },
+    "entry_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "uri"
+      ],
+      "properties": {
+        "uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "artifact_id": {
+          "type": "string"
+        },
+        "schema_uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "media_type": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "description": "Registry entry reference."
+    },
+    "assurance_level": {
+      "type": "string",
+      "enum": [
+        "AL1",
+        "AL2",
+        "AL3",
+        "AL4"
+      ]
+    },
+    "publication_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "declaration_ref"
+      ],
+      "properties": {
+        "declaration_ref": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "uri"
+          ],
+          "properties": {
+            "uri": {
+              "type": "string",
+              "format": "uri"
+            },
+            "artifact_id": {
+              "type": "string"
+            },
+            "schema_uri": {
+              "type": "string",
+              "format": "uri"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[A-Fa-f0-9]{64}$"
+            },
+            "media_type": {
+              "type": "string"
+            },
+            "notes": {
+              "type": "string"
+            }
+          },
+          "description": "Implementer declaration reference."
+        },
+        "evidence_bundle_ref": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "uri"
+          ],
+          "properties": {
+            "uri": {
+              "type": "string",
+              "format": "uri"
+            },
+            "artifact_id": {
+              "type": "string"
+            },
+            "schema_uri": {
+              "type": "string",
+              "format": "uri"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[A-Fa-f0-9]{64}$"
+            },
+            "media_type": {
+              "type": "string"
+            },
+            "notes": {
+              "type": "string"
+            }
+          },
+          "description": "Evidence bundle reference."
+        },
+        "decision_receipt_ref": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "uri"
+          ],
+          "properties": {
+            "uri": {
+              "type": "string",
+              "format": "uri"
+            },
+            "artifact_id": {
+              "type": "string"
+            },
+            "schema_uri": {
+              "type": "string",
+              "format": "uri"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[A-Fa-f0-9]{64}$"
+            },
+            "media_type": {
+              "type": "string"
+            },
+            "notes": {
+              "type": "string"
+            }
+          },
+          "description": "Decision receipt reference."
+        },
+        "authority_boundary_ref": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "uri"
+          ],
+          "properties": {
+            "uri": {
+              "type": "string",
+              "format": "uri"
+            },
+            "artifact_id": {
+              "type": "string"
+            },
+            "schema_uri": {
+              "type": "string",
+              "format": "uri"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[A-Fa-f0-9]{64}$"
+            },
+            "media_type": {
+              "type": "string"
+            },
+            "notes": {
+              "type": "string"
+            }
+          },
+          "description": "Authority boundary reference."
+        },
+        "status_ref": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "uri"
+          ],
+          "properties": {
+            "uri": {
+              "type": "string",
+              "format": "uri"
+            },
+            "artifact_id": {
+              "type": "string"
+            },
+            "schema_uri": {
+              "type": "string",
+              "format": "uri"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[A-Fa-f0-9]{64}$"
+            },
+            "media_type": {
+              "type": "string"
+            },
+            "notes": {
+              "type": "string"
+            }
+          },
+          "description": "Status or revocation reference."
+        },
+        "audit_trail_ref": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "uri"
+          ],
+          "properties": {
+            "uri": {
+              "type": "string",
+              "format": "uri"
+            },
+            "artifact_id": {
+              "type": "string"
+            },
+            "schema_uri": {
+              "type": "string",
+              "format": "uri"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[A-Fa-f0-9]{64}$"
+            },
+            "media_type": {
+              "type": "string"
+            },
+            "notes": {
+              "type": "string"
+            }
+          },
+          "description": "Audit trail reference."
+        }
+      }
+    },
+    "authorization_notice": {
+      "type": "string",
+      "const": "Registry publication is discovery evidence and MUST NOT be interpreted as runtime authorization without current authority, policy, evidence, revocation, and decision artifacts."
+    },
+    "published_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "valid_until": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
-  "release": "v0.9.0",
-  "generated_at": "2026-05-06T00:00:00Z",
+  "release": "v0.10.0",
+  "generated_at": "2026-06-26T00:00:00Z",
   "artifacts": [
     {
       "artifact_id": "dtg-credentials",
@@ -521,6 +521,176 @@
       "validated_by": [
         "tools/validate-conformance.js"
       ]
+    },
+    {
+      "artifact_id": "tsmm-runtime-governance-projection",
+      "status": "implemented",
+      "schema": "profiles/tsmm/tsmm-runtime-governance-projection.schema.json",
+      "examples": [
+        "profiles/tsmm/examples/runtime-governance-projection.example.json",
+        "examples/cross-repo/runtime-assurance-v0.10/01-tsmm-runtime-governance-projection.example.json"
+      ],
+      "documentation": [
+        "docs/tsmm-runtime-governance-projection-profile.md",
+        "docs/crosswalks/tsmm-runtime-governance-crosswalk.md"
+      ],
+      "validated_by": [
+        "tools/validate-conformance.js",
+        ".github/workflows/validate-schemas.yml"
+      ],
+      "notes": "Added in v0.10.0 for TSMM-aligned runtime assurance."
+    },
+    {
+      "artifact_id": "trust-task-reference",
+      "status": "experimental",
+      "schema": "profiles/trust-tasks/trust-task-reference.schema.json",
+      "examples": [
+        "profiles/trust-tasks/examples/trust-task-reference.example.json"
+      ],
+      "documentation": [
+        "docs/trust-task-runtime-assurance-profile.md",
+        "docs/crosswalks/tsmm-trust-task-evidence-crosswalk.md"
+      ],
+      "validated_by": [
+        "tools/validate-conformance.js",
+        ".github/workflows/validate-schemas.yml"
+      ],
+      "notes": "Added in v0.10.0 for TSMM-aligned runtime assurance."
+    },
+    {
+      "artifact_id": "trust-task-lifecycle-event",
+      "status": "experimental",
+      "schema": "profiles/trust-tasks/trust-task-lifecycle-event.schema.json",
+      "examples": [
+        "profiles/trust-tasks/examples/trust-task-lifecycle-event.example.json",
+        "examples/cross-repo/runtime-assurance-v0.10/04-trust-task-lifecycle-event.example.json"
+      ],
+      "documentation": [
+        "docs/trust-task-runtime-assurance-profile.md"
+      ],
+      "validated_by": [
+        "tools/validate-conformance.js",
+        ".github/workflows/validate-schemas.yml"
+      ],
+      "notes": "Added in v0.10.0 for TSMM-aligned runtime assurance."
+    },
+    {
+      "artifact_id": "trust-task-manifest-reference",
+      "status": "experimental",
+      "schema": "profiles/trust-tasks/trust-task-manifest-reference.schema.json",
+      "examples": [
+        "profiles/trust-tasks/examples/trust-task-manifest-reference.example.json"
+      ],
+      "documentation": [
+        "docs/trust-task-runtime-assurance-profile.md"
+      ],
+      "validated_by": [
+        "tools/validate-conformance.js",
+        ".github/workflows/validate-schemas.yml"
+      ],
+      "notes": "Added in v0.10.0 for TSMM-aligned runtime assurance."
+    },
+    {
+      "artifact_id": "trust-task-execution-receipt",
+      "status": "experimental",
+      "schema": "profiles/trust-tasks/trust-task-execution-receipt.schema.json",
+      "examples": [
+        "profiles/trust-tasks/examples/trust-task-execution-receipt.example.json",
+        "examples/cross-repo/runtime-assurance-v0.10/05-trust-task-execution-receipt.example.json"
+      ],
+      "documentation": [
+        "docs/trust-task-runtime-assurance-profile.md"
+      ],
+      "validated_by": [
+        "tools/validate-conformance.js",
+        ".github/workflows/validate-schemas.yml"
+      ],
+      "notes": "Added in v0.10.0 for TSMM-aligned runtime assurance."
+    },
+    {
+      "artifact_id": "openvtc-state-normalization",
+      "status": "experimental",
+      "schema": "profiles/openvtc/openvtc-state-normalization.schema.json",
+      "examples": [
+        "profiles/openvtc/examples/state-normalization.example.json"
+      ],
+      "documentation": [
+        "docs/openvtc-state-normalization.md"
+      ],
+      "validated_by": [
+        "tools/validate-conformance.js",
+        ".github/workflows/validate-schemas.yml"
+      ],
+      "notes": "Added in v0.10.0 for TSMM-aligned runtime assurance."
+    },
+    {
+      "artifact_id": "openvtc-task-evidence",
+      "status": "experimental",
+      "schema": "profiles/openvtc/openvtc-task-evidence.schema.json",
+      "examples": [
+        "profiles/openvtc/examples/task-evidence.example.json",
+        "examples/cross-repo/runtime-assurance-v0.10/03-openvtc-task-evidence.example.json"
+      ],
+      "documentation": [
+        "docs/openvtc-state-normalization.md",
+        "docs/openvtc-runtime-profile.md"
+      ],
+      "validated_by": [
+        "tools/validate-conformance.js",
+        ".github/workflows/validate-schemas.yml"
+      ],
+      "notes": "Added in v0.10.0 for TSMM-aligned runtime assurance."
+    },
+    {
+      "artifact_id": "integrity-bound-evidence-bundle",
+      "status": "implemented",
+      "schema": "evidence/evidence-bundle-manifest.schema.json",
+      "examples": [
+        "evidence/examples/integrity-bound-evidence-bundle.example.json",
+        "examples/cross-repo/runtime-assurance-v0.10/06-integrity-bound-evidence-bundle.example.json"
+      ],
+      "documentation": [
+        "docs/evidence-bundle-integrity-profile.md"
+      ],
+      "validated_by": [
+        "tools/validate-conformance.js",
+        ".github/workflows/validate-schemas.yml"
+      ],
+      "notes": "Added in v0.10.0 for TSMM-aligned runtime assurance."
+    },
+    {
+      "artifact_id": "vti-status-list-reference",
+      "status": "experimental",
+      "schema": "profiles/vti/status-list-reference.schema.json",
+      "examples": [
+        "profiles/vti/examples/status-list-reference.example.json"
+      ],
+      "documentation": [
+        "docs/status-and-revocation-evidence.md",
+        "docs/vti-runtime-assurance-profile.md"
+      ],
+      "validated_by": [
+        "tools/validate-conformance.js",
+        ".github/workflows/validate-schemas.yml"
+      ],
+      "notes": "Added in v0.10.0 for TSMM-aligned runtime assurance."
+    },
+    {
+      "artifact_id": "registry-publication-profile",
+      "status": "experimental",
+      "schema": "registry/registry-publication-profile.schema.json",
+      "examples": [
+        "registry/examples/registry-publication-profile.example.json",
+        "examples/cross-repo/runtime-assurance-v0.10/08-registry-publication-profile.example.json"
+      ],
+      "documentation": [
+        "docs/registry-publication-profile.md"
+      ],
+      "validated_by": [
+        "tools/validate-conformance.js",
+        ".github/workflows/validate-schemas.yml"
+      ],
+      "notes": "Added in v0.10.0 for TSMM-aligned runtime assurance."
     }
   ]
 }

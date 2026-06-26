@@ -1,0 +1,18 @@
+{
+  "event_id": "task-event-001",
+  "task_id": "trust-task:vti:sign-trust-task",
+  "lifecycle_state": "completed",
+  "occurred_at": "2026-06-26T00:00:00Z",
+  "actor": "did:web:vta.example",
+  "reason": "Runtime task completed after authority and revocation checks passed.",
+  "evidence_refs": [
+    {
+      "uri": "https://example.org/tis/evidence/task-event-001.json",
+      "artifact_id": "task-event-001"
+    }
+  ],
+  "tsmm_runtime_governance_ref": {
+    "uri": "https://example.org/tsmm/runtime/envelopes/rg-001",
+    "artifact_id": "rg-001"
+  }
+}

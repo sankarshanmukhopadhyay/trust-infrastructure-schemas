@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.10.0/profiles/openvtc/openvtc-state-normalization.schema.json",
+  "title": "OpenVTC State Normalization",
+  "description": "Mapping from OpenVTC implementation relationship states into TIS assurance states and TSMM-aligned lifecycle states.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "mapping_id",
+    "implementation_state",
+    "normalized_relationship_state",
+    "mapped_at"
+  ],
+  "properties": {
+    "mapping_id": {
+      "type": "string"
+    },
+    "implementation_state": {
+      "type": "string",
+      "enum": [
+        "RequestSent",
+        "RequestAccepted",
+        "RequestRejected",
+        "Established",
+        "None"
+      ]
+    },
+    "normalized_relationship_state": {
+      "type": "string",
+      "enum": [
+        "requested",
+        "accepted",
+        "rejected",
+        "established",
+        "none"
+      ]
+    },
+    "task_lifecycle_state": {
+      "type": "string",
+      "enum": [
+        "submitted",
+        "working",
+        "input-required",
+        "auth-required",
+        "completed",
+        "failed",
+        "canceled",
+        "rejected"
+      ]
+    },
+    "mapped_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

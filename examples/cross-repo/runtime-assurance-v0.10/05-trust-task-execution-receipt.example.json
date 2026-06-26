@@ -1,0 +1,46 @@
+{
+  "receipt_id": "task-exec-001",
+  "task_ref": {
+    "uri": "https://example.org/trust-tasks/vti/sign-trust-task.json",
+    "artifact_id": "trust-task:vti:sign-trust-task"
+  },
+  "transport": "internal",
+  "actor": "did:web:vta.example",
+  "subject_ref": {
+    "uri": "https://example.org/tis/artifacts/credential-write-request-001.json",
+    "artifact_id": "credential-write-request-001"
+  },
+  "authority_context_ref": {
+    "uri": "https://example.org/tis/vti/acl/acl-001.json",
+    "artifact_id": "acl-001"
+  },
+  "tsmm_runtime_governance_ref": {
+    "uri": "https://example.org/tsmm/runtime/envelopes/rg-001",
+    "artifact_id": "rg-001"
+  },
+  "request_digest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "response_digest": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+  "lifecycle_state": "completed",
+  "decision_outcome": "allow",
+  "effect_admission": "permitted",
+  "policy_refs": [
+    {
+      "uri": "https://example.org/policies/vta-runtime-policy.json",
+      "artifact_id": "policy-vta-runtime"
+    }
+  ],
+  "evidence_refs": [
+    {
+      "uri": "https://example.org/tis/evidence/bundles/runtime-bundle-001.json",
+      "artifact_id": "runtime-bundle-001"
+    }
+  ],
+  "executed_at": "2026-06-26T00:00:00Z",
+  "fresh_until": "2026-06-27T00:00:00Z",
+  "audit_refs": [
+    {
+      "uri": "https://example.org/audit/events/audit-001.json",
+      "artifact_id": "audit-001"
+    }
+  ]
+}

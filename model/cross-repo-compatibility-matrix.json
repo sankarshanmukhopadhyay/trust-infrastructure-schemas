@@ -1,7 +1,14 @@
 {
-  "release": "v0.9.0",
-  "reviewed_at": "2026-05-06T00:00:00Z",
+  "release": "v0.10.0",
+  "reviewed_at": "2026-06-26T00:00:00Z",
   "upstreams": [
+    {
+      "repo": "trust-systems-meta-model",
+      "url": "local archive: trust-systems-meta-model-main.zip",
+      "tracked_ref": "main",
+      "role": "Semantic governance model and runtime governance envelope source",
+      "local_archive_reviewed": "trust-systems-meta-model-main.zip"
+    },
     {
       "repo": "OpenVTC/dtg-credentials",
       "url": "https://github.com/OpenVTC/dtg-credentials",
@@ -77,6 +84,57 @@
       ],
       "assurance_implication": "Captures authority, delegation, scope, enforcement, revocation, and audit evidence for runtime trust operations.",
       "validation_status": "validated-example"
+    },
+    {
+      "repo": "trust-systems-meta-model",
+      "artifact": "Runtime governance envelope",
+      "role": "Semantic source for runtime assurance projection",
+      "authority_surface": "Actor, requested effect, trust boundary, authority basis, delegation chain, policy, evidence, revocation check, decision, and audit expectation.",
+      "evidence_produced": [
+        "runtime-governance-projection",
+        "decision-receipt",
+        "audit-reference"
+      ],
+      "tis_profile": [
+        "profiles/tsmm/tsmm-runtime-governance-projection.schema.json",
+        "docs/crosswalks/tsmm-runtime-governance-crosswalk.md"
+      ],
+      "assurance_implication": "Establishes TSMM as the semantic governance layer and TIS as the executable artifact contract layer.",
+      "validation_status": "validated-example"
+    },
+    {
+      "repo": "OpenVTC/verifiable-trust-infrastructure",
+      "artifact": "VTA ACL capability and status enforcement",
+      "role": "Authority and revocation evidence capture",
+      "authority_surface": "VTI roles, capability grants, context scope, consumer kind, lifecycle state, step-up, and status-list checks.",
+      "evidence_produced": [
+        "vta-acl-entry",
+        "vta-authorization-credential",
+        "status-list-reference"
+      ],
+      "tis_profile": [
+        "profiles/vti/vta-acl-entry.schema.json",
+        "profiles/vti/vta-authorization-credential.schema.json",
+        "profiles/vti/status-list-reference.schema.json"
+      ],
+      "assurance_implication": "Makes authorization evidence effect-bound, status-aware, and auditable.",
+      "validation_status": "validated-example"
+    },
+    {
+      "repo": "OpenVTC/openvtc",
+      "artifact": "Relationship state and task evidence normalization",
+      "role": "Relationship and workflow runtime evidence capture",
+      "authority_surface": "Persona DID, relationship ID, implementation state, normalized relationship state, lifecycle state, and evidence references.",
+      "evidence_produced": [
+        "openvtc-state-normalization",
+        "openvtc-task-evidence"
+      ],
+      "tis_profile": [
+        "profiles/openvtc/openvtc-state-normalization.schema.json",
+        "profiles/openvtc/openvtc-task-evidence.schema.json"
+      ],
+      "assurance_implication": "Prevents implementation workflow state from being misread as governance outcome and enables task evidence replay.",
+      "validation_status": "validated-example"
     }
   ],
   "drift_review": {
@@ -88,7 +146,11 @@
       "VTA ACL or context model changes",
       "sealed transfer envelope changes",
       "attestation or DID template changes",
-      "breaking changes in CLI output or examples"
+      "breaking changes in CLI output or examples",
+      "TSMM runtime governance envelope changes",
+      "Trust Task lifecycle vocabulary changes",
+      "VTI capability or ACL role vocabulary changes",
+      "status-list or revocation semantics changes"
     ],
     "required_action": "Open a TIS drift review issue when upstream changes alter artifact shape, authority semantics, evidence requirements, or validation fixtures."
   }

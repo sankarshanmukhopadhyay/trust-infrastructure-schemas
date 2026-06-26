@@ -1,8 +1,8 @@
 # Trust Infrastructure Schemas
 
-**Current release:** `v0.9.0`  
-**Release theme:** DTG/OpenVTC/VTI Compatibility Profiles and Runtime Trust Artifact Alignment  
-**Last reviewed:** 2026-05-06
+**Current release:** `v0.10.0`  
+**Release theme:** TSMM-Aligned Runtime Assurance Artifact Contracts  
+**Last reviewed:** 2026-06-26
 
 This repository publishes canonical **machine-readable trust artifacts** for operational digital trust infrastructure. It is an implementation-oriented **Open Trust Artifact Model** for expressing authority, evidence, assurance, conformance, registry state, policy references, runtime workflow state, and bounded trust decisions in forms that can be validated by machines and reviewed by humans.
 
@@ -20,19 +20,20 @@ Trust infrastructure fails when governance remains trapped in websites, PDFs, an
 
 `trust-infrastructure-schemas` provides the artifact contracts for those questions.
 
-## What changed in v0.9.0
+## What changed in v0.10.0
 
-`v0.9.0` moves TIS from related-work awareness to executable cross-repo interoperability with DTG Credentials, OpenVTC, and Verifiable Trust Infrastructure.
+`v0.10.0` moves TIS from compatibility profiles to TSMM-aligned runtime assurance artifact contracts.
 
 Major changes:
 
-- added a DTG VC envelope compatibility profile aligned to <https://github.com/OpenVTC/dtg-credentials>;
-- added DTG personhood and relationship-card overlay profiles;
-- added OpenVTC runtime evidence profiles for relationship state, VRC issuance, configuration evidence, and DIDComm routing;
-- added VTI runtime assurance profiles for VTA contexts, ACL entries, authorization credentials, sealed transfer, DID templates, TEE attestation, and provision-integration receipts;
-- added a machine-readable cross-repo compatibility matrix and drift-review process;
-- refreshed stale release references and documentation navigation;
-- expanded validation coverage across all new examples.
+- added a TSMM runtime governance projection profile;
+- added Trust Task reference, manifest-reference, lifecycle-event, and execution-receipt schemas;
+- separated task lifecycle state, decision outcome, and effect admission;
+- aligned VTI authorization evidence with implementation roles, capability grants, context scope, consumer kind, lifecycle state, and TSMM authority semantics;
+- added OpenVTC relationship state normalization and task evidence mapping;
+- added integrity-bound evidence bundle metadata;
+- added VTI status-list reference and registry publication profiles;
+- added TSMM crosswalks and a v0.10.0 runtime assurance composition pack.
 
 ## Canonical governance flow
 
@@ -43,7 +44,7 @@ Model -> Authority Boundary -> Runtime Evidence -> Evaluation -> Decision Receip
 For DTG/OpenVTC/VTI workflows, the executable flow is:
 
 ```text
-DTG Credential -> OpenVTC Relationship/VRC Evidence -> VTI Authority Evidence -> TIS Decision Receipt -> Registry Entry
+TSMM Runtime Governance Projection -> VTI Authority Evidence -> OpenVTC Task Evidence -> Trust Task Receipt -> Evidence Bundle -> Decision Receipt -> Registry Publication
 ```
 
 ## Artifact families
@@ -58,7 +59,10 @@ DTG Credential -> OpenVTC Relationship/VRC Evidence -> VTI Authority Evidence ->
 
 ### Runtime profiles
 
+- TSMM runtime governance projection profile: `docs/tsmm-runtime-governance-projection-profile.md`
+- Trust Task runtime assurance profile: `docs/trust-task-runtime-assurance-profile.md`
 - OpenVTC runtime profile: `docs/openvtc-runtime-profile.md`
+- OpenVTC state normalization: `docs/openvtc-state-normalization.md`
 - VTI runtime assurance profile: `docs/vti-runtime-assurance-profile.md`
 - AIS-1 bonded agent profile: `profiles/ais1/schema.json` *(experimental)*
 
@@ -67,12 +71,15 @@ DTG Credential -> OpenVTC Relationship/VRC Evidence -> VTI Authority Evidence ->
 - Assurance levels: `assurance/assurance-levels.md`
 - Conformance declaration schema: `conformance/conformance-declaration.schema.json`
 - Evidence bundle manifest schema: `evidence/evidence-bundle-manifest.schema.json`
+- Evidence bundle integrity profile: `docs/evidence-bundle-integrity-profile.md`
+- Status and revocation evidence: `docs/status-and-revocation-evidence.md`
 - Decision receipt schema: `decision/decision-receipt.schema.json`
 
 ### Registry and ecosystem-state artifacts
 
 - Registry schema: `registry/registry.schema.json`
 - Registry entry schema: `registry/registry-entry.schema.json`
+- Registry publication profile: `registry/registry-publication-profile.schema.json`
 - Trust artifact taxonomy: `model/trust-artifact-taxonomy.json`
 - Cross-repo compatibility matrix: `model/cross-repo-compatibility-matrix.json`
 

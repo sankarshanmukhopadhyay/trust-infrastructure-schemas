@@ -1,0 +1,17 @@
+{
+  "manifest_id": "manifest-vti-runtime-001",
+  "manifest_uri": "https://example.org/trust-tasks/manifests/vti-runtime.json",
+  "task_refs": [
+    {
+      "uri": "https://example.org/trust-tasks/vti/sign-trust-task.json",
+      "artifact_id": "trust-task:vti:sign-trust-task"
+    }
+  ],
+  "publisher": "did:web:vta.example",
+  "published_at": "2026-06-26T00:00:00Z",
+  "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "compatible_profiles": [
+    "profiles/trust-tasks/trust-task-execution-receipt.schema.json",
+    "profiles/vti/vta-acl-entry.schema.json"
+  ]
+}

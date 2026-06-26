@@ -1,0 +1,8 @@
+{
+  "mapping_id": "openvtc-state-map-001",
+  "implementation_state": "Established",
+  "normalized_relationship_state": "established",
+  "task_lifecycle_state": "completed",
+  "mapped_at": "2026-06-26T00:00:00Z",
+  "notes": "OpenVTC Established state is preserved as normalized relationship state and completion evidence."
+}
