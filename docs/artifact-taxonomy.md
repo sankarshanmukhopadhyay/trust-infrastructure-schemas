@@ -33,3 +33,7 @@ This release adds or elevates:
 ## Implementation guidance
 
 Consumers should use the taxonomy to decide which artifacts are appropriate for their assurance flow. A domain baseline may only need conformance declarations and evidence manifests. A relying party should also preserve decision receipts. A public registry should publish registry entries referencing declarations, evidence, evaluations, and relevant decisions.
+
+## Delegation lineage artifacts
+
+A delegation lineage is an authority artifact that records the ordered or branching derivation of authority from an originating principal. Its paired verification artifact records chain-level checks and an effect-admission result. It complements, rather than replaces, an authority boundary.

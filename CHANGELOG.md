@@ -119,3 +119,10 @@ All notable changes to this repository are documented here.
 ### Changed
 
 - Refined schema documentation and example validation practices.
+
+## v0.11.0 - 2026-07-14
+
+- Added delegation-lineage and delegation-lineage-verification schemas.
+- Added linear, fan-out, and negative scope-expansion examples.
+- Added implementer guidance and authority-boundary integration notes.
+- Preserved backward compatibility for existing schema consumers.

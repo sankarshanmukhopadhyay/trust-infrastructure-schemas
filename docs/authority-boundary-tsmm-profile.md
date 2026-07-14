@@ -28,3 +28,7 @@ TSMM-derived authority boundaries SHOULD include:
 ## Enforcement rule
 
 The boundary constrains a decision. It does not make the decision by itself. Runtime action still requires a decision receipt when a relying party admits an effect.
+
+## Optional delegation-lineage evidence
+
+When authority is multi-hop or fan-out, include a reference to a `delegation/delegation-lineage.schema.json` artifact in the authority boundary's evidence references. The lineage artifact carries topology and attenuation evidence; the authority boundary continues to define the applicable governance boundary.

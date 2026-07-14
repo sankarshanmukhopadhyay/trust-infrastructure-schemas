@@ -103,3 +103,7 @@ npm run check
 ```
 
 The validation pipeline checks schema examples, coverage references, release documentation, and local artifact hygiene.
+
+## Delegation lineage
+
+Version 0.11.0 adds portable schemas for chained and fan-out delegation. Implementers can verify originating-principal continuity, scope attenuation, trust-domain transitions, branch convergence, and revocation propagation before admitting an effect. Start with [`delegation/README.md`](delegation/README.md).

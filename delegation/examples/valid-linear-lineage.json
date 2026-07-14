@@ -1,0 +1,90 @@
+{
+  "lineage_id": "lineage.procurement.001",
+  "originating_principal": {
+    "uri": "https://example.org/principal.acme",
+    "role": "other"
+  },
+  "original_intent": {
+    "uri": "https://example.org/intent.buy-laptops",
+    "role": "other"
+  },
+  "transaction_id": "txn-001",
+  "topology": "linear",
+  "hops": [
+    {
+      "hop_id": "hop-1",
+      "delegator": {
+        "uri": "https://example.org/principal.acme",
+        "role": "other"
+      },
+      "actor": {
+        "uri": "https://example.org/agent.procurement",
+        "role": "other"
+      },
+      "scope_received": [
+        "quote-request",
+        "vendor-discovery"
+      ],
+      "scope_granted": [
+        "quote-request",
+        "vendor-discovery"
+      ],
+      "attenuation_result": "not-applicable",
+      "trust_domain": "acme.example",
+      "status": "active"
+    },
+    {
+      "hop_id": "hop-2",
+      "parent_hop_id": "hop-1",
+      "delegator": {
+        "uri": "https://example.org/agent.procurement",
+        "role": "other"
+      },
+      "actor": {
+        "uri": "https://example.org/agent.vendor",
+        "role": "other"
+      },
+      "scope_received": [
+        "quote-request",
+        "vendor-discovery"
+      ],
+      "scope_granted": [
+        "quote-request"
+      ],
+      "attenuation_result": "pass",
+      "trust_domain": "acme.example",
+      "status": "active"
+    }
+  ],
+  "revocation": {
+    "preventive": "deny new effects",
+    "interruption": "cancel in-flight requests",
+    "compensation": "reverse committed order where permitted",
+    "propagation_result": "pass"
+  },
+  "chain_verification": {
+    "verified_at": "2026-07-14T00:00:00Z",
+    "verifier": {
+      "uri": "https://example.org/verifier.policy-engine",
+      "role": "other"
+    },
+    "checks": {
+      "principal_continuity": "pass",
+      "lineage_completeness": "pass",
+      "scope_attenuation": "pass",
+      "transaction_binding": "pass",
+      "intent_binding": "pass",
+      "status_freshness": "pass",
+      "domain_transition": "not-applicable",
+      "aggregate_authority": "not-applicable",
+      "revocation_propagation": "pass"
+    },
+    "result": "pass",
+    "evidence": [
+      {
+        "uri": "https://example.org/evidence.mandate",
+        "role": "other"
+      }
+    ]
+  }
+}
