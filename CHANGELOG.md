@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Establish flagship authority, adoption, assurance, interoperability, validation-evidence, and GitHub Pages controls without changing the repository version.
+
+
 All notable changes to this repository are documented here.
 
 ## [v0.10.0] - 2026-06-26

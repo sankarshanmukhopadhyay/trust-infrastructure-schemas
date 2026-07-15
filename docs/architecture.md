@@ -43,3 +43,8 @@ flowchart TD
 - Keep domain policy outside generic schemas unless it is expressed as a reusable profile.
 - Make all examples runnable through CI.
 - Treat validation coverage as part of release evidence.
+
+
+## Flagship-layer responsibility
+
+TIS is the portable machine-readable contract layer. TSMM remains authoritative for semantics, while TGA consumes TIS contracts in executable governance packages.

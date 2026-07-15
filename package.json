@@ -6,7 +6,11 @@
   "scripts": {
     "lint": "node tools/lint-schemas.js",
     "validate": "node tools/validate-conformance.js",
-    "check": "npm run validate && npm run lint"
+    "check": "npm run validate && npm run lint",
+    "docs:check": "node tools/validate-docs.js",
+    "governance:check": "node tools/validate-repository-governance.js",
+    "relationships:check": "node tools/validate-portfolio-relationships.js",
+    "validate:all": "node tools/validate-all.js"
   },
   "devDependencies": {
     "ajv-cli": "^5.0.0"

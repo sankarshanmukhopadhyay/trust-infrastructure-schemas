@@ -1,0 +1,1 @@
+const fs=require('fs'); const t=fs.readFileSync('governance/repository-authority.yaml','utf8'); for(const k of ['repository:','portfolio_tier: flagship','lifecycle: active','authority:','dependencies:','supersession_policy:']) if(!t.includes(k)){console.error('missing '+k);process.exit(1)} console.log('Repository governance declaration: PASS');

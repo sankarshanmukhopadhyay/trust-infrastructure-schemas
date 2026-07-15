@@ -1,0 +1,42 @@
+{
+  "repository": "trust-infrastructure-schemas",
+  "repositoryVersion": "v0.11.0",
+  "commit": "working-tree",
+  "validationProfile": "repository-full",
+  "executedAt": "2026-07-15T06:04:03.475Z",
+  "checks": [
+    {
+      "id": "schemas",
+      "status": "pass",
+      "detail": " Validating v0.10 composition Trust Task execution receipt ==\n== Validating v0.10 composition integrity-bound evidence bundle ==\n== Validating v0.10 composition decision receipt ==\n== Validating v0.10 composition registry publication profile ==\n== Validating cross-repo compatibility matrix ==\n== Validating trust artifact taxonomy ==\n== Validating decision receipt example ==\n== Validating composition domain baseline declaration ==\n== Validating TSMM artifact mapping ==\n== Validating TSMM-derived authority boundary example ==\n== Validating TSMM evidence bundle manifest example ==\n== Validating TSMM-aligned evaluation envelope example ==\n== Validating TSMM-mapped decision receipt example ==\n== Validating TSMM-derived registry entry example ==\n== Validating TSMM composition authority boundary ==\n== Validating TSMM composition evidence bundle ==\n== Validating TSMM composition decision receipt ==\n== Validating TSMM composition registry entry ==\n== Validating artifact coverage manifest ==\nOK\n"
+    },
+    {
+      "id": "lint",
+      "status": "pass",
+      "detail": "\n> trust-infrastructure-schemas@0.11.0 lint\n> node tools/lint-schemas.js\n\nSchema lint OK\n"
+    },
+    {
+      "id": "docs",
+      "status": "pass",
+      "detail": "\n> trust-infrastructure-schemas@0.11.0 docs:check\n> node tools/validate-docs.js\n\nDocumentation links: PASS\n"
+    },
+    {
+      "id": "governance",
+      "status": "pass",
+      "detail": "\n> trust-infrastructure-schemas@0.11.0 governance:check\n> node tools/validate-repository-governance.js\n\nRepository governance declaration: PASS\n"
+    },
+    {
+      "id": "relationships",
+      "status": "pass",
+      "detail": "\n> trust-infrastructure-schemas@0.11.0 relationships:check\n> node tools/validate-portfolio-relationships.js\n\nPortfolio relationships: PASS (2 declarations)\n"
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0
+  },
+  "limitations": [
+    "Repository validation is not external certification."
+  ]
+}

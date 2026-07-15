@@ -1,0 +1,11 @@
+title: Trust Infrastructure Schemas
+description: Portable machine-readable trust contracts for authority, delegation, evidence, decisions, registries, and assurance.
+markdown: kramdown
+theme: minima
+header_pages:
+  - docs/index.md
+  - docs/architecture.md
+  - docs/adoption.md
+  - docs/assurance.md
+  - docs/interoperability.md
+  - docs/repository-status.md

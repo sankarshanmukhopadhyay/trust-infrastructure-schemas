@@ -1,6 +1,6 @@
 # Trust Infrastructure Schemas Documentation
 
-**Current release:** `v0.10.0`  
+**Current release:** `v0.11.0`  
 **Last reviewed:** 2026-06-26
 
 This documentation describes TIS as an executable governance artifact layer for operational trust infrastructure.
@@ -60,7 +60,7 @@ TSMM Runtime Governance Projection -> VTI Authority Evidence -> OpenVTC Task Evi
 - [TSMM registry alignment](tsmm-registry-alignment.md)
 - [TSMM executable artifact walkthrough](tsmm-executable-artifact-walkthrough.md)
 
-## v0.10.0 runtime assurance additions
+## v0.11.0 flagship and delegation additions
 
 - [TSMM runtime governance projection profile](tsmm-runtime-governance-projection-profile.md)
 - [Trust Task runtime assurance profile](trust-task-runtime-assurance-profile.md)
