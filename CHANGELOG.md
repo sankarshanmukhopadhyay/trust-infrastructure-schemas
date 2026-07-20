@@ -131,3 +131,11 @@ All notable changes to this repository are documented here.
 - Added linear, fan-out, and negative scope-expansion examples.
 - Added implementer guidance and authority-boundary integration notes.
 - Preserved backward compatibility for existing schema consumers.
+
+## Unreleased
+
+### Fixed
+
+- Added a canonical root `index.md` so the Just The Docs build generates `_site/index.html`.
+- Improved the Pages post-build checks to report missing home-page, Mermaid-loader, and title conditions independently.
+- Updated the documentation landing page to identify v0.12.0 Candidate status.

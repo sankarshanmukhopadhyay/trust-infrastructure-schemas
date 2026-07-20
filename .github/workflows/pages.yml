@@ -25,7 +25,21 @@ jobs:
       - name: Build site
         run: bundle exec jekyll build --trace
       - name: Verify generated site
-        run: test -f _site/index.html && grep -R "mermaid-init.js" _site >/dev/null
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f _site/index.html || {
+            echo "::error::Jekyll did not generate _site/index.html. Ensure a root index.md with front matter and permalink exists."
+            exit 1
+          }
+          grep -R --include='*.html' -q "mermaid-init.js" _site || {
+            echo "::error::The generated site does not include the Mermaid initialization module."
+            exit 1
+          }
+          grep -R --include='*.html' -q "Trust Infrastructure Schemas" _site/index.html || {
+            echo "::error::The generated home page does not contain the expected repository title."
+            exit 1
+          }
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

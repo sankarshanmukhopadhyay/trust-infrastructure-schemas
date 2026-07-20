@@ -1,7 +1,15 @@
+---
+layout: default
+title: Documentation
+nav_order: 2
+has_children: true
+permalink: /docs/
+---
+
 # Trust Infrastructure Schemas Documentation
 
-**Current release:** `v0.11.0`  
-**Last reviewed:** 2026-06-26
+**Current release:** `v0.12.0`  
+**Last reviewed:** 2026-07-20
 
 This documentation describes TIS as an executable governance artifact layer for operational trust infrastructure.
 
