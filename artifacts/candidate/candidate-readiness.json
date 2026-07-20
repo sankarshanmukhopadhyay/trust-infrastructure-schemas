@@ -1,0 +1,13 @@
+{
+  "repository": "trust-infrastructure-schemas",
+  "version": "0.12.0",
+  "maturity": "candidate",
+  "generated_at": "2026-07-20T05:00:29.238682+00:00",
+  "environment": "Linux-4.4.0-x86_64-with-glibc2.41",
+  "validation_command": "npm run candidate:check",
+  "status": "pass",
+  "limitations": [
+    "candidate status is not certification",
+    "independent interoperability testing remains incomplete"
+  ]
+}

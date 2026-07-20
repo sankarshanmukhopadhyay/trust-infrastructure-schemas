@@ -27,3 +27,15 @@ A projection does not create authority. It records how authority expressed in TS
 Schema: `profiles/tsmm/tsmm-runtime-governance-projection.schema.json`
 
 Example: `profiles/tsmm/examples/runtime-governance-projection.example.json`
+
+## Semantic projection boundary
+
+```mermaid
+flowchart LR
+  TSMM[TSMM semantic entities] --> X[Explicit crosswalk]
+  X --> TIS[TIS portable schemas]
+  TIS --> R[Runtime artifacts]
+  R --> V[Validation evidence]
+  V -. semantic defect feedback .-> TSMM
+  V -. schema defect feedback .-> TIS
+```

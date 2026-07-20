@@ -1,56 +1,25 @@
-name: Validate JSON Schemas
-
+name: Validate TIS Candidate
 on:
   pull_request:
-  push:
-    branches: [ main ]
-
-permissions:
-  contents: read
-
+  push: {branches: [main]}
+permissions: {contents: read}
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
-
 jobs:
-  validate-examples:
+  validate:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: "20"
-
-      - name: Install AJV CLI
-        run: npm install -g ajv-cli@5
-
-      - name: Validate all published artifact examples
-        run: |
-          set -euo pipefail
-          node tools/validate-conformance.js
-
-      - name: Lint schemas and release hygiene
-        run: |
-          set -euo pipefail
-          node tools/lint-schemas.js
-
-      - name: Validate Mermaid diagrams
-        run: |
-          set -euo pipefail
-          awk '/```mermaid/{flag=1;next}/```/{if(flag){flag=0;exit}}flag{print}' docs/architecture.md > /tmp/architecture.mmd
-          npm install --no-save mermaid@10.9.1
-          node --input-type=module - <<'NODE'
-          import fs from "fs";
-          import mermaid from "mermaid";
-          const code = fs.readFileSync("/tmp/architecture.mmd","utf8");
-          try {
-            await mermaid.parse(code);
-            console.log("Mermaid parse OK");
-          } catch (e) {
-            console.error(e);
-            process.exit(1);
-          }
-          NODE
+          node-version: '24'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: npm ci
+      - run: npm run candidate:check
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tis-candidate-evidence
+          path: artifacts/

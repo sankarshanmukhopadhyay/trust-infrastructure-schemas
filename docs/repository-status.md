@@ -8,7 +8,7 @@ title: Repository status
 | Portfolio tier | Flagship |
 | Lifecycle | Active |
 | Role | `portable-machine-readable-contract-layer` |
-| Current version | `v0.11.0` |
+| Current version | `v0.12.0` |
 | Stability | Provisional, under active governance |
 | Primary artifact | Portable JSON Schema contracts for authority, delegation, evidence, decisions, registries, and assurance |
 | Validation | `make validate` |

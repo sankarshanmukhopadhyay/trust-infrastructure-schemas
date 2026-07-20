@@ -1,11 +1,26 @@
 title: Trust Infrastructure Schemas
 description: Portable machine-readable trust contracts for authority, delegation, evidence, decisions, registries, and assurance.
+url: https://sankarshanmukhopadhyay.github.io
+baseurl: /trust-infrastructure-schemas
+remote_theme: just-the-docs/just-the-docs@v0.10.1
 markdown: kramdown
-theme: minima
-header_pages:
-  - docs/index.md
-  - docs/architecture.md
-  - docs/adoption.md
-  - docs/assurance.md
-  - docs/interoperability.md
-  - docs/repository-status.md
+search_enabled: true
+heading_anchors: true
+color_scheme: light
+aux_links:
+  "View on GitHub":
+    - "https://github.com/sankarshanmukhopadhyay/trust-infrastructure-schemas"
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+exclude:
+  - node_modules/
+  - vendor/
+  - tools/
+  - scripts/
+  - tests/
+  - validation/
+  - artifacts/
+  - .github/
+  - Gemfile
+  - Gemfile.lock

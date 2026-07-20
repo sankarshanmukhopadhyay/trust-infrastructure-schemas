@@ -47,3 +47,16 @@ A verifier or relying party SHOULD:
 ## Assurance role
 
 Decision receipts become especially important at AL3 and AL4 because they connect assurance claims to actual relying-party behavior. They provide evidence that governance was not merely published but operationally applied.
+
+## Decision receipt generation
+
+```mermaid
+flowchart TD
+  I[Inputs] --> P[Policy references]
+  P --> A[Authority and delegation]
+  A --> E[Evidence]
+  E --> V[Evaluation]
+  V --> O[Outcome]
+  O --> F[Effect admission status]
+  F --> R[Integrity-bound decision receipt]
+```

@@ -1,6 +1,6 @@
 {
   "name": "trust-infrastructure-schemas",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "private": true,
   "description": "Machine-readable schemas and governance artifacts for operational trust infrastructure.",
   "scripts": {
@@ -10,9 +10,15 @@
     "docs:check": "node tools/validate-docs.js",
     "governance:check": "node tools/validate-repository-governance.js",
     "relationships:check": "node tools/validate-portfolio-relationships.js",
-    "validate:all": "node tools/validate-all.js"
+    "validate:all": "node tools/validate-all.js",
+    "mermaid:check": "python scripts/validate_mermaid.py",
+    "candidate:evidence": "python scripts/write_candidate_evidence.py",
+    "candidate:check": "npm run validate:all && npm run mermaid:check && npm run candidate:evidence"
   },
   "devDependencies": {
-    "ajv-cli": "^5.0.0"
+    "ajv-cli": "^5.0.0",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "mermaid": "11.4.1"
   }
 }

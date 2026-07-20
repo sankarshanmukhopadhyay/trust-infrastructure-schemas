@@ -1,0 +1,21 @@
+schema_version: "1.0"
+project:
+  name: trust-infrastructure-schemas
+  maturity: candidate
+  lifecycle: active
+  operational_status: active-validation
+  specification_status: candidate-specification
+  intended_use: [schema-implementation, interoperability-evaluation, assurance-evidence-packaging, pilot-integration]
+  not_asserted: [independent-certification, ecosystem-specific-legal-compliance, authority-over-canonical-semantics]
+authority:
+  normative_scope: [portable-schema-contracts, schema-identifiers, validation-contracts, serialization-profiles]
+  does_not_own: [canonical-trust-semantics, external-protocol-governance, implementation-certification]
+  delegation: Schema and status changes require maintainer approval under GOVERNANCE.md; validation work may be delegated through reviewed pull requests.
+  revocation_or_supersession: Releases and status claims are superseded by a versioned release, changelog entry, and updated status contract; compromised artifacts are withdrawn through SECURITY.md.
+evidence:
+  validation_commands: [npm ci, npm run candidate:check]
+  evidence_outputs: [artifacts/candidate/candidate-readiness.json]
+  known_limitations: [independent interoperability testing is incomplete, candidate status is not certification]
+review:
+  last_review: "2026-07-20"
+  next_review: "2026-10-01"

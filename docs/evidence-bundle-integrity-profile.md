@@ -22,3 +22,19 @@ Evidence bundles may list individual artifact hashes, but runtime assurance requ
 Schema: `evidence/evidence-bundle-manifest.schema.json`
 
 Example: `evidence/examples/integrity-bound-evidence-bundle.example.json`
+
+## Evidence bundle lifecycle
+
+```mermaid
+stateDiagram-v2
+  [*] --> Collected
+  Collected --> Hashed
+  Hashed --> Manifested
+  Manifested --> Evaluated
+  Evaluated --> Retained
+  Retained --> Verified
+  Verified --> Expired
+  Verified --> Revoked
+  Expired --> Archived
+  Revoked --> Archived
+```

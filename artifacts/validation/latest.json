@@ -1,9 +1,9 @@
 {
   "repository": "trust-infrastructure-schemas",
-  "repositoryVersion": "v0.11.0",
+  "repositoryVersion": "0.12.0",
   "commit": "working-tree",
   "validationProfile": "repository-full",
-  "executedAt": "2026-07-15T06:04:03.475Z",
+  "executedAt": "2026-07-20T05:00:26.353Z",
   "checks": [
     {
       "id": "schemas",
@@ -13,22 +13,22 @@
     {
       "id": "lint",
       "status": "pass",
-      "detail": "\n> trust-infrastructure-schemas@0.11.0 lint\n> node tools/lint-schemas.js\n\nSchema lint OK\n"
+      "detail": "\n> trust-infrastructure-schemas@0.12.0 lint\n> node tools/lint-schemas.js\n\nSchema lint OK\n"
     },
     {
       "id": "docs",
       "status": "pass",
-      "detail": "\n> trust-infrastructure-schemas@0.11.0 docs:check\n> node tools/validate-docs.js\n\nDocumentation links: PASS\n"
+      "detail": "\n> trust-infrastructure-schemas@0.12.0 docs:check\n> node tools/validate-docs.js\n\nDocumentation links: PASS\n"
     },
     {
       "id": "governance",
       "status": "pass",
-      "detail": "\n> trust-infrastructure-schemas@0.11.0 governance:check\n> node tools/validate-repository-governance.js\n\nRepository governance declaration: PASS\n"
+      "detail": "\n> trust-infrastructure-schemas@0.12.0 governance:check\n> node tools/validate-repository-governance.js\n\nRepository governance declaration: PASS\n"
     },
     {
       "id": "relationships",
       "status": "pass",
-      "detail": "\n> trust-infrastructure-schemas@0.11.0 relationships:check\n> node tools/validate-portfolio-relationships.js\n\nPortfolio relationships: PASS (2 declarations)\n"
+      "detail": "\n> trust-infrastructure-schemas@0.12.0 relationships:check\n> node tools/validate-portfolio-relationships.js\n\nPortfolio relationships: PASS (2 declarations)\n"
     }
   ],
   "summary": {

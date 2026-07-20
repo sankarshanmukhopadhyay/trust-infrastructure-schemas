@@ -24,3 +24,18 @@ A registry publication profile MUST NOT be interpreted as runtime authorization 
 Schema: `registry/registry-publication-profile.schema.json`
 
 Example: `registry/examples/registry-publication-profile.example.json`
+
+## Publication status lifecycle
+
+```mermaid
+stateDiagram-v2
+  [*] --> Proposed
+  Proposed --> Validated
+  Validated --> Published
+  Published --> Suspended
+  Suspended --> Published
+  Published --> Revoked
+  Published --> Superseded
+  Revoked --> Archived
+  Superseded --> Archived
+```

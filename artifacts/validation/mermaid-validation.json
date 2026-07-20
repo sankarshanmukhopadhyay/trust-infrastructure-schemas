@@ -1,0 +1,41 @@
+{
+  "diagram_count": 6,
+  "results": [
+    {
+      "file": "docs/architecture.md",
+      "index": 1,
+      "ok": true,
+      "first_line": "flowchart TD"
+    },
+    {
+      "file": "docs/decision-receipts.md",
+      "index": 1,
+      "ok": true,
+      "first_line": "flowchart TD"
+    },
+    {
+      "file": "docs/evidence-bundle-integrity-profile.md",
+      "index": 1,
+      "ok": true,
+      "first_line": "stateDiagram-v2"
+    },
+    {
+      "file": "docs/registry-publication-profile.md",
+      "index": 1,
+      "ok": true,
+      "first_line": "stateDiagram-v2"
+    },
+    {
+      "file": "docs/tsmm-runtime-governance-projection-profile.md",
+      "index": 1,
+      "ok": true,
+      "first_line": "flowchart LR"
+    },
+    {
+      "file": "docs/portfolio-relationships.md",
+      "index": 1,
+      "ok": true,
+      "first_line": "flowchart LR"
+    }
+  ]
+}
