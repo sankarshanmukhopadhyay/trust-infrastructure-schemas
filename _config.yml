@@ -4,6 +4,7 @@ url: https://sankarshanmukhopadhyay.github.io
 baseurl: /trust-infrastructure-schemas
 remote_theme: just-the-docs/just-the-docs@v0.10.1
 markdown: kramdown
+strict_front_matter: true
 search_enabled: true
 heading_anchors: true
 color_scheme: light
@@ -13,6 +14,17 @@ aux_links:
 plugins:
   - jekyll-remote-theme
   - jekyll-seo-tag
+
+# Publication contract: every canonical documentation page is rendered through
+# the Just-the-Docs default layout. Individual pages retain only navigation and
+# content metadata; styling is enforced centrally so a new docs page cannot be
+# published as bare HTML merely because its author omitted a layout field.
+defaults:
+  - scope:
+      path: "docs"
+    values:
+      layout: default
+
 exclude:
   - node_modules/
   - vendor/

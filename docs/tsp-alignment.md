@@ -1,5 +1,5 @@
 ---
-title: Transport alignment: ToIP Trust Spanning Protocol (TSP)
+title: "Transport alignment: ToIP Trust Spanning Protocol (TSP)"
 parent: Semantic Alignment
 grand_parent: Documentation
 nav_order: 12
@@ -18,12 +18,3 @@ Spec reference: https://trustoverip.github.io/tswg-tsp-specification/
 
 - Stable schemas for claims, evidence, and conformance artifacts.
 - Versioned identifiers for reproducible evaluation and exchange.
-- Deterministic validation tooling for CI enforcement.
-
-## What this repo does not define
-
-- Endpoint discovery and routing.
-- Message encryption and authentication mechanisms.
-- Network-level threat mitigation.
-
-Those concerns are handled by the selected transport protocol (for example, TSP) and the implementation environment.

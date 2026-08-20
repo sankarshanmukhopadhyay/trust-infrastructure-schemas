@@ -39,6 +39,20 @@ const markdownFiles = filesRecursively(docsRoot).filter((f) => f.endsWith('.md')
 const publicationSources = [path.join(process.cwd(), 'index.md'), ...markdownFiles];
 const pages = markdownFiles.map((file) => ({ file, fm: frontMatter(file) }));
 const errors = [];
+
+// The publication contract is centralized in Jekyll config: canonical docs
+// inherit the Just-the-Docs default layout, and malformed YAML front matter is
+// fatal. This avoids requiring 70+ duplicated `layout` declarations while still
+// making the styling/front-matter guarantee machine-verifiable.
+const jekyllConfig = fs.readFileSync(path.join(process.cwd(), '_config.yml'), 'utf8');
+if (!/^strict_front_matter:\s*true\s*$/m.test(jekyllConfig)) {
+  errors.push('_config.yml must set strict_front_matter: true so malformed page metadata fails the build');
+}
+const docsDefaultLayout = /defaults:\s*[\s\S]*?-\s+scope:\s*[\s\S]*?path:\s*["']?docs["']?\s*[\s\S]*?values:\s*[\s\S]*?layout:\s*default\s*(?:\n|$)/m;
+if (!docsDefaultLayout.test(jekyllConfig)) {
+  errors.push('_config.yml must apply layout: default to the docs publication surface');
+}
+
 for (const file of publicationSources) {
   const text = fs.readFileSync(file, 'utf8');
   const re = /\]\((?!https?:\/\/|mailto:|\{% link )([^)]*\.md)(?:#[^)]*)?\)/g;
