@@ -1,3 +1,9 @@
+---
+title: Portfolio Relationship Contracts
+parent: Governance & Lifecycle
+grand_parent: Documentation
+nav_order: 3
+---
 # Portfolio Relationship Contracts
 
 The `portfolio/` schemas provide portable contracts for representing portfolio relationships, repository authority, adoption paths, and validation results. They do not decide which portfolio relationships exist.

@@ -1,3 +1,9 @@
+---
+title: Trust Task Runtime Assurance Profile
+parent: Integration & Adoption
+grand_parent: Documentation
+nav_order: 10
+---
 # Trust Task Runtime Assurance Profile
 
 ## Purpose

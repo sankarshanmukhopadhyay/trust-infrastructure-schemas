@@ -1,3 +1,9 @@
+---
+title: Ecosystem interoperability
+parent: Integration & Adoption
+grand_parent: Documentation
+nav_order: 6
+---
 # Ecosystem interoperability
 
 This repository is designed to compose with upstream DTG Labs projects. The objective is **interoperability by construction**: clear role boundaries, explicit assumptions, and traceable artifacts.

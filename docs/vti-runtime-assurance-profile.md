@@ -1,3 +1,9 @@
+---
+title: VTI Runtime Assurance Profile
+parent: Integration & Adoption
+grand_parent: Documentation
+nav_order: 12
+---
 # VTI Runtime Assurance Profile
 
 **Applicable release:** `v0.9.0`  

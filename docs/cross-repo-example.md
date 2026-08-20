@@ -1,3 +1,9 @@
+---
+title: Cross-Repo Composition Example
+parent: Integration & Adoption
+grand_parent: Documentation
+nav_order: 3
+---
 # Cross-Repo Composition Example
 
 **Last reviewed:** 2026-05-05  

@@ -1,3 +1,9 @@
+---
+title: Decision Receipts
+parent: Artifact Contracts
+grand_parent: Documentation
+nav_order: 5
+---
 # Decision Receipts
 
 **Last reviewed:** 2026-05-05  

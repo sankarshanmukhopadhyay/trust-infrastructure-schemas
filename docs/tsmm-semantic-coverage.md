@@ -1,3 +1,9 @@
+---
+title: TSMM Semantic Coverage
+parent: Semantic Alignment
+grand_parent: Documentation
+nav_order: 11
+---
 # TSMM Semantic Coverage
 
 TIS v0.13.0 makes its normative dependency on TSMM machine-verifiable. Canonical artifact schemas declare `x-tsmm-semantic-binding` metadata containing stable `urn:tsmm:concept:*` identifiers, while `model/tsmm-semantic-coverage.json` records coverage status across the artifact layer.

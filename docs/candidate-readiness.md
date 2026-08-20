@@ -1,7 +1,8 @@
 ---
 title: Candidate Readiness
-parent: Validation and Conformance
-nav_order: 1
+parent: Assurance & Validation
+grand_parent: Documentation
+nav_order: 2
 ---
 # Candidate readiness
 

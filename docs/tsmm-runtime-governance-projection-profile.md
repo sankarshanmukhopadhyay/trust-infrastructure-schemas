@@ -1,3 +1,9 @@
+---
+title: TSMM Runtime Governance Projection Profile
+parent: Semantic Alignment
+grand_parent: Documentation
+nav_order: 10
+---
 # TSMM Runtime Governance Projection Profile
 
 ## Purpose

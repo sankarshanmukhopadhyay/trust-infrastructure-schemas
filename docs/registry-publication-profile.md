@@ -1,3 +1,9 @@
+---
+title: Registry Publication Profile
+parent: Artifact Contracts
+grand_parent: Documentation
+nav_order: 13
+---
 # Registry Publication Profile
 
 ## Purpose

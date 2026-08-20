@@ -1,3 +1,9 @@
+---
+title: Architecture
+parent: Integration & Adoption
+grand_parent: Documentation
+nav_order: 2
+---
 # Architecture
 
 **Last reviewed:** 2026-05-05  

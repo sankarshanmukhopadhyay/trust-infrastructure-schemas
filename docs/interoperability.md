@@ -1,5 +1,8 @@
 ---
 title: Interoperability
+parent: Integration & Adoption
+grand_parent: Documentation
+nav_order: 7
 ---
 # Interoperability
 

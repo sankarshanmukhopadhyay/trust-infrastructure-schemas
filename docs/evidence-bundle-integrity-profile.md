@@ -1,3 +1,9 @@
+---
+title: Evidence Bundle Integrity Profile
+parent: Artifact Contracts
+grand_parent: Documentation
+nav_order: 8
+---
 # Evidence Bundle Integrity Profile
 
 ## Purpose

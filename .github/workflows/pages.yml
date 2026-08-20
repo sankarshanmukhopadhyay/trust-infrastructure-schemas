@@ -21,6 +21,11 @@ jobs:
         with:
           ruby-version: '3.3'
           bundler-cache: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate documentation information architecture
+        run: node tools/validate-pages-ia.js
       - uses: actions/configure-pages@v5
       - name: Build site
         run: bundle exec jekyll build --trace

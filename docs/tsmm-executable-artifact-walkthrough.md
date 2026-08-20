@@ -1,10 +1,13 @@
 ---
+title: TSMM Executable Artifact Walkthrough
+parent: Integration & Adoption
+grand_parent: Documentation
+nav_order: 11
 owner: maintainers
 last_reviewed: 2026-05-05
 applicable_version: v0.8.0
 tier: 1
 ---
-
 # TSMM Executable Artifact Walkthrough
 
 This walkthrough shows an end-to-end cross-repo artifact chain aligned with TSMM.

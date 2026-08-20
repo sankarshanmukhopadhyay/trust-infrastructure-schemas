@@ -1,10 +1,13 @@
 ---
+title: TSMM Decision Receipt Profile
+parent: Semantic Alignment
+grand_parent: Documentation
+nav_order: 7
 owner: maintainers
 last_reviewed: 2026-05-05
 applicable_version: v0.8.0
 tier: 1
 ---
-
 # TSMM Decision Receipt Profile
 
 The TSMM decision receipt profile defines how a TSMM runtime trust decision is represented using `decision/decision-receipt.schema.json`.

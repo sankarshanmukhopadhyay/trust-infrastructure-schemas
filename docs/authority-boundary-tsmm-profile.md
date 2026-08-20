@@ -1,10 +1,13 @@
 ---
+title: Authority Boundary TSMM Profile
+parent: Artifact Contracts
+grand_parent: Documentation
+nav_order: 4
 owner: maintainers
 last_reviewed: 2026-05-05
 applicable_version: v0.8.0
 tier: 1
 ---
-
 # Authority Boundary TSMM Profile
 
 A TSMM authority graph describes who has authority, how authority is delegated, and where authority can be revoked. A TIS authority boundary constrains reliance on a specific portion of that graph.

@@ -1,3 +1,9 @@
+---
+title: OASF artifact family
+parent: Artifact Contracts
+grand_parent: Documentation
+nav_order: 10
+---
 # OASF artifact family
 
 This document records the canonical OASF-shaped artifact patterns that now belong in this repository.

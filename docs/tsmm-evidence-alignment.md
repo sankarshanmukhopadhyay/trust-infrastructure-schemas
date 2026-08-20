@@ -1,10 +1,13 @@
 ---
+title: TSMM Evidence Alignment
+parent: Semantic Alignment
+grand_parent: Documentation
+nav_order: 8
 owner: maintainers
 last_reviewed: 2026-05-05
 applicable_version: v0.8.0
 tier: 1
 ---
-
 # TSMM Evidence Alignment
 
 TSMM defines the semantic role of evidence. This repository packages evidence into machine-validatable artifacts.

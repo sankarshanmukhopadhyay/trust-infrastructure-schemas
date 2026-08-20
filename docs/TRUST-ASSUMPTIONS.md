@@ -1,3 +1,9 @@
+---
+title: Trust Assumptions
+parent: Semantic Alignment
+grand_parent: Documentation
+nav_order: 1
+---
 # Trust Assumptions
 
 **Last reviewed:** 2026-05-05  

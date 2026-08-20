@@ -1,3 +1,9 @@
+---
+title: Validation Coverage
+parent: Assurance & Validation
+grand_parent: Documentation
+nav_order: 4
+---
 # Validation Coverage
 
 **Last reviewed:** 2026-05-05  

@@ -1,3 +1,9 @@
+---
+title: OpenVTC State Normalization
+parent: Integration & Adoption
+grand_parent: Documentation
+nav_order: 9
+---
 # OpenVTC State Normalization
 
 ## Purpose

@@ -1,3 +1,9 @@
+---
+title: Roadmap
+parent: Governance & Lifecycle
+grand_parent: Documentation
+nav_order: 5
+---
 # Roadmap
 
 **Last reviewed:** 2026-05-05  

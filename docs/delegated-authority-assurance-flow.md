@@ -1,5 +1,8 @@
 ---
 title: Delegated authority assurance flow
+parent: Artifact Contracts
+grand_parent: Documentation
+nav_order: 6
 ---
 # Delegated authority assurance flow
 

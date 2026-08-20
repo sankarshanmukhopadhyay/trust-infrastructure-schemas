@@ -1,3 +1,9 @@
+---
+title: ODRL artifact family
+parent: Artifact Contracts
+grand_parent: Documentation
+nav_order: 11
+---
 # ODRL artifact family
 
 ## Why add this here

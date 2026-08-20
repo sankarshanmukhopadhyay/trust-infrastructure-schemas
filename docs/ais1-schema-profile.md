@@ -1,3 +1,9 @@
+---
+title: AIS-1 Schema Profile (Experimental)
+parent: Artifact Contracts
+grand_parent: Documentation
+nav_order: 2
+---
 # AIS-1 Schema Profile (Experimental)
 
 This note records how AIS-1 should be represented in `trust-infrastructure-schemas`.

@@ -1,3 +1,9 @@
+---
+title: Status and Revocation Evidence
+parent: Artifact Contracts
+grand_parent: Documentation
+nav_order: 14
+---
 # Status and Revocation Evidence
 
 ## Purpose

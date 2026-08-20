@@ -1,10 +1,13 @@
 ---
+title: TSMM Registry Alignment
+parent: Semantic Alignment
+grand_parent: Documentation
+nav_order: 9
 owner: maintainers
 last_reviewed: 2026-05-05
 applicable_version: v0.8.0
 tier: 1
 ---
-
 # TSMM Registry Alignment
 
 TSMM models the registry as a governance surface. TIS defines registry entries as executable publication artifacts.

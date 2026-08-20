@@ -1,3 +1,9 @@
+---
+title: DTG / OpenVTC / VTI Interoperability and Drift Tracking
+parent: Integration & Adoption
+grand_parent: Documentation
+nav_order: 5
+---
 # DTG / OpenVTC / VTI Interoperability and Drift Tracking
 
 **Applicable release:** `v0.9.0`  

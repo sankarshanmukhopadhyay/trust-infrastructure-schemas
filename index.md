@@ -11,20 +11,20 @@ permalink: /
 Trust Infrastructure Schemas (TIS) publishes portable, machine-readable contracts for authority, delegation, evidence, decisions, registries, conformance, and assurance.
 
 **Status:** Candidate specification  
-**Current release:** `v0.12.0`  
+**Current release:** `v0.13.0`  
 **Lifecycle:** Active  
 **Operational status:** Active validation
 
-## Start here
+## Navigate by task
 
-- [Adoption guide](docs/adoption.md)
-- [Architecture](docs/architecture.md)
-- [Artifact taxonomy](docs/artifact-taxonomy.md)
-- [Candidate readiness](docs/candidate-readiness.md)
-- [Validation coverage](docs/validation-coverage.md)
-- [Portfolio relationships](docs/portfolio-relationships.md)
-- [Governance](GOVERNANCE.md)
-- [Release notes](RELEASE_NOTES_v0.12.0.md)
+- **Implement:** [Adoption](docs/adoption.md) → [Architecture](docs/architecture.md) → [Artifact Contracts](docs/artifact-contracts.md)
+- **Trace meaning:** [Semantic Alignment](docs/semantic-alignment.md) → [TSMM Semantic Coverage](docs/tsmm-semantic-coverage.md)
+- **Validate:** [Assurance & Validation](docs/assurance-validation.md) → [Candidate Readiness](docs/candidate-readiness.md)
+- **Integrate:** [Integration & Adoption](docs/integration-adoption.md) → [Interoperability](docs/interoperability.md)
+- **Govern:** [Governance & Lifecycle](docs/governance-lifecycle.md) → [Portfolio Relationship Contract](docs/portfolio-relationship-contract.md)
+- **Release history:** [v0.13.0 release notes](docs/releases/v0.13.0.md)
+
+The complete task-oriented documentation map is available from the [Documentation home](docs/index.md).
 
 ## Authority boundary
 
@@ -33,7 +33,7 @@ TIS owns portable schema design, identifiers, serialization contracts, validatio
 ## First validation result
 
 ```bash
-npm ci
+npm ci --no-audit --no-fund
 npm run candidate:check
 ```
 

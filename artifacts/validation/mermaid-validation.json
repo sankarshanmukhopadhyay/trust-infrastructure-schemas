@@ -8,16 +8,10 @@
       "first_line": "flowchart TD"
     },
     {
-      "file": "docs/decision-receipts.md",
+      "file": "docs/portfolio-relationships.md",
       "index": 1,
       "ok": true,
-      "first_line": "flowchart TD"
-    },
-    {
-      "file": "docs/evidence-bundle-integrity-profile.md",
-      "index": 1,
-      "ok": true,
-      "first_line": "stateDiagram-v2"
+      "first_line": "flowchart LR"
     },
     {
       "file": "docs/registry-publication-profile.md",
@@ -26,13 +20,19 @@
       "first_line": "stateDiagram-v2"
     },
     {
-      "file": "docs/tsmm-runtime-governance-projection-profile.md",
+      "file": "docs/evidence-bundle-integrity-profile.md",
       "index": 1,
       "ok": true,
-      "first_line": "flowchart LR"
+      "first_line": "stateDiagram-v2"
     },
     {
-      "file": "docs/portfolio-relationships.md",
+      "file": "docs/decision-receipts.md",
+      "index": 1,
+      "ok": true,
+      "first_line": "flowchart TD"
+    },
+    {
+      "file": "docs/tsmm-runtime-governance-projection-profile.md",
       "index": 1,
       "ok": true,
       "first_line": "flowchart LR"

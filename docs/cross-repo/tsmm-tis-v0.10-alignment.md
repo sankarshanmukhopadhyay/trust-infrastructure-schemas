@@ -1,3 +1,9 @@
+---
+title: TSMM and TIS v0.10.0 Alignment
+parent: Semantic Alignment
+grand_parent: Documentation
+nav_order: 3
+---
 # TSMM and TIS v0.10.0 Alignment
 
 ## Release position

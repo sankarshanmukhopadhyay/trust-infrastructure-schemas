@@ -1,3 +1,9 @@
+---
+title: Open Trust Artifact Model
+parent: Artifact Contracts
+grand_parent: Documentation
+nav_order: 12
+---
 # Open Trust Artifact Model
 
 **Last reviewed:** 2026-05-05  

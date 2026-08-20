@@ -1,3 +1,9 @@
+---
+title: Cross-Repo Governance
+parent: Governance & Lifecycle
+grand_parent: Documentation
+nav_order: 1
+---
 # Cross-Repo Governance
 
 **Last reviewed:** 2026-05-05  

@@ -8,6 +8,15 @@
 - Portable portfolio relationship, repository authority, adoption path, and validation-result schemas.
 - Repository-local portfolio relationship and TSMM compatibility contracts.
 - CI checks for semantic alignment, authority transfer violations, mapped artifact existence, and version drift.
+- Task-oriented GitHub Pages navigation across Artifact Contracts, Semantic Alignment, Assurance & Validation, Integration & Adoption, Governance & Lifecycle, and Releases.
+- Executable GitHub Pages information-architecture validation through `tools/validate-pages-ia.js`.
+
+
+### CI and publication
+- Remove the unused npm Mermaid package; Mermaid validation remains Python-based.
+- Reduce the npm lockfile dependency surface from 168 package entries to 28.
+- Run `npm ci --no-audit --no-fund` with an explicit lockfile cache key.
+- Expand `candidate:check` to include governance, portfolio relationships, semantic alignment, version consistency, documentation, Pages IA, Mermaid validation, and candidate evidence generation.
 
 ### Governance
 - Preserve TSMM authority over canonical semantics, TIS authority over portable schema contracts, and portfolio-repository authority over classification.

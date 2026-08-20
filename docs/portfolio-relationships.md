@@ -1,7 +1,8 @@
 ---
 title: Portfolio Relationships
-parent: Governance
-nav_order: 8
+parent: Governance & Lifecycle
+grand_parent: Documentation
+nav_order: 4
 ---
 # Portfolio relationships
 

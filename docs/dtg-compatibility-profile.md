@@ -1,3 +1,9 @@
+---
+title: DTG Compatibility Profile
+parent: Integration & Adoption
+grand_parent: Documentation
+nav_order: 4
+---
 # DTG Compatibility Profile
 
 **Applicable release:** `v0.9.0`  

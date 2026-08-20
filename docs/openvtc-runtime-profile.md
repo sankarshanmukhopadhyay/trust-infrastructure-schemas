@@ -1,3 +1,9 @@
+---
+title: OpenVTC Runtime Profile
+parent: Integration & Adoption
+grand_parent: Documentation
+nav_order: 8
+---
 # OpenVTC Runtime Profile
 
 **Applicable release:** `v0.9.0`  

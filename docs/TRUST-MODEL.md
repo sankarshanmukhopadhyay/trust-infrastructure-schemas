@@ -1,3 +1,9 @@
+---
+title: Trust Model
+parent: Semantic Alignment
+grand_parent: Documentation
+nav_order: 2
+---
 # Trust Model
 
 **Last reviewed:** 2026-05-05  

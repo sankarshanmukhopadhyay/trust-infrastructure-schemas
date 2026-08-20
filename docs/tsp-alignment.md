@@ -1,3 +1,9 @@
+---
+title: Transport alignment: ToIP Trust Spanning Protocol (TSP)
+parent: Semantic Alignment
+grand_parent: Documentation
+nav_order: 12
+---
 # Transport alignment: ToIP Trust Spanning Protocol (TSP)
 
 This repository is transport-agnostic. It defines machine-readable **data structures** that can be used as payloads in secure exchanges between endpoints.

@@ -1,10 +1,13 @@
 ---
+title: TSMM Alignment
+parent: Semantic Alignment
+grand_parent: Documentation
+nav_order: 6
 owner: maintainers
 last_reviewed: 2026-05-05
 applicable_version: v0.8.0
 tier: 1
 ---
-
 # TSMM Alignment
 
 This repository is aligned with the Trust Systems Meta Model (TSMM) as the executable artifact contract layer. TSMM provides the semantic model. This repository provides schemas that implementers can validate, preserve, publish, and audit.

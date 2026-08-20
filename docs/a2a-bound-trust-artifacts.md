@@ -1,3 +1,9 @@
+---
+title: A2A-bound trust artifacts
+parent: Artifact Contracts
+grand_parent: Documentation
+nav_order: 1
+---
 # A2A-bound trust artifacts
 
 ## Why this note exists

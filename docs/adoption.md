@@ -1,5 +1,8 @@
 ---
 title: Adoption
+parent: Integration & Adoption
+grand_parent: Documentation
+nav_order: 1
 ---
 # Adoption
 

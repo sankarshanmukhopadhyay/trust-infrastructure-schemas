@@ -1,3 +1,9 @@
+---
+title: Stable identifier governance
+parent: Artifact Contracts
+grand_parent: Documentation
+nav_order: 9
+---
 # Stable identifier governance
 
 This repository is the canonical publication point for trust-infrastructure artifact contracts. That makes identifier hygiene part of the product, not housekeeping.
