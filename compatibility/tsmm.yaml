@@ -1,0 +1,12 @@
+schema_version: "1.0"
+source_repository: trust-infrastructure-schemas
+source_version: "v0.13.0"
+target_repository: trust-systems-meta-model
+target_versions: ["v0.24.x"]
+relationship: normative-dependency
+semantic_contract_status: verified
+semantic_authority: trust-systems-meta-model
+serialization_authority: trust-infrastructure-schemas
+validation: tools/validate-tsmm-semantic-alignment.js
+limitations:
+  - Compatibility evidence does not constitute external certification.

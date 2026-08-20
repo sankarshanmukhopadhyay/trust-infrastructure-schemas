@@ -153,5 +153,13 @@
         }
       }
     }
+  },
+  "x-tsmm-semantic-binding": {
+    "semanticAuthority": "trust-systems-meta-model",
+    "relationship": "semantic-projection",
+    "conceptIds": [
+      "urn:tsmm:concept:trust-registry"
+    ],
+    "authorityTransfer": false
   }
 }

@@ -1,5 +1,17 @@
 # Changelog
 
+## [v0.13.0] - 2026-08-20
+
+### Added
+- Stable TSMM semantic traceability using `urn:tsmm:concept:*` identifiers.
+- Machine-readable TSMM semantic coverage and schema-level `x-tsmm-semantic-binding` metadata.
+- Portable portfolio relationship, repository authority, adoption path, and validation-result schemas.
+- Repository-local portfolio relationship and TSMM compatibility contracts.
+- CI checks for semantic alignment, authority transfer violations, mapped artifact existence, and version drift.
+
+### Governance
+- Preserve TSMM authority over canonical semantics, TIS authority over portable schema contracts, and portfolio-repository authority over classification.
+
 ## Unreleased
 
 - Establish flagship authority, adoption, assurance, interoperability, validation-evidence, and GitHub Pages controls without changing the repository version.

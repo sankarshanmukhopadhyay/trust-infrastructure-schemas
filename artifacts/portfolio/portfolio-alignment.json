@@ -1,0 +1,10 @@
+{
+  "repository": "trust-infrastructure-schemas",
+  "semanticAuthority": "trust-systems-meta-model",
+  "relationship": "normative-dependency",
+  "unknownConceptReferenceFormat": 0,
+  "missingMappedArtifacts": 0,
+  "authorityConflicts": 0,
+  "status": "pass",
+  "evidenceGeneratedAt": "2026-08-20T04:30:24.872Z"
+}

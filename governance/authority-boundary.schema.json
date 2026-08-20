@@ -246,5 +246,15 @@
     "notes": {
       "type": "string"
     }
+  },
+  "x-tsmm-semantic-binding": {
+    "semanticAuthority": "trust-systems-meta-model",
+    "relationship": "semantic-projection",
+    "conceptIds": [
+      "urn:tsmm:concept:authority",
+      "urn:tsmm:concept:delegation",
+      "urn:tsmm:concept:scope"
+    ],
+    "authorityTransfer": false
   }
 }

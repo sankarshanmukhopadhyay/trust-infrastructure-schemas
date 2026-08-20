@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.13.0/portfolio/portfolio-relationship.schema.json",
+  "title": "Portfolio Relationship",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "from",
+    "to",
+    "type",
+    "constraint"
+  ],
+  "properties": {
+    "from": {
+      "type": "string",
+      "minLength": 1
+    },
+    "to": {
+      "type": "string",
+      "minLength": 1
+    },
+    "type": {
+      "enum": [
+        "normative-dependency",
+        "informative-alignment",
+        "supports",
+        "profiles",
+        "implements",
+        "tested-by",
+        "evaluated-by",
+        "produces-evidence-for",
+        "assurance-feedback-to",
+        "incubates",
+        "fork-of",
+        "nominates-review-for"
+      ]
+    },
+    "constraint": {
+      "type": "string",
+      "minLength": 1
+    },
+    "contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "semantics": {
+          "enum": [
+            "canonical",
+            "derived",
+            "independent",
+            "not-applicable"
+          ]
+        },
+        "serialization": {
+          "enum": [
+            "canonical",
+            "independent",
+            "not-applicable"
+          ]
+        }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "type": "string"
+        },
+        "artifact": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

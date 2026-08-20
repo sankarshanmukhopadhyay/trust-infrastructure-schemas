@@ -1,7 +1,7 @@
 {
-  "$schema": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.9.0/model/tsmm-artifact-mapping.schema.json",
-  "mapping_id": "tis-tsmm-artifact-mapping-v0.8.0",
-  "version": "v0.8.0",
+  "$schema": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/v0.13.0/model/tsmm-artifact-mapping.schema.json",
+  "mapping_id": "tis-tsmm-artifact-mapping-v0.13.0",
+  "version": "v0.13.0",
   "semantic_model": "TSMM",
   "artifact_contract_layer": "trust-infrastructure-schemas",
   "canonical_layering": {
@@ -19,6 +19,10 @@
         "bounded authority statement",
         "delegation chain",
         "revocation obligation"
+      ],
+      "tsmm_concept_ids": [
+        "urn:tsmm:concept:authority",
+        "urn:tsmm:concept:delegation"
       ]
     },
     {
@@ -31,6 +35,10 @@
         "artifact inventory",
         "hash and freshness references",
         "authority context"
+      ],
+      "tsmm_concept_ids": [
+        "urn:tsmm:concept:evidence-artifact",
+        "urn:tsmm:concept:evidence-bundle"
       ]
     },
     {
@@ -43,6 +51,9 @@
         "evaluation result",
         "controls checked",
         "semantic bindings"
+      ],
+      "tsmm_concept_ids": [
+        "urn:tsmm:concept:assessment"
       ]
     },
     {
@@ -56,6 +67,10 @@
         "allowed actions",
         "prohibited actions",
         "timestamps"
+      ],
+      "tsmm_concept_ids": [
+        "urn:tsmm:concept:trust-decision",
+        "urn:tsmm:concept:effect"
       ]
     },
     {
@@ -68,6 +83,9 @@
         "declaration reference",
         "assurance level",
         "artifact chain"
+      ],
+      "tsmm_concept_ids": [
+        "urn:tsmm:concept:trust-registry"
       ]
     },
     {
@@ -79,6 +97,9 @@
       "evidence_produced": [
         "assurance level",
         "control coverage"
+      ],
+      "tsmm_concept_ids": [
+        "urn:tsmm:concept:assurance-profile"
       ]
     }
   ],

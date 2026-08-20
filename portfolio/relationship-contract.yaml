@@ -1,0 +1,16 @@
+schema_version: "1.0"
+repository: trust-infrastructure-schemas
+authority:
+  owns: [portable-schema-contracts, schema-identifiers, serialization-profiles, validation-contracts]
+  does_not_own: [canonical-semantics, portfolio-classification]
+semantic_authority:
+  repository: trust-systems-meta-model
+relationships:
+  - repository: trust-systems-meta-model
+    type: normative-dependency
+    semantic_authority_transfer: false
+compatibility:
+  trust-systems-meta-model:
+    reviewed_version: "v0.24.0"
+    status: verified
+    evidence: artifacts/portfolio/portfolio-alignment.json

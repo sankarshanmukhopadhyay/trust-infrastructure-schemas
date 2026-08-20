@@ -139,6 +139,8 @@ try {
   validate("decision/decision-receipt.schema.json", "examples/composition/tsmm-aligned/04-decision-receipt.example.json", "TSMM composition decision receipt");
   validate("registry/registry-entry.schema.json", "examples/composition/tsmm-aligned/05-registry-entry.example.json", "TSMM composition registry entry");
 
+  validate("model/tsmm-semantic-coverage.schema.json", "model/tsmm-semantic-coverage.json", "TSMM semantic coverage");
+
   validateCoverageManifest();
 
   console.log("OK");

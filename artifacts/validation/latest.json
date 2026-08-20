@@ -1,39 +1,19 @@
 {
   "repository": "trust-infrastructure-schemas",
-  "repositoryVersion": "0.12.0",
+  "repositoryVersion": "0.13.0",
   "commit": "working-tree",
   "validationProfile": "repository-full",
-  "executedAt": "2026-07-20T05:17:13.503Z",
+  "executedAt": "2026-08-20T04:22:36.854Z",
   "checks": [
     {
       "id": "schemas",
-      "status": "pass",
-      "detail": " Validating v0.10 composition Trust Task execution receipt ==\n== Validating v0.10 composition integrity-bound evidence bundle ==\n== Validating v0.10 composition decision receipt ==\n== Validating v0.10 composition registry publication profile ==\n== Validating cross-repo compatibility matrix ==\n== Validating trust artifact taxonomy ==\n== Validating decision receipt example ==\n== Validating composition domain baseline declaration ==\n== Validating TSMM artifact mapping ==\n== Validating TSMM-derived authority boundary example ==\n== Validating TSMM evidence bundle manifest example ==\n== Validating TSMM-aligned evaluation envelope example ==\n== Validating TSMM-mapped decision receipt example ==\n== Validating TSMM-derived registry entry example ==\n== Validating TSMM composition authority boundary ==\n== Validating TSMM composition evidence bundle ==\n== Validating TSMM composition decision receipt ==\n== Validating TSMM composition registry entry ==\n== Validating artifact coverage manifest ==\nOK\n"
-    },
-    {
-      "id": "lint",
-      "status": "pass",
-      "detail": "\n> trust-infrastructure-schemas@0.12.0 lint\n> node tools/lint-schemas.js\n\nSchema lint OK\n"
-    },
-    {
-      "id": "docs",
-      "status": "pass",
-      "detail": "\n> trust-infrastructure-schemas@0.12.0 docs:check\n> node tools/validate-docs.js\n\nDocumentation links: PASS\n"
-    },
-    {
-      "id": "governance",
-      "status": "pass",
-      "detail": "\n> trust-infrastructure-schemas@0.12.0 governance:check\n> node tools/validate-repository-governance.js\n\nRepository governance declaration: PASS\n"
-    },
-    {
-      "id": "relationships",
-      "status": "pass",
-      "detail": "\n> trust-infrastructure-schemas@0.12.0 relationships:check\n> node tools/validate-portfolio-relationships.js\n\nPortfolio relationships: PASS (2 declarations)\n"
+      "status": "fail",
+      "detail": "annot find module 'ajv'\nRequire stack:\n- /mnt/data/work_tis/trust-infrastructure-schemas-main/tools/validate-conformance.js\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Module.require (node:internal/modules/cjs/loader:1487:12)\n    at require (node:internal/modules/helpers:135:16)\n    at Object.<anonymous> (/mnt/data/work_tis/trust-infrastructure-schemas-main/tools/validate-conformance.js:10:13)\n    at Module._compile (node:internal/modules/cjs/loader:1730:14) {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: [\n    '/mnt/data/work_tis/trust-infrastructure-schemas-main/tools/validate-conformance.js'\n  ]\n}\n\nNode.js v22.16.0\n"
     }
   ],
   "summary": {
-    "passed": 5,
-    "failed": 0,
+    "passed": 0,
+    "failed": 1,
     "skipped": 0
   },
   "limitations": [

@@ -1,0 +1,86 @@
+{
+  "$schema": "./tsmm-semantic-coverage.schema.json",
+  "coverage_id": "tis-tsmm-semantic-coverage-v0.13.0",
+  "version": "v0.13.0",
+  "semantic_authority": "trust-systems-meta-model",
+  "semantic_authority_version": "v0.24.0",
+  "artifact_contract_authority": "trust-infrastructure-schemas",
+  "coverage": [
+    {
+      "concept_id": "urn:tsmm:concept:authority",
+      "artifacts": [
+        "governance/authority-boundary.schema.json"
+      ],
+      "status": "complete"
+    },
+    {
+      "concept_id": "urn:tsmm:concept:delegation",
+      "artifacts": [
+        "delegation/delegation-lineage.schema.json",
+        "delegation/delegation-lineage-verification.schema.json"
+      ],
+      "status": "complete"
+    },
+    {
+      "concept_id": "urn:tsmm:concept:evidence-bundle",
+      "artifacts": [
+        "evidence/evidence-bundle-manifest.schema.json"
+      ],
+      "status": "complete"
+    },
+    {
+      "concept_id": "urn:tsmm:concept:assessment",
+      "artifacts": [
+        "oasf/oasf-evaluation-envelope.schema.json"
+      ],
+      "status": "partial"
+    },
+    {
+      "concept_id": "urn:tsmm:concept:trust-decision",
+      "artifacts": [
+        "decision/decision-receipt.schema.json"
+      ],
+      "status": "complete"
+    },
+    {
+      "concept_id": "urn:tsmm:concept:effect",
+      "artifacts": [
+        "decision/decision-receipt.schema.json"
+      ],
+      "status": "complete"
+    },
+    {
+      "concept_id": "urn:tsmm:concept:trust-registry",
+      "artifacts": [
+        "registry/registry-entry.schema.json",
+        "registry/registry-publication-profile.schema.json"
+      ],
+      "status": "complete"
+    },
+    {
+      "concept_id": "urn:tsmm:concept:assurance-profile",
+      "artifacts": [
+        "assurance/assurance.schema.json"
+      ],
+      "status": "partial"
+    },
+    {
+      "concept_id": "urn:tsmm:concept:revocation",
+      "artifacts": [
+        "profiles/vti/status-list-reference.schema.json"
+      ],
+      "status": "partial"
+    },
+    {
+      "concept_id": "urn:tsmm:concept:redress",
+      "artifacts": [
+        "decision/decision-receipt.schema.json"
+      ],
+      "status": "informative",
+      "notes": "Review-path evidence is representable; a dedicated redress contract is not yet defined."
+    }
+  ],
+  "unmapped_review_candidates": [
+    "urn:tsmm:concept:supersession"
+  ]
+}

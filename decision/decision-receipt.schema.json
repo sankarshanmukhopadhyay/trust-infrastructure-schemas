@@ -361,5 +361,15 @@
         }
       }
     }
+  },
+  "x-tsmm-semantic-binding": {
+    "semanticAuthority": "trust-systems-meta-model",
+    "relationship": "semantic-projection",
+    "conceptIds": [
+      "urn:tsmm:concept:trust-decision",
+      "urn:tsmm:concept:effect",
+      "urn:tsmm:concept:redress"
+    ],
+    "authorityTransfer": false
   }
 }

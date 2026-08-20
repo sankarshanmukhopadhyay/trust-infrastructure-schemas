@@ -4,7 +4,7 @@ portfolio_tier: flagship
 lifecycle: active
 role: portable-machine-readable-contract-layer
 stability: provisional
-current_version: "v0.11.0"
+current_version: "v0.13.0"
 authority:
   owns:
     - trust-artifact-schemas
@@ -17,7 +17,7 @@ authority:
     - external-certification
 dependencies:
   - repository: trust-systems-meta-model
-    relationship: derives-semantics-from
+    relationship: normative-dependency
     role: canonical-semantic-model
   - repository: trust-graph-artifacts
     relationship: supplies-contracts-to

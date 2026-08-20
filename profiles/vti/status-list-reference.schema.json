@@ -146,5 +146,13 @@
       },
       "description": "TSMM effect impacted by this status check."
     }
+  },
+  "x-tsmm-semantic-binding": {
+    "semanticAuthority": "trust-systems-meta-model",
+    "relationship": "semantic-projection",
+    "conceptIds": [
+      "urn:tsmm:concept:revocation"
+    ],
+    "authorityTransfer": false
   }
 }
