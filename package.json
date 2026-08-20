@@ -1,6 +1,6 @@
 {
   "name": "trust-infrastructure-schemas",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "private": true,
   "description": "Machine-readable schemas and governance artifacts for operational trust infrastructure.",
   "scripts": {
@@ -19,8 +19,6 @@
     "pages:check": "node tools/validate-pages-ia.js"
   },
   "devDependencies": {
-    "ajv-cli": "^5.0.0",
-    "ajv": "^8.17.1",
-    "ajv-formats": "^3.0.1"
+    "ajv": "^8.17.1"
   }
 }

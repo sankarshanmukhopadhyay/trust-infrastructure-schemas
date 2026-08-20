@@ -94,8 +94,9 @@ for (const page of pages) {
 }
 
 const rootIndex = fs.readFileSync(path.join(process.cwd(), 'index.md'), 'utf8');
-if (!rootIndex.includes('**Current release:** `v0.13.0`')) {
-  errors.push('index.md must identify v0.13.0 as the current release');
+const version = fs.readFileSync(path.join(process.cwd(), 'VERSION'), 'utf8').trim();
+if (!rootIndex.includes(`**Current release:** ` + '`v' + version + '`')) {
+  errors.push(`index.md must identify v${version} as the current release`);
 }
 
 if (errors.length) {

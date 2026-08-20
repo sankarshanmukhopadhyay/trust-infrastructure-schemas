@@ -1,6 +1,6 @@
 # Decentralized Trust Graph Credentials
 
-Based on [Core Spec v0.3](https://github.com/trustoverip/dtgwg-cred-tf/blob/main/dtg.md)
+Aligned against [DTG Credential Specification](https://github.com/trustoverip/dtgwg-cred-spec) main, reviewed 2026-08-20.
 
 ## VMC (Membership Credential)
 - Purpose: Establishes a node in the DTG by defining membership in a VTC or VTN.
@@ -28,7 +28,7 @@ Based on [Core Spec v0.3](https://github.com/trustoverip/dtgwg-cred-tf/blob/main
 - `did:cid:bagaaierabrfzc4dx2iuxki64mwjakyw5s6mgp7sk75a3nnzxv5doeyflpsnq`
 
 ## VWC (Witness Credential)
-- Purpose: Third-party attestation that an edge was established under specific conditions.
+- Purpose: Third-party attestation bound to a trust-task exchange and to the exact witnessed VRC using a required JCS/SHA-256 digest.
 - [witness-credential.json](witness-credential.json)
 - `did:cid:bagaaiera5i3lobqxncn25lxvqznfiak4gvujojpddjft6ub25ys7xbrbfc5a`
 

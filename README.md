@@ -2,13 +2,13 @@
 
 > **Flagship repository**  
 > **Role:** `portable-machine-readable-contract-layer`  
-> **Current version:** `v0.13.0`  
+> **Current version:** `v0.14.0`  
 > **Canonical validation:** `make validate`  
 > **Authority:** [`governance/repository-authority.yaml`](governance/repository-authority.yaml)  
 > **Start here:** [`docs/adoption.md`](docs/adoption.md)
 
 
-**Current release:** `v0.13.0`  
+**Current release:** `v0.14.0`  
 **Release theme:** TSMM-Aligned Runtime Assurance Artifact Contracts  
 **Last reviewed:** 2026-06-26
 
@@ -28,9 +28,9 @@ Trust infrastructure fails when governance remains trapped in websites, PDFs, an
 
 `trust-infrastructure-schemas` provides the artifact contracts for those questions.
 
-## What changed in v0.13.0
+## What changed in v0.14.0
 
-`v0.13.0` moves TIS from compatibility profiles to TSMM-aligned runtime assurance artifact contracts.
+`v0.14.0` moves TIS from compatibility profiles to TSMM-aligned runtime assurance artifact contracts.
 
 Major changes:
 

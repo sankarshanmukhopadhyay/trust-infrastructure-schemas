@@ -9,6 +9,8 @@ permalink: /docs/releases/
 
 # Releases
 
+- [v0.14.0 - DTG Drift Alignment and Pages Completeness](v0.14.0.md)
+
 Version history, release notes, compatibility posture, and migration context.
 
 ## In this section

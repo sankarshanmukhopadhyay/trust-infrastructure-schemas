@@ -1,5 +1,20 @@
 # Changelog
 
+## [v0.14.0] - 2026-08-20
+
+### Changed
+- Align the DTG Witness Credential overlay with the merged DTG credential specification: `taskContext` and a JCS/SHA-256 VRC `digest` now provide exchange and exact-edge binding.
+- Refresh DTG upstream compatibility tracking across credential, Trust Task, ZKP, and implementation repositories.
+- Reduce npm validation dependencies to Ajv only, move CI to Node 22 LTS, disable lifecycle scripts, prefer the npm cache, and bound registry retry delays.
+
+### Documentation and publication
+- Add a complete schema catalog and a dated DTG upstream review to GitHub Pages.
+- Add generated-site completeness validation so every `docs/**/*.md` source must produce an HTML page before deployment.
+
+### Assurance
+- Treat unmerged VDC and proof-of-liveness work as tracked drift rather than silently promoting proposal semantics into TIS.
+
+
 ## [v0.13.0] - 2026-08-20
 
 ### Added

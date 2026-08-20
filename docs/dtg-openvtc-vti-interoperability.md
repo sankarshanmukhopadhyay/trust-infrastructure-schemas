@@ -6,11 +6,13 @@ nav_order: 5
 ---
 # DTG / OpenVTC / VTI Interoperability and Drift Tracking
 
-**Applicable release:** `v0.9.0`  
+**Applicable release:** `v0.14.0`  
 **Status:** Cross-repo compatibility profile  
-**Last reviewed:** 2026-05-06
+**Last reviewed:** 2026-08-20
 
-TIS now tracks three upstream implementation repositories as operational references:
+TIS tracks DTG specifications and implementation repositories as operational references. The detailed portfolio review is published in [DTG Upstream Review](dtg-upstream-review.md).
+
+Core implementation references:
 
 | Repository | Role in the trust stack |
 |---|---|

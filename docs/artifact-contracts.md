@@ -9,6 +9,8 @@ permalink: /docs/artifact-contracts/
 
 # Artifact Contracts
 
+Start with the [Schema Catalog](schema-catalog.md) for a complete family-level inventory of machine contracts.
+
 Canonical and profile-level machine contracts for authority, delegation, evidence, decisions, registry state, identifiers, and artifact families.
 
 ## In this section

@@ -1,6 +1,6 @@
 {
-  "release": "v0.10.0",
-  "reviewed_at": "2026-06-26T00:00:00Z",
+  "release": "v0.14.0",
+  "reviewed_at": "2026-08-20T00:00:00Z",
   "upstreams": [
     {
       "repo": "trust-systems-meta-model",
@@ -29,9 +29,43 @@
       "tracked_ref": "main",
       "role": "VTI/VTA authority, sealed transfer, DID template, attestation, and integration implementation",
       "local_archive_reviewed": "verifiable-trust-infrastructure-main.zip"
+    },
+    {
+      "repo": "trustoverip/dtgwg-cred-spec",
+      "url": "https://github.com/trustoverip/dtgwg-cred-spec",
+      "tracked_ref": "b89f389abbdae77ba60b673c0836c781c2b54169",
+      "role": "Normative DTG credential specification; VWC edge-binding authority"
+    },
+    {
+      "repo": "trustoverip/dtgwg-trust-tasks-tf",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf",
+      "tracked_ref": "a8cc6f3373525716a19747b834460a225ff08516",
+      "role": "Trust Task protocol and implementation family"
+    },
+    {
+      "repo": "trustoverip/dtgwg-zkp-tf",
+      "url": "https://github.com/trustoverip/dtgwg-zkp-tf",
+      "tracked_ref": "b37d52fca4ab64ef759d4952b13757f3b23cb20b",
+      "role": "Privacy and zero-knowledge requirements; no merged schema delta at reviewed ref"
     }
   ],
   "mappings": [
+    {
+      "repo": "trustoverip/dtgwg-cred-spec",
+      "artifact": "Verifiable Witness Credential (VWC)",
+      "role": "Normative credential semantic input",
+      "authority_surface": "Witness issuer, observed party, trust-task context, and required digest binding to the exact JCS-canonicalized VRC.",
+      "evidence_produced": [
+        "WitnessCredential",
+        "VRC digest edge binding",
+        "trust-task context binding"
+      ],
+      "tis_profile": [
+        "credentials/dtg/v1/witness-credential.json"
+      ],
+      "assurance_implication": "A VWC is not treated as evidence of a specific edge unless the referenced VRC is available and its digest can be recomputed and matched.",
+      "validation_status": "validated-example"
+    },
     {
       "repo": "OpenVTC/dtg-credentials",
       "artifact": "DTG VC envelope",

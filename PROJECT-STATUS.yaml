@@ -17,5 +17,5 @@ evidence:
   evidence_outputs: [artifacts/candidate/candidate-readiness.json, artifacts/portfolio/portfolio-alignment.json]
   known_limitations: [independent interoperability testing is incomplete, candidate status is not certification]
 review:
-  last_review: "2026-07-20"
+  last_review: "2026-08-20"
   next_review: "2026-10-01"

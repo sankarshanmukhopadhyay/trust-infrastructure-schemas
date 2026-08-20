@@ -41,6 +41,7 @@ jobs:
             echo "::error::The generated site does not include the Mermaid initialization module."
             exit 1
           }
+          node tools/verify-generated-pages.js _site
           grep -R --include='*.html' -q "Trust Infrastructure Schemas" _site/index.html || {
             echo "::error::The generated home page does not contain the expected repository title."
             exit 1
