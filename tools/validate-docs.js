@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const roots = ['README.md', 'docs'];
+const roots = ['README.md', 'index.md', 'docs'];
 const bad = [];
 
 function walk(p) {
@@ -12,10 +12,21 @@ function walk(p) {
   }
   if (!p.endsWith('.md')) return;
   const text = fs.readFileSync(p, 'utf8');
-  for (const match of text.matchAll(/\[[^\]]+\]\(([^)#]+)(?:#[^)]+)?\)/g)) {
+
+  // Validate Jekyll link tags against repository-root paths.
+  for (const match of text.matchAll(/\{%\s*link\s+([^\s%]+)\s*%\}/g)) {
     const target = match[1];
-    if (/^(https?:|mailto:)/.test(target)) continue;
-    const resolved = path.resolve(path.dirname(p), target);
+    if (!fs.existsSync(path.resolve(target))) bad.push(`${p}: missing Jekyll link target ${target}`);
+  }
+
+  // Validate ordinary local Markdown links. Jekyll link tags are handled above.
+  for (const match of text.matchAll(/\[[^\]]+\]\(([^)]+)\)/g)) {
+    const target = match[1].trim();
+    if (/^(https?:|mailto:|#)/.test(target)) continue;
+    if (target.startsWith('{% link ')) continue;
+    const clean = target.split('#')[0];
+    if (!clean) continue;
+    const resolved = path.resolve(path.dirname(p), clean);
     if (!fs.existsSync(resolved)) bad.push(`${p}: ${target}`);
   }
 }

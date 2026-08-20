@@ -6,26 +6,26 @@ nav_order: 2
 ---
 # Schema Catalog
 
-This page is the human-readable entry point to every machine-contract family published by TIS. The JSON/YAML files remain canonical; this catalog makes their scope and validation surface discoverable from GitHub Pages.
+This page inventories the machine contracts present in the repository. Presence does **not** imply equal authority: TIS Core contracts are reusable normative contracts, while ecosystem-specific profiles are adapters whose native semantics remain upstream. See [Repository Scope and Admission Policy]({% link docs/repository-scope.md %}).
 
-| Family | Canonical location | Governance purpose |
-|---|---|---|
-| Common references | `common/` | Stable cross-artifact references. |
-| DTG credentials | `credentials/dtg/v1/` | DTG credential semantic overlays and VC compatibility contracts. |
-| Agent credentials | `credentials/agent/v1/` | Agent identity, capability, infrastructure, and collaboration attestations. |
-| Reputation | `credentials/reputation/v1/` | Portable reputation claims. |
-| Authority | `governance/` | Authority boundaries, scope, delegation requirements, and revocation obligations. |
-| Delegation | `delegation/` | Delegation lineage and chain-verification evidence. |
-| Evidence | `evidence/` | Evidence-bundle integrity and references. |
-| Decisions | `decision/` | Bounded decision receipts. |
-| Registries | `registry/` | Registry entries and publication profiles. |
-| Trust Tasks | `profiles/trust-tasks/` | Runtime task references, lifecycle events, manifests, and execution receipts. |
-| OpenVTC | `profiles/openvtc/` | Runtime workflow evidence and state normalization. |
-| VTI | `profiles/vti/` | VTA authorization, ACL, transfer, status, and integration evidence. |
-| TSMM | `profiles/tsmm/` | Runtime governance projection contracts. |
-| OASF / AIS-1 / ODRL | `oasf/`, `profiles/ais1/`, `odrl/` | Experimental ecosystem composition profiles. |
-| Assurance / controls / conformance | `assurance/`, `controls/`, `conformance/` | Assurance claims, controls, and implementer declarations. |
-| Portfolio governance | `portfolio/`, `data/` | Cross-repository authority and relationship contracts. |
+| Class | Family | Canonical location | Governance purpose |
+|---|---|---|---|
+| Core | Common references | `common/` | Stable cross-artifact references. |
+| Adapter / compatibility debt | DTG credentials | `credentials/dtg/v1/` | DTG credential semantic overlays and VC compatibility contracts. |
+| Adapter | Agent credentials | `credentials/agent/v1/` | Agent identity, capability, infrastructure, and collaboration attestations. |
+| Adapter | Reputation | `credentials/reputation/v1/` | Portable reputation claims. |
+| Core | Authority | `governance/` | Authority boundaries, scope, delegation requirements, and revocation obligations. |
+| Core | Delegation | `delegation/` | Delegation lineage and chain-verification evidence. |
+| Core | Evidence | `evidence/` | Evidence-bundle integrity and references. |
+| Core | Decisions | `decision/` | Bounded decision receipts. |
+| Core | Registries | `registry/` | Registry entries and publication profiles. |
+| Adapter | Trust Tasks | `profiles/trust-tasks/` | Runtime task references, lifecycle events, manifests, and execution receipts. |
+| Adapter | OpenVTC | `profiles/openvtc/` | Runtime workflow evidence and state normalization. |
+| Adapter | VTI | `profiles/vti/` | VTA authorization, ACL, transfer, status, and integration evidence. |
+| Adapter | TSMM | `profiles/tsmm/` | Runtime governance projection contracts. |
+| Experimental adapter | OASF / AIS-1 / ODRL | `oasf/`, `profiles/ais1/`, `odrl/` | Experimental ecosystem composition profiles. |
+| Core | Assurance / controls / conformance | `assurance/`, `controls/`, `conformance/` | Assurance claims, controls, and implementer declarations. |
+| Repository evidence | Portfolio governance | `portfolio/`, `data/` | Cross-repository authority and relationship contracts. |
 
 ## Publication contract
 

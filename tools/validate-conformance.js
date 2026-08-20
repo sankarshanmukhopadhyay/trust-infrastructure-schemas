@@ -2,13 +2,12 @@
 /**
  * Reference validator for trust-infrastructure-schemas.
  *
- * Uses Ajv in-process so validation remains fast enough for local and CI use.
+ * Uses the repository-local JSON Schema subset validator so validation has zero package-install dependencies.
  * Usage:
  *   node tools/validate-conformance.js
  */
 const fs = require("fs");
-const Ajv = require("ajv");
-const Ajv2020 = require("ajv/dist/2020");
+const { validate: validateJsonSchema } = require("./json-schema-lite");
 
 function exists(p) {
   try { fs.accessSync(p); return true; } catch { return false; }
@@ -23,12 +22,9 @@ function validate(schema, data, label) {
   if (!exists(data)) throw new Error(`Missing data/example: ${data}`);
   console.log(`== Validating ${label} ==`);
   const schemaObj = loadJson(schema);
-  const AjvCtor = String(schemaObj.$schema || "").includes("2020-12") ? Ajv2020 : Ajv;
-  const ajv = new AjvCtor({ strict: false, validateFormats: false, allErrors: true });
-  const validateFn = ajv.compile(schemaObj);
-  const valid = validateFn(loadJson(data));
-  if (!valid) {
-    throw new Error(`${data} invalid against ${schema}: ${JSON.stringify(validateFn.errors, null, 2)}`);
+  const errors = validateJsonSchema(schemaObj, schemaObj, loadJson(data));
+  if (errors.length) {
+    throw new Error(`${data} invalid against ${schema}:\n- ${errors.join("\n- ")}`);
   }
 }
 

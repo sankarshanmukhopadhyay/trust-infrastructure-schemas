@@ -11,20 +11,20 @@ permalink: /
 Trust Infrastructure Schemas (TIS) publishes portable, machine-readable contracts for authority, delegation, evidence, decisions, registries, conformance, and assurance.
 
 **Status:** Candidate specification  
-**Current release:** `v0.14.0`  
+**Current release:** `v0.14.1`  
 **Lifecycle:** Active  
 **Operational status:** Active validation
 
 ## Navigate by task
 
-- **Implement:** [Adoption](docs/adoption.md) → [Architecture](docs/architecture.md) → [Artifact Contracts](docs/artifact-contracts.md)
-- **Trace meaning:** [Semantic Alignment](docs/semantic-alignment.md) → [TSMM Semantic Coverage](docs/tsmm-semantic-coverage.md)
-- **Validate:** [Assurance & Validation](docs/assurance-validation.md) → [Candidate Readiness](docs/candidate-readiness.md)
-- **Integrate:** [Integration & Adoption](docs/integration-adoption.md) → [Interoperability](docs/interoperability.md)
-- **Govern:** [Governance & Lifecycle](docs/governance-lifecycle.md) → [Portfolio Relationship Contract](docs/portfolio-relationship-contract.md)
-- **Release history:** [v0.14.0 release notes](docs/releases/v0.14.0.md)
+- **Implement:** [Adoption]({% link docs/adoption.md %}) → [Architecture]({% link docs/architecture.md %}) → [Artifact Contracts]({% link docs/artifact-contracts.md %})
+- **Trace meaning:** [Semantic Alignment]({% link docs/semantic-alignment.md %}) → [TSMM Semantic Coverage]({% link docs/tsmm-semantic-coverage.md %})
+- **Validate:** [Assurance & Validation]({% link docs/assurance-validation.md %}) → [Candidate Readiness]({% link docs/candidate-readiness.md %})
+- **Integrate:** [Integration & Adoption]({% link docs/integration-adoption.md %}) → [Interoperability]({% link docs/interoperability.md %})
+- **Govern:** [Governance & Lifecycle]({% link docs/governance-lifecycle.md %}) → [Portfolio Relationship Contract]({% link docs/portfolio-relationship-contract.md %})
+- **Release history:** [v0.14.1 release notes]({% link docs/releases/v0.14.1.md %})
 
-The complete task-oriented documentation map is available from the [Documentation home](docs/index.md).
+The complete task-oriented documentation map is available from the [Documentation home]({% link docs/index.md %}).
 
 ## Authority boundary
 

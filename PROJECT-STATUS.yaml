@@ -13,7 +13,7 @@ authority:
   delegation: Schema and status changes require maintainer approval under GOVERNANCE.md; validation work may be delegated through reviewed pull requests.
   revocation_or_supersession: Releases and status claims are superseded by a versioned release, changelog entry, and updated status contract; compromised artifacts are withdrawn through SECURITY.md.
 evidence:
-  validation_commands: [npm ci, npm run candidate:check]
+  validation_commands: [npm run candidate:check]
   evidence_outputs: [artifacts/candidate/candidate-readiness.json, artifacts/portfolio/portfolio-alignment.json]
   known_limitations: [independent interoperability testing is incomplete, candidate status is not certification]
 review:

@@ -13,7 +13,7 @@ Understand candidate readiness, validation coverage, assurance evidence, and rep
 
 ## In this section
 
-- [Assurance](assurance.md)
-- [Candidate Readiness](candidate-readiness.md)
-- [Repository status](repository-status.md)
-- [Validation Coverage](validation-coverage.md)
+- [Assurance]({% link docs/assurance.md %})
+- [Candidate Readiness]({% link docs/candidate-readiness.md %})
+- [Repository status]({% link docs/repository-status.md %})
+- [Validation Coverage]({% link docs/validation-coverage.md %})

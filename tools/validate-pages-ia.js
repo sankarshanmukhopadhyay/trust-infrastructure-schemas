@@ -33,8 +33,17 @@ function frontMatter(file) {
 }
 
 const markdownFiles = filesRecursively(docsRoot).filter((f) => f.endsWith('.md'));
+
+// Markdown targets survive into generated HTML as .md hrefs and commonly 404.
+// Require Jekyll's link tag for repository-local Markdown references.
+const publicationSources = [path.join(process.cwd(), 'index.md'), ...markdownFiles];
 const pages = markdownFiles.map((file) => ({ file, fm: frontMatter(file) }));
 const errors = [];
+for (const file of publicationSources) {
+  const text = fs.readFileSync(file, 'utf8');
+  const re = /\]\((?!https?:\/\/|mailto:|\{% link )([^)]*\.md)(?:#[^)]*)?\)/g;
+  for (const match of text.matchAll(re)) errors.push(`${path.relative(process.cwd(), file)}: local Markdown link must use Jekyll {% link %}: ${match[1]}`);
+}
 
 for (const page of pages) {
   const rel = path.relative(process.cwd(), page.file);

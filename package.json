@@ -1,8 +1,8 @@
 {
   "name": "trust-infrastructure-schemas",
-  "version": "0.14.0",
+  "version": "0.14.1",
   "private": true,
-  "description": "Machine-readable schemas and governance artifacts for operational trust infrastructure.",
+  "description": "Portable machine-verifiable trust contracts with zero-install repository validation.",
   "scripts": {
     "lint": "node tools/lint-schemas.js",
     "validate": "node tools/validate-conformance.js",
@@ -18,7 +18,5 @@
     "version:check": "node tools/check-version-consistency.js",
     "pages:check": "node tools/validate-pages-ia.js"
   },
-  "devDependencies": {
-    "ajv": "^8.17.1"
-  }
+  "devDependencies": {}
 }

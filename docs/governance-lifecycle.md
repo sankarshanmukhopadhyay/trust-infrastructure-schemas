@@ -13,8 +13,10 @@ Review portfolio relationships, repository governance surfaces, documentation op
 
 ## In this section
 
-- [Cross-Repo Governance](cross-repo-governance.md)
-- [GitHub Pages](github-pages.md)
-- [Portfolio Relationship Contracts](portfolio-relationship-contract.md)
-- [Portfolio Relationships](portfolio-relationships.md)
-- [Roadmap](roadmap.md)
+- [Cross-Repo Governance]({% link docs/cross-repo-governance.md %})
+- [GitHub Pages]({% link docs/github-pages.md %})
+- [Portfolio Relationship Contracts]({% link docs/portfolio-relationship-contract.md %})
+- [Portfolio Relationships]({% link docs/portfolio-relationships.md %})
+- [Roadmap]({% link docs/roadmap.md %})
+
+- [Repository Scope and Admission Policy]({% link docs/repository-scope.md %})

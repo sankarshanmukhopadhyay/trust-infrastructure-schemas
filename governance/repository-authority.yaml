@@ -4,17 +4,20 @@ portfolio_tier: flagship
 lifecycle: active
 role: portable-machine-readable-contract-layer
 stability: provisional
-current_version: "v0.14.0"
+current_version: "v0.14.1"
 authority:
   owns:
-    - trust-artifact-schemas
+    - portable-core-contracts
     - schema-identifiers
     - portable-evidence-contracts
     - schema-validation-rules
+    - ecosystem-adapter-mappings
   does_not_own:
     - canonical-semantic-definitions
     - domain-specific-governance-conclusions
     - external-certification
+    - upstream-native-protocol-semantics
+    - general-portfolio-monitoring
 dependencies:
   - repository: trust-systems-meta-model
     relationship: normative-dependency
@@ -27,3 +30,13 @@ version_policy:
   unverified_later_versions: require explicit review before compatibility is claimed
 supersession_policy: newer authoritative artifacts supersede earlier artifacts only when explicitly declared
 revocation_or_withdrawal_policy: unsafe or misleading artifacts may be withdrawn by maintainers with an auditable rationale
+
+admission_policy:
+  core_requires:
+    - cross-system-portability
+    - explicit-authority-boundary
+    - non-duplication-of-authoritative-upstream-schema
+    - machine-verifiable-assurance-value
+    - defined-lifecycle-and-revocation
+  profiles_are: non-authoritative-adapters
+  repository_evidence_is: assurance-metadata-not-automatically-a-schema-family
