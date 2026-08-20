@@ -14,16 +14,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: npm
-          cache-dependency-path: package-lock.json
       - uses: actions/setup-python@v5
         with: {python-version: '3.12'}
-      - name: Install validation dependency
-        env:
-          npm_config_fetch_retries: '2'
-          npm_config_fetch_retry_mintimeout: '1000'
-          npm_config_fetch_retry_maxtimeout: '10000'
-        run: npm ci --no-audit --no-fund --ignore-scripts --prefer-offline
+      - name: Confirm dependency-free validator
+        run: node -e "const p=require('./package.json'); if (Object.keys(p.devDependencies || {}).length) process.exit(1); console.log('No npm install required')"
       - run: npm run candidate:check
       - uses: actions/upload-artifact@v4
         with:

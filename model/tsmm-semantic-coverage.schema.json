@@ -74,5 +74,6 @@
         "pattern": "^urn:tsmm:concept:"
       }
     }
-  }
+  },
+  "description": "Validates the machine-readable coverage of canonical TSMM semantic concepts by TIS artifacts and profiles."
 }

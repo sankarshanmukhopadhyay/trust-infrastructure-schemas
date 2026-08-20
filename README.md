@@ -2,15 +2,15 @@
 
 > **Flagship repository**  
 > **Role:** `portable-machine-readable-contract-layer`  
-> **Current version:** `v0.14.0`  
+> **Current version:** `v0.14.1`  
 > **Canonical validation:** `make validate`  
 > **Authority:** [`governance/repository-authority.yaml`](governance/repository-authority.yaml)  
 > **Start here:** [`docs/adoption.md`](docs/adoption.md)
 
 
-**Current release:** `v0.14.0`  
-**Release theme:** TSMM-Aligned Runtime Assurance Artifact Contracts  
-**Last reviewed:** 2026-06-26
+**Current release:** `v0.14.1`  
+**Release theme:** Publication repair, zero-install validation, and scope discipline  
+**Last reviewed:** 2026-08-20
 
 This repository publishes canonical **machine-readable trust artifacts** for operational digital trust infrastructure. It is an implementation-oriented **Open Trust Artifact Model** for expressing authority, evidence, assurance, conformance, registry state, policy references, runtime workflow state, and bounded trust decisions in forms that can be validated by machines and reviewed by humans.
 
@@ -28,20 +28,20 @@ Trust infrastructure fails when governance remains trapped in websites, PDFs, an
 
 `trust-infrastructure-schemas` provides the artifact contracts for those questions.
 
-## What changed in v0.14.0
+## What changed in v0.14.1
 
-`v0.14.0` moves TIS from compatibility profiles to TSMM-aligned runtime assurance artifact contracts.
+`v0.14.1` repairs the publication and validation architecture and establishes a stricter repository boundary.
 
 Major changes:
 
-- added stable TSMM semantic identifiers to canonical artifact mappings;
-- added machine-readable TSMM semantic coverage and schema-level semantic binding metadata;
-- added portable portfolio relationship, repository authority, adoption path, and validation-result contracts;
-- added semantic-alignment, authority-transfer, and release-version drift checks;
-- added repository-local TSMM compatibility and portfolio relationship contracts;
-- preserved TIS authority over schema identifiers, serialization, constraints, validation, and releases;
-- preserved TSMM authority over canonical semantic meaning;
-- emit downloadable portfolio-alignment evidence from validation.
+- candidate validation no longer installs npm packages or depends on registry availability;
+- GitHub Pages treats root `index.md` plus `docs/**/*.md` as the canonical publication surface;
+- internal documentation links are resolved by Jekyll rather than emitted as `.md` URLs;
+- generated-site assurance checks for missing HTML, unresolved Markdown links, and missing stylesheet references;
+- TIS Core is explicitly separated from ecosystem-specific adapter profiles and repository assurance evidence;
+- new schemas must pass portability, authority, non-duplication, assurance-value, and lifecycle admission tests.
+
+See [`docs/repository-scope.md`](docs/repository-scope.md).
 
 ## Canonical governance flow
 
@@ -103,11 +103,10 @@ The tracking method is documented in `docs/dtg-openvtc-vti-interoperability.md` 
 
 ## Validation
 
-Local validation requires Node.js and `ajv-cli`.
+Local validation requires Node.js. Candidate validation has no npm package-install dependency.
 
 ```bash
-npm install
-npm run check
+npm run candidate:check
 ```
 
 The validation pipeline checks schema examples, coverage references, release documentation, and local artifact hygiene.

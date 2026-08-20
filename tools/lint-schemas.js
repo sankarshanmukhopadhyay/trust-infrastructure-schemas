@@ -43,7 +43,7 @@ function fail(msg) {
 
 const version = fs.existsSync("VERSION") ? fs.readFileSync("VERSION", "utf8").trim() : "";
 if (!version) fail("missing VERSION value");
-if (version && !fs.existsSync(`docs/releases/${version}.md`)) fail(`missing release document docs/releases/${version}.md`);
+if (version && !fs.existsSync(`docs/releases/v${version}.md`)) fail(`missing release document docs/releases/${version}.md`);
 
 for (const p of walkAll(".")) {
   if (path.basename(p) === ".DS_Store") fail(`local-only artifact found: ${p}`);

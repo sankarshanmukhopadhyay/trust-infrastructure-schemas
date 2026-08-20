@@ -6,8 +6,8 @@ nav_order: 2
 ---
 # Architecture
 
-**Last reviewed:** 2026-05-05  
-**Current release:** `v0.9.0`
+**Last reviewed:** 2026-08-20  
+**Current release:** `v0.14.1`
 
 The repository architecture is organized around artifact families that support executable governance.
 
@@ -35,12 +35,17 @@ flowchart TD
 
 | Layer | Files | Purpose |
 |---|---|---|
-| Identity and authority | `credentials/`, `profiles/ais1/`, `governance/` | Defines identity, profile, and authority-boundary contracts. |
+| Core authority | `governance/`, `delegation/`, `common/` | Portable authority, delegation, and reference contracts owned by TIS. |
+| Ecosystem adapters | `credentials/`, `profiles/` | Compatibility overlays and mappings; upstream ecosystems remain authoritative for native semantics. |
 | Assurance and conformance | `assurance/`, `conformance/`, `evidence/` | Defines claims, assurance levels, and evidence manifests. |
 | Evaluation and policy | `oasf/`, `odrl/`, `decision/` | Defines publication, evaluation, policy reference, and decision artifacts. |
 | Registry state | `registry/`, `examples/composition/` | Defines discoverable state and composition examples. |
 | Model metadata | `model/`, `validation/` | Defines artifact taxonomy and validation coverage. |
 | Tooling | `tools/`, `.github/workflows/` | Validates examples, schemas, diagrams, coverage, and release hygiene. |
+
+## Authority topology
+
+TIS distinguishes **core portable contracts** from **ecosystem adapters** and **repository assurance evidence**. Profiles do not acquire upstream semantic authority merely because TIS validates them. See [Repository Scope and Admission Policy]({% link docs/repository-scope.md %}).
 
 ## Design principles
 

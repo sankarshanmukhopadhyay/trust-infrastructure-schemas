@@ -4,6 +4,7 @@ url: https://sankarshanmukhopadhyay.github.io
 baseurl: /trust-infrastructure-schemas
 remote_theme: just-the-docs/just-the-docs@v0.10.1
 markdown: kramdown
+strict_front_matter: true
 search_enabled: true
 heading_anchors: true
 color_scheme: light
@@ -13,6 +14,17 @@ aux_links:
 plugins:
   - jekyll-remote-theme
   - jekyll-seo-tag
+
+# Publication contract: every canonical documentation page is rendered through
+# the Just-the-Docs default layout. Individual pages retain only navigation and
+# content metadata; styling is enforced centrally so a new docs page cannot be
+# published as bare HTML merely because its author omitted a layout field.
+defaults:
+  - scope:
+      path: "docs"
+    values:
+      layout: default
+
 exclude:
   - node_modules/
   - vendor/
@@ -24,3 +36,30 @@ exclude:
   - .github/
   - Gemfile
   - Gemfile.lock
+  # Repository/source Markdown is not part of the GitHub Pages publication surface.
+  # Canonical Pages content is root index.md plus docs/**/*.md. Keeping these
+  # source files out of _site prevents raw/unskinned Markdown endpoints.
+  - CHANGELOG.md
+  - CODE_OF_CONDUCT.md
+  - CONTRIBUTING.md
+  - GOVERNANCE.md
+  - README.md
+  - RELEASE_NOTES_v0.11.0.md
+  - RELEASE_NOTES_v0.12.0.md
+  - ROADMAP.md
+  - SECURITY.md
+  - assurance/assurance-levels.md
+  - conformance/IMPLEMENTER-DECLARATION.md
+  - controls/controls.md
+  - credentials/agent/v1/README.md
+  - credentials/dtg/v1/README.md
+  - credentials/reputation/v1/README.md
+  - decision/README.md
+  - delegation/README.md
+  - examples/cross-repo/runtime-assurance-v0.10/README.md
+  - odrl/README.md
+  - profiles/ais1/README.md
+  - registry/README.md
+  - upstream/dtg-credentials.md
+  - upstream/openvtc.md
+  - upstream/verifiable-trust-infrastructure.md

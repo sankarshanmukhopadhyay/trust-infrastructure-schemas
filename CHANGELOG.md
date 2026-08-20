@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.14.1 - 2026-08-20
+
+### Fixed
+- repaired GitHub Pages link generation and publication-surface validation;
+- removed raw repository Markdown from the deployed Pages artifact;
+- removed the npm package-install dependency from candidate validation.
+
+### Governance
+- established TIS Core admission criteria and separated normative core contracts from ecosystem adapters and repository assurance evidence.
+
+
 ## [v0.14.0] - 2026-08-20
 
 ### Changed

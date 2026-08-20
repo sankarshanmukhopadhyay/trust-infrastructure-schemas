@@ -10,7 +10,7 @@ nav_order: 5
 **Status:** Cross-repo compatibility profile  
 **Last reviewed:** 2026-08-20
 
-TIS tracks DTG specifications and implementation repositories as operational references. The detailed portfolio review is published in [DTG Upstream Review](dtg-upstream-review.md).
+TIS tracks DTG specifications and implementation repositories as operational references. The detailed portfolio review is published in [DTG Upstream Review]({% link docs/dtg-upstream-review.md %}).
 
 Core implementation references:
 
