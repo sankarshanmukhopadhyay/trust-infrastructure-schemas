@@ -1,0 +1,127 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/main/assurance/assurance-lifecycle-event.schema.json",
+  "title": "Assurance Lifecycle Event",
+  "description": "Portable evidence contract recording how a detected change affects the current validity, reuse, reassessment, invalidation, or supersession of prior assurance evidence without mutating historical records.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "event_id",
+    "event_type",
+    "observed_at",
+    "target",
+    "previous_state_refs",
+    "changed_dimensions",
+    "impact",
+    "disposition",
+    "authority",
+    "rationale"
+  ],
+  "properties": {
+    "event_id": {"type": "string", "minLength": 1},
+    "event_type": {
+      "type": "string",
+      "enum": ["change_detected", "reassessment", "invalidation", "supersession"]
+    },
+    "observed_at": {"type": "string", "format": "date-time"},
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "type": {"type": "string", "minLength": 1},
+        "version": {"type": "string"}
+      }
+    },
+    "previous_state_refs": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "format": "uri"}
+    },
+    "current_state_refs": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "format": "uri"}
+    },
+    "changed_dimensions": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "target",
+          "evidence",
+          "authority",
+          "policy",
+          "semantic_dependency",
+          "schema_dependency",
+          "component_compatibility",
+          "security_posture",
+          "privacy_posture",
+          "freshness",
+          "documentation",
+          "other"
+        ]
+      }
+    },
+    "impact": {
+      "type": "string",
+      "enum": ["non_material", "material", "unknown"]
+    },
+    "affected_refs": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "format": "uri"}
+    },
+    "disposition": {
+      "type": "string",
+      "enum": ["current", "stale", "reassessment_required", "invalid", "superseded", "indeterminate"]
+    },
+    "reassessment_scope": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "superseding_ref": {"type": "string", "format": "uri"},
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["actor", "scope"],
+      "properties": {
+        "actor": {"type": "string", "minLength": 1},
+        "scope": {"type": "string", "minLength": 1},
+        "policy_ref": {"type": "string", "format": "uri"},
+        "evidence_ref": {"type": "string", "format": "uri"}
+      }
+    },
+    "rationale": {"type": "string", "minLength": 10},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "producer": {"type": "string"},
+        "run_id": {"type": "string"},
+        "source_commit": {"type": "string"},
+        "evidence_bundle_ref": {"type": "string", "format": "uri"}
+      }
+    }
+  },
+  "x-tsmm-semantic-binding": {
+    "semanticAuthority": "trust-systems-meta-model",
+    "relationship": "semantic-projection",
+    "conceptIds": [
+      "urn:tsmm:concept:assessment",
+      "urn:tsmm:concept:trust-decision",
+      "urn:tsmm:concept:revocation",
+      "urn:tsmm:concept:supersession",
+      "urn:tsmm:concept:evidence-artifact",
+      "urn:tsmm:concept:authority",
+      "urn:tsmm:concept:scope",
+      "urn:tsmm:concept:policy"
+    ],
+    "authorityTransfer": false
+  }
+}
