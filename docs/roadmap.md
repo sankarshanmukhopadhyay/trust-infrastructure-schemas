@@ -6,74 +6,71 @@ nav_order: 5
 ---
 # Roadmap
 
-**Last reviewed:** 2026-05-05  
-**Current release:** `v0.9.0`
+**Last reviewed:** 2026-08-28  
+**Current release:** `v0.14.1`
 
-The roadmap prioritizes adoption, validation, and governance interoperability over unconstrained schema expansion.
+The roadmap prioritizes portable contracts, validation, and governance interoperability over unconstrained schema expansion.
 
-## Delivered in v0.7.0
+## September 2026 priority: TRQP Stack 2026.2 lifecycle evidence
 
-- Decision receipt schema, example, and documentation.
-- Hardened authority-boundary schema.
-- Evidence bundle manifest schema.
-- Registry entry schema.
-- Artifact coverage manifest and coverage schema.
-- Expanded CI/local validation for all major artifact families.
-- Refreshed README, documentation index, trust model, trust assumptions, taxonomy, cross-repo guidance, and release notes.
-- Repository hygiene improvements, including `.gitignore` and local-artifact cleanup.
+**Coordinating issue:** https://github.com/sankarshanmukhopadhyay/trqp-assurance-hub/issues/39  
+**Tracking issue:** https://github.com/sankarshanmukhopadhyay/trqp-assurance-hub/issues/41
 
-## Near-term backlog
+GitHub Issues are currently disabled in this repository, so the Hub tracking issue records the cross-repository dependency while implementation remains TIS-owned.
 
-### 1. Decision receipt interoperability profile
+### Proposition
 
-Define profiles for common relying-party contexts:
+> Change, invalidation, reassessment, assurance-validity, and supersession evidence used across repositories should have portable machine-readable contracts where interoperability requires them, without moving semantic or component authority into TIS.
 
-- registry discovery;
-- credential acceptance;
-- agent identity-state reliance;
-- runtime delegation pre-check;
-- conformance certification acceptance.
+### Assessment first
 
-### 2. Evidence bundle integrity profile
+Before introducing a new schema family, evaluate whether existing TIS contracts can express the required Stack 2026.2 evidence through compatible extension or composition.
 
-Add optional manifest-level integrity controls, including canonicalization expectations, bundle hash calculation, signature metadata, and detached-proof references.
+Candidate portable surfaces, only where required, include:
 
-### 3. Authority boundary conformance tests
+- assurance change event;
+- change-impact classification;
+- reassessment plan/result;
+- assurance validity state;
+- supersession lineage.
 
-Add test fixtures that show valid and invalid authority boundaries, including revoked, stale, delegated, and out-of-scope examples.
+### Required properties
 
-### 4. Registry publication profile
+- subject/target identity;
+- previous/current state references;
+- changed dimensions;
+- materiality/impact state;
+- affected claims/evidence;
+- authority/provenance references;
+- invalidation/reassessment rationale;
+- explicit unknown/unsupported impact;
+- lifecycle/supersession references;
+- no implicit authority transfer.
 
-Clarify the minimum artifact references that a registry entry should carry at AL2, AL3, and AL4.
+### Acceptance evidence
 
-### 5. Crosswalk hardening
+- existing-contract sufficiency decision;
+- valid and invalid fixtures for any new contract;
+- explicit unknown-impact representation;
+- machine-testable authority boundaries;
+- documented compatibility/invalidation behavior;
+- successful consumption by relevant Stack components;
+- synchronized schema catalogue, Pages and candidate validation.
 
-Extend OASF and control crosswalk examples to carry confidence, equivalence type, and review status.
+## Stack 2026.2 version policy
 
-## Deferred
+`v0.15.0` is only a candidate if a material portable-contract addition lands. If existing TIS `v0.14.1` contracts are sufficient, retain the existing release in the coordinated tuple.
 
-- New domain-specific credential families unless they are backed by a clear adoption use case.
-- Runtime policy-engine implementation details.
-- Cryptographic proof format standardization beyond reference and integrity metadata.
+## Timing
 
-## vNext alignment priorities
+| Target | Outcome |
+|---|---|
+| 6 Sep | existing-contract sufficiency assessed |
+| 20 Sep | any required portable contract and compatibility behavior ready |
+| 20–25 Sep | participate in coordinated adversarial suite |
+| 26 Sep | version decision frozen |
+| 27–28 Sep | coordinated eligibility replay |
 
-- Promote the TSMM artifact mapping from candidate to supported after implementation feedback.
-- Add transform tooling from TSMM graph references to TIS authority boundary and decision receipt drafts.
-- Add richer negative examples for registry-publication-is-not-authorization cases.
+## Continuing backlog
 
-
-## v0.10.0 delivered
-
-- TSMM runtime governance projection profile.
-- Trust Task lifecycle and execution receipt evidence.
-- VTI authorization evidence aligned with implementation roles and capability enforcement.
-- OpenVTC relationship state normalization and task evidence mapping.
-- Integrity-bound evidence bundle metadata.
-- Status, revocation, and registry publication profiles.
-
-## v0.11.0 candidate direction
-
-- Conformance assertions for effect-level authorization.
-- Negative fixtures for stale status, revoked authority, missing decision receipt, and mismatched effect admission.
-- Optional JSON-LD contexts for runtime assurance artifacts.
+Decision-receipt interoperability, evidence-bundle integrity, authority-boundary conformance, registry publication, and crosswalk hardening remain valid backlog. They are not Stack 2026.2 blockers unless directly required by the lifecycle proposition above.
