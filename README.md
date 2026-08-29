@@ -28,6 +28,16 @@ Trust infrastructure fails when governance remains trapped in websites, PDFs, an
 
 `trust-infrastructure-schemas` provides the artifact contracts for those questions.
 
+## TIS in the Trust Systems Modelling Stack (TSMS)
+
+TIS is the **portable machine-readable contract layer** between TSMM canonical semantics and TGA executable governance artifacts. The current candidate baseline is **TSMM v0.24.0 / TIS v0.14.1 / TGA v0.12.1**. Unknown versions are not silently treated as compatible.
+
+- [TSMS portable contract guide](docs/tsms.md)
+- Machine-readable compatibility declaration: `model/tsms-compatibility.json`
+- Validation: `npm run tsms:check`
+- Governing workstream: [#7](https://github.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/issues/7)
+
+
 ## What changed in v0.14.1
 
 `v0.14.1` repairs the publication and validation architecture and establishes a stricter repository boundary.
