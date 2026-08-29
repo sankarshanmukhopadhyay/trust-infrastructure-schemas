@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "contractId": "urn:tsms:tis:compatibility",
+  "repository": "sankarshanmukhopadhyay/trust-infrastructure-schemas",
+  "repositoryVersion": "v0.14.1",
+  "role": "portable-machine-readable-contract-layer",
+  "tsms": {
+    "stackManifest": "https://github.com/sankarshanmukhopadhyay/trust-systems-meta-model/blob/main/model/tsms-stack.json",
+    "coordinationIssue": "https://github.com/sankarshanmukhopadhyay/trust-systems-meta-model/issues/5",
+    "baselineStatus": "candidate",
+    "semanticAuthority": {
+      "repository": "sankarshanmukhopadhyay/trust-systems-meta-model",
+      "version": "v0.24.0"
+    },
+    "downstreamConsumer": {
+      "repository": "sankarshanmukhopadhyay/trust-graph-artifacts",
+      "version": "v0.12.1"
+    }
+  },
+  "authority": {
+    "owns": [
+      "portable-core-contracts",
+      "schema-identifiers",
+      "portable-evidence-contracts",
+      "schema-validation-rules",
+      "ecosystem-adapter-mappings"
+    ],
+    "doesNotOwn": [
+      "canonical-semantic-definitions",
+      "tga-implementation-compositions",
+      "external-certification"
+    ]
+  },
+  "compatibilityPolicy": {
+    "knownBaseline": "compatible-candidate",
+    "unknownVersion": "unsupported",
+    "semanticAuthorityTransfer": false,
+    "silentCompatibilityForUnknownVersions": false
+  },
+  "goldenPathContracts": [
+    "governance/authority-boundary.schema.json",
+    "evidence/evidence-bundle-manifest.schema.json",
+    "decision/decision-receipt.schema.json"
+  ]
+}
