@@ -1,0 +1,12 @@
+{
+  "event_id": "ale-invalid-unknown-current",
+  "event_type": "change_detected",
+  "observed_at": "2026-08-29T03:22:00Z",
+  "target": {"id": "trqp-target", "type": "assurance-target"},
+  "previous_state_refs": ["https://example.org/evidence/prior"],
+  "changed_dimensions": ["component_compatibility"],
+  "impact": "unknown",
+  "disposition": "current",
+  "authority": {"actor": "TRQP Assurance Hub", "scope": "stack compatibility impact"},
+  "rationale": "Impact could not be established, but this deliberately invalid fixture incorrectly retains the prior assurance as current."
+}
