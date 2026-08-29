@@ -1,0 +1,28 @@
+{
+  "event_id": "ale-trqp-2026-2-002",
+  "event_type": "change_detected",
+  "observed_at": "2026-08-29T03:21:00Z",
+  "target": {
+    "id": "trqp-docs-example",
+    "type": "assurance-target",
+    "version": "2"
+  },
+  "previous_state_refs": [
+    "https://example.org/evidence/trqp/docs/v1"
+  ],
+  "current_state_refs": [
+    "https://example.org/evidence/trqp/docs/v2"
+  ],
+  "changed_dimensions": ["documentation"],
+  "impact": "non_material",
+  "affected_refs": [
+    "https://example.org/assurance/trqp/previous-pass"
+  ],
+  "disposition": "current",
+  "authority": {
+    "actor": "TRQP Assurance Hub",
+    "scope": "stack assurance materiality classification",
+    "policy_ref": "https://example.org/policy/trqp/change-classification"
+  },
+  "rationale": "Only explanatory documentation changed; executable policy, evidence, authority, dependencies, and evaluated target state are unchanged."
+}
