@@ -6,7 +6,7 @@ nav_order: 5
 ---
 # Roadmap
 
-**Last reviewed:** 2026-08-28  
+**Last reviewed:** 2026-08-29  
 **Current release:** `v0.14.1`
 
 The roadmap prioritizes portable contracts, validation, and governance interoperability over unconstrained schema expansion.
@@ -14,9 +14,9 @@ The roadmap prioritizes portable contracts, validation, and governance interoper
 ## September 2026 priority: TRQP Stack 2026.2 lifecycle evidence
 
 **Coordinating issue:** https://github.com/sankarshanmukhopadhyay/trqp-assurance-hub/issues/39  
-**Tracking issue:** https://github.com/sankarshanmukhopadhyay/trqp-assurance-hub/issues/41
+**TIS implementation issue:** https://github.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/issues/4
 
-GitHub Issues are currently disabled in this repository, so the Hub tracking issue records the cross-repository dependency while implementation remains TIS-owned.
+TIS #4 is the authoritative repo-local tracker for this work. The earlier Hub #41 existed only while TIS Issues were disabled and is retained closed as historical lineage.
 
 ### Proposition
 
