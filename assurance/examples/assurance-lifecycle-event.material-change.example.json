@@ -1,0 +1,41 @@
+{
+  "event_id": "ale-trqp-2026-2-001",
+  "event_type": "change_detected",
+  "observed_at": "2026-08-29T03:20:00Z",
+  "target": {
+    "id": "trqp-tspp-posture-example",
+    "type": "assurance-target",
+    "version": "2"
+  },
+  "previous_state_refs": [
+    "https://example.org/evidence/trqp/posture/v1"
+  ],
+  "current_state_refs": [
+    "https://example.org/evidence/trqp/posture/v2"
+  ],
+  "changed_dimensions": [
+    "security_posture",
+    "evidence"
+  ],
+  "impact": "material",
+  "affected_refs": [
+    "https://example.org/assurance/trqp/previous-pass"
+  ],
+  "disposition": "reassessment_required",
+  "reassessment_scope": [
+    "TSPP posture controls affected by the changed security posture",
+    "evidence freshness and integrity continuity"
+  ],
+  "authority": {
+    "actor": "TRQP-TSPP evaluator",
+    "scope": "security and privacy posture materiality",
+    "policy_ref": "https://example.org/policy/trqp/posture-materiality"
+  },
+  "rationale": "The target security posture and supporting evidence changed materially, so the prior posture conclusion cannot remain current without bounded reassessment.",
+  "provenance": {
+    "producer": "TRQP-TSPP",
+    "run_id": "run-2026-08-29-001",
+    "source_commit": "0123456789abcdef",
+    "evidence_bundle_ref": "https://example.org/evidence/trqp/change-bundle-001"
+  }
+}
