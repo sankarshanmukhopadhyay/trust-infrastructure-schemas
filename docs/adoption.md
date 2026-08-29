@@ -6,6 +6,8 @@ nav_order: 1
 ---
 # Adoption
 
+If you are consuming TIS as part of the **Trust Systems Modelling Stack (TSMS)**, start with [`docs/tsms.md`](tsms.md). It defines the TSMM → TIS → TGA authority boundary, candidate compatibility baseline, fail-safe version behavior, and the initial golden-path portable contracts.
+
 ## First valid result
 
 1. Install the repository dependencies documented in the README.
