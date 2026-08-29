@@ -1,0 +1,12 @@
+{
+  "event_id": "ale-invalid-material-current",
+  "event_type": "change_detected",
+  "observed_at": "2026-08-29T03:23:00Z",
+  "target": {"id": "trqp-target", "type": "assurance-target"},
+  "previous_state_refs": ["https://example.org/evidence/prior"],
+  "changed_dimensions": ["policy"],
+  "impact": "material",
+  "disposition": "current",
+  "authority": {"actor": "TRQP Assurance Hub", "scope": "stack assurance materiality"},
+  "rationale": "A material policy change is deliberately paired with an invalid current disposition to prove fail-safe rejection."
+}

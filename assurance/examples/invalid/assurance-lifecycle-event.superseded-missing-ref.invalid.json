@@ -1,0 +1,12 @@
+{
+  "event_id": "ale-invalid-superseded-no-ref",
+  "event_type": "supersession",
+  "observed_at": "2026-08-29T03:24:00Z",
+  "target": {"id": "trqp-assurance-record", "type": "assurance-record"},
+  "previous_state_refs": ["https://example.org/assurance/prior"],
+  "changed_dimensions": ["evidence"],
+  "impact": "material",
+  "disposition": "superseded",
+  "authority": {"actor": "TRQP Assurance Hub", "scope": "combined assurance lifecycle"},
+  "rationale": "This deliberately invalid fixture declares supersession without identifying the superseding artifact or state."
+}
