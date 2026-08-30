@@ -2,15 +2,15 @@
 
 > **Flagship repository**  
 > **Role:** `portable-machine-readable-contract-layer`  
-> **Current version:** `v0.14.1`  
+> **Current version:** `v0.15.0`  
 > **Canonical validation:** `make validate`  
 > **Authority:** [`governance/repository-authority.yaml`](governance/repository-authority.yaml)  
 > **Start here:** [`docs/adoption.md`](docs/adoption.md)
 
 
-**Current release:** `v0.14.1`  
-**Release theme:** Publication repair, zero-install validation, and scope discipline  
-**Last reviewed:** 2026-08-20
+**Current release:** `v0.15.0`  
+**Release theme:** Portable assurance lifecycle evidence under change  
+**Last reviewed:** 2026-08-30
 
 This repository publishes canonical **machine-readable trust artifacts** for operational digital trust infrastructure. It is an implementation-oriented **Open Trust Artifact Model** for expressing authority, evidence, assurance, conformance, registry state, policy references, runtime workflow state, and bounded trust decisions in forms that can be validated by machines and reviewed by humans.
 
@@ -30,28 +30,27 @@ Trust infrastructure fails when governance remains trapped in websites, PDFs, an
 
 ## TIS in the Trust Systems Modelling Stack (TSMS)
 
-TIS is the **portable machine-readable contract layer** between TSMM canonical semantics and TGA executable governance artifacts. The current candidate baseline is **TSMM v0.24.0 / TIS v0.14.1 / TGA v0.12.1**. Unknown versions are not silently treated as compatible.
+TIS is the **portable machine-readable contract layer** between TSMM canonical semantics and TGA executable governance artifacts. The current candidate baseline is **TSMM v0.24.0 / TIS v0.15.0 / TGA v0.12.1**. Unknown versions are not silently treated as compatible.
 
 - [TSMS portable contract guide](docs/tsms.md)
 - Machine-readable compatibility declaration: `model/tsms-compatibility.json`
 - Validation: `npm run tsms:check`
 - Governing workstream: [#7](https://github.com/sankarshanmukhopadhyay/trust-infrastructure-schemas/issues/7)
 
+## What changed in v0.15.0
 
-## What changed in v0.14.1
-
-`v0.14.1` repairs the publication and validation architecture and establishes a stricter repository boundary.
+`v0.15.0` adds the portable assurance lifecycle event contract required to carry change-impact evidence across independently authoritative Stack components.
 
 Major changes:
 
-- candidate validation no longer installs npm packages or depends on registry availability;
-- GitHub Pages treats root `index.md` plus `docs/**/*.md` as the canonical publication surface;
-- internal documentation links are resolved by Jekyll rather than emitted as `.md` URLs;
-- generated-site assurance checks for missing HTML, unresolved Markdown links, and missing stylesheet references;
-- TIS Core is explicitly separated from ecosystem-specific adapter profiles and repository assurance evidence;
-- new schemas must pass portability, authority, non-duplication, assurance-value, and lifecycle admission tests.
+- adds `assurance/assurance-lifecycle-event.schema.json` for change detection, reassessment, invalidation, supersession, provenance, and authority-boundary evidence;
+- represents material, non-material, and unknown impact without allowing unknown impact to collapse silently to current/reusable assurance;
+- preserves TSMM semantic authority and component-local judgment ownership through explicit `authorityTransfer: false` bindings;
+- validates negative cases for material/unknown impact and unsupported reassessment/supersession states;
+- establishes cross-repository consumption evidence through TRQP-TSPP, trqp-conformance-suite, and trqp-assurance-hub;
+- keeps historical assurance immutable while enabling lineage-based reassessment and supersession.
 
-See [`docs/repository-scope.md`](docs/repository-scope.md).
+See [`docs/releases/v0.15.0.md`](docs/releases/v0.15.0.md).
 
 ## Canonical governance flow
 
@@ -63,6 +62,12 @@ For DTG/OpenVTC/VTI workflows, the executable flow is:
 
 ```text
 TSMM Runtime Governance Projection -> VTI Authority Evidence -> OpenVTC Task Evidence -> Trust Task Receipt -> Evidence Bundle -> Decision Receipt -> Registry Publication
+```
+
+For TRQP Stack lifecycle evidence, the proven flow is:
+
+```text
+TSPP materiality judgment -> TIS lifecycle contract -> CTS reassessment consequence -> Assurance Hub current-validity recomposition
 ```
 
 ## Artifact families
@@ -87,6 +92,7 @@ TSMM Runtime Governance Projection -> VTI Authority Evidence -> OpenVTC Task Evi
 ### Assurance and conformance artifacts
 
 - Assurance levels: `assurance/assurance-levels.md`
+- Assurance lifecycle event schema: `assurance/assurance-lifecycle-event.schema.json`
 - Conformance declaration schema: `conformance/conformance-declaration.schema.json`
 - Evidence bundle manifest schema: `evidence/evidence-bundle-manifest.schema.json`
 - Evidence bundle integrity profile: `docs/evidence-bundle-integrity-profile.md`
@@ -119,7 +125,7 @@ Local validation requires Node.js. Candidate validation has no npm package-insta
 npm run candidate:check
 ```
 
-The validation pipeline checks schema examples, coverage references, release documentation, and local artifact hygiene.
+The validation pipeline checks schema examples, coverage references, release documentation, authority boundaries, lifecycle invariants, semantic alignment, TSMS compatibility, and local artifact hygiene.
 
 ## Delegation lineage
 
