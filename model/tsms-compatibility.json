@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "contractId": "urn:tsms:tis:compatibility",
   "repository": "sankarshanmukhopadhyay/trust-infrastructure-schemas",
-  "repositoryVersion": "v0.14.1",
+  "repositoryVersion": "v0.15.0",
   "role": "portable-machine-readable-contract-layer",
   "tsms": {
     "stackManifest": "https://github.com/sankarshanmukhopadhyay/trust-systems-meta-model/blob/main/model/tsms-stack.json",
@@ -40,6 +40,7 @@
   "goldenPathContracts": [
     "governance/authority-boundary.schema.json",
     "evidence/evidence-bundle-manifest.schema.json",
-    "decision/decision-receipt.schema.json"
+    "decision/decision-receipt.schema.json",
+    "assurance/assurance-lifecycle-event.schema.json"
   ]
 }
