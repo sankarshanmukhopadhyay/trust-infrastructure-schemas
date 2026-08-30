@@ -1,5 +1,22 @@
 # Changelog
 
+## v0.15.0 - 2026-08-30
+
+### Added
+- added `assurance/assurance-lifecycle-event.schema.json` as the portable Stack contract for change detection, reassessment, invalidation, supersession, provenance, authority, and bounded reassessment scope;
+- added machine-verifiable material, non-material, and unknown-impact handling with fail-safe lifecycle dispositions;
+- added lifecycle validation and negative probes preventing material or unknown impact from silently preserving current assurance.
+
+### Interoperability evidence
+- demonstrated TSPP production of the shared lifecycle event while retaining security/privacy posture materiality authority;
+- demonstrated CTS consumption for bounded-versus-full conformance reassessment without reclassifying upstream materiality;
+- demonstrated Assurance Hub recomposition of current assurance validity without rewriting historical outcomes or stealing upstream semantic authority.
+
+### Governance
+- preserved TSMM canonical semantic authority and explicit `authorityTransfer: false` bindings;
+- promoted the lifecycle event into the TSMS golden-path contract set only after cross-repository consumption succeeded;
+- recorded that v0.15.0 is additive and evidence-driven rather than a synchronization-only release.
+
 ## v0.14.1 - 2026-08-20
 
 ### Fixed
@@ -150,26 +167,22 @@ All notable changes to this repository are documented here.
 ## [v0.5.0] - 2026-03-25
 
 ### Added
-
 - Added cross-repo governance and composition documentation.
 - Added expanded schema governance and identifier guidance.
 
 ## [v0.4.0] - 2026-03-10
 
 ### Added
-
 - Added assurance-level and control mapping materials.
 
 ## [v0.3.0] - 2026-02-20
 
 ### Added
-
 - Added conformance declaration schema and implementer declaration template.
 
 ## [v0.2.1] - 2026-02-01
 
 ### Changed
-
 - Refined schema documentation and example validation practices.
 
 ## v0.11.0 - 2026-07-14
