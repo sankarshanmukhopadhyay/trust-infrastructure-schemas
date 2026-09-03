@@ -48,6 +48,7 @@ exclude:
   - RELEASE_NOTES_v0.12.0.md
   - ROADMAP.md
   - SECURITY.md
+  - SUPPORT.md
   - assurance/assurance-levels.md
   - conformance/IMPLEMENTER-DECLARATION.md
   - controls/controls.md
